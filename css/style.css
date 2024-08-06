@@ -190,22 +190,26 @@ h1{
     color: white;
 }
 
+.cards2:hover{
+    transform: (1.1);
+}
 
 
 .cards2 p{
+    font-size: 20px;
     color: #14CC1C;
     font-weight: 700;
 }
 
-.cards1 a:hover{
-    transform: scale(1.1);
-
-}
-
-
 .direitos{
+    font-weight: 1000;
+    color: #333;
+    margin-top: 20px;
+    padding: 10px;
     text-size-adjust: 50px;
     background-color: #14CC1C;
     text-align: center;
 }
+
+
 
