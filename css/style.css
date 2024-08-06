@@ -5,10 +5,12 @@ body{
     background-color: rgb(255, 255, 255);  
 }
 header{
+
+    margin-top: 40px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    width: 1500px;
+    width: auto;
     background-color: #14cc1c;
     color: #ffffff;
     padding: 10px 20px;
@@ -124,8 +126,8 @@ h1{
     text-align: center;
     margin: 0px 20px 80px 30px;
     background-color: rgb(255, 255, 255);
-    width: 500px;
-    height: 150px;
+    width: 1000px;
+    height: 300px;
     box-shadow: rgba(1, 58, 11, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     border: 1px solid rgba(18, 19, 18, 0.068);
     transition: 500ms linear;
@@ -172,3 +174,38 @@ h1{
 .destaque{
     background-color: #14CC1C;
 }
+
+
+
+
+
+
+
+
+.cards2 a{
+    text-decoration: none;
+    padding: 10px 70px 10px 70px;
+    background-color: #14CC1C;
+    border-radius: 10px;
+    color: white;
+}
+
+
+
+.cards2 p{
+    color: #14CC1C;
+    font-weight: 700;
+}
+
+.cards1 a:hover{
+    transform: scale(1.1);
+
+}
+
+
+.direitos{
+    text-size-adjust: 50px;
+    background-color: #14CC1C;
+    text-align: center;
+}
+
