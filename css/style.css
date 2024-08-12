@@ -145,7 +145,7 @@ h1{
     text-align: center;
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Mangal_das_Gar%C3%A7as_DSC_8656_%289514030210%29.jpg');
     background-repeat: no-repeat;
-    background-size: 1900px 550px;
+    background-size: 1900px 590px;
     background-attachment: fixed ;
 }
 .titulo1{
@@ -234,4 +234,34 @@ h1{
 
      
 
+
+
+
+
+.container1 .cadrar{
+    text-decoration: none;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 70px 10px 70px;
+    background-color: #14CC1C;
+    border-radius: 10px;
+    color: white;
+    border-right: 400px;
+
+}
+
+.container1 .cadrar1{
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 70px 10px 70px;
+    background-color: #00000096;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.container1 a{
+    color: #fff;
+    text-decoration: none;
+}
 
