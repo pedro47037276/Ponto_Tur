@@ -67,7 +67,7 @@ h1{
 
 .cards1 p{
     margin: 10px 20px 40px 20px;
-    font-weight: 400;
+    font-weight: 1000;
     font-size: 1rem;
 
 }
@@ -136,7 +136,7 @@ h1{
 }
 
 .cards2 h1{
-    color: #14CC1C;
+    color: #000000;
     font-weight: 700;
 }
 
@@ -197,7 +197,7 @@ h1{
 
 .cards2 p{
     font-size: 20px;
-    color: #14CC1C;
+    color: #000000;
     font-weight: 700;
 }
 
@@ -285,12 +285,11 @@ header nav ul li{
 .container1 .cadrar{
     text-decoration: none;
     text-align: center;
-    text-decoration: none;
     padding: 10px 70px 10px 70px;
     background-color: #14CC1C;
     border-radius: 10px;
-    color: white;
-    border-right: 400px;
+       
+   
 
 }
 
