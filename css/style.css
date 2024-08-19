@@ -4,17 +4,78 @@
     padding: 0;
     background-color: rgb(255, 255, 255);  
 }*/
+
+
+.header-nav{
+    display:flex;
+    justify-content: space-between;
+    /*background-color: blue;*/
+    background-color: white;
+    width:100%;
+    padding:10px;
+
+    & h1{
+        margin-left: 50px;
+    }
+}
+
+.header-nav nav{
+    /*align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 60px;*/
+    
+}
+
+.header-nav nav a{
+    text-decoration: none;
+    color: black;
+    
+}
+.header-nav nav ul{
+   list-style-type: none;
+   
+}
+.header-nav nav ul li{
+    display: inline-block;
+    padding: 0 40px;
+    
+}
+
+.container1{
+    text-align: center;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Mangal_das_Gar%C3%A7as_DSC_8656_%289514030210%29.jpg');
+    background-repeat: no-repeat;
+    /*background-size: 1900px 650px;*/
+    background-size: cover;
+    background-attachment: fixed ;
+
+    height: 620PX;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-conteudo{
+    margin: auto
+}
+
+
 .cards{
 
-    margin-top: 40px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: auto;
     background-color: #14cc1c;
     color: #ffffff;
     padding: 10px 20px;
     text-align: center;
+    margin-top: 40px;
     
 }
 h1{
@@ -114,40 +175,48 @@ h1{
 
 .cards2 img{  
     width: 70px;
-   
- 
+
 }
 
 
 .cards2{
-    justify-content: space-between;
-    display: inline-block;
+    /*justify-content: space-between;*/
+    /*display: inline-block;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
     border-radius: 20px;
     text-align: center;
-    margin: 0px 20px 80px 30px;
+    margin: 80px 20px 80px 30px;
     background-color: rgb(255, 255, 255);
-    width: 1000px;
+    width: 500px;
     height: 300px;
     box-shadow: rgba(1, 58, 11, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     border: 1px solid rgba(18, 19, 18, 0.068);
     transition: 500ms linear;
 
+    & h1{
+        color: #000000;
+        font-weight: 700;
+    }
+    
+    & P{
+        max-width: 70%;
+   
+        font-size: 0.80rem;
+    }
+    
 
 }
 
-.cards2 h1{
-    color: #000000;
-    font-weight: 700;
-}
 
 
-.container1{
-    text-align: center;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Mangal_das_Gar%C3%A7as_DSC_8656_%289514030210%29.jpg');
-    background-repeat: no-repeat;
-    background-size: 1900px 590px;
-    background-attachment: fixed ;
-}
+
+
+
+
 .titulo1{
     color: #fff;
 }
@@ -210,44 +279,34 @@ h1{
     background-color: #14CC1C;
     text-align: center;
 }
-header nav{
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-    height: 60px;
-    
-}
-header nav a{
-    text-decoration: none;
-    color: #14CC1C;
-}
-header nav ul{
-   list-style-type: none;
-   
-}
-header nav ul li{
-    display: inline-block;
-    padding: 0 40px;
-    
-}
+
 
 @media(max-width: 800px){
 
     .cards{
         display: flex;
         flex-direction: column;
-  
+        align-items: center;
 
     }
 
     .cards2{
         display: flex;
         flex-direction: column;
-        width: 75%;  
+        align-items: center;
+        width: 85%;
+        height: 300px;
 
+    }
+
+    .cards2 p{
+        font-size: 0.95rem;
+        width: 70%;
+    }
+
+    .cards2 h1{
+        font-size: 1.5rem;
+        width: 70%;
     }
 
     .menu-mobile{
@@ -275,6 +334,85 @@ header nav ul li{
     }
 
 }
+
+@media(max-width: 800px){
+
+    .recomendacoes{
+       
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .recomendacoes .titulo{
+        color: #14CC1C;
+        font-weight: 700;
+        font-size: 1.3rem;
+        
+        padding: 30px 0px 30px 0px;
+    }
+
+    .cards1{
+
+        width: 85%;
+        height: 395px;
+
+      
+
+        display: inline-block;
+        border-radius: 20px;
+        text-align: center;
+        margin: 0px 20px 80px 30px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(1, 58, 11, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        border: 1px solid rgba(18, 19, 18, 0.068);
+        transition: 500ms linear;
+
+    }
+
+    .cards1 img{
+        width: 100%;
+        height: 160px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .cards1:hover{
+        scale: 1.02;
+        box-shadow: rgba(1, 58, 11, 0.247) 0px 20px 25px -5px, rgba(0, 0, 0, 0.185) 0px 10px 10px -5px;
+    }
+    
+    .cards1 h1{
+        color: #14CC1C;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+    
+    .cards1 p{
+        margin: 10px 20px 15px 20px;
+        font-weight: 400;
+        font-size: 0.87rem;
+    
+    }
+    
+    .cards1 a{
+        text-decoration: none;
+        padding: 5px 65px 5px 65px;
+       
+        background-color: #14CC1C;
+        border-radius: 10px;
+        color: white;
+    }
+    
+    .cards1 a:hover{
+        transform: scale(1.1);
+    
+    }   
+}
+
 
      
 
