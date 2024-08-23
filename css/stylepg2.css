@@ -1,12 +1,24 @@
-.body{
+/**{
+    font-family: poppins;
+}*/
 
+.body{
+    
     display: block;
 }
 
-h1{
-   
-    color: #7FFF00
+a{
+	text-decoration: none;
+    color: black;
 }
+
+.map{
+    width: 100%;
+    height: 500px;
+    background-color: #14CC1C;
+}
+
+
 
 .btn-abrir-menu{
     align-self:end;
@@ -18,7 +30,7 @@ h1{
 
 
 .topo{
-  
+    
     display:flex;
     justify-content:space-between;
 
@@ -60,7 +72,7 @@ h1{
     transition: 500ms linear;
 }
  .locall p{
-    font weight:1000px;
+    font-weight:1000px;
     color: black;
  }
 
@@ -68,27 +80,16 @@ h1{
     border-radius:25px;
     text-align:center;
     background: #14cc1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
  }
 
  .cards{
     margin-top:30px;
 
  }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  .cards1 img{
     width: 100%;
@@ -149,13 +150,23 @@ h1{
 
 .pesq{
     margin-top:30px;
-
-    
-    color:;
     font-weight:1000;
     
+}
 
+@media(max-width: 800px){
+    .map{
+        width: 100%;
+        height: 500px;
+    }
 
-    
+    .locall1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
 
 }
