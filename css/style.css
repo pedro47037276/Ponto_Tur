@@ -16,6 +16,7 @@
 }
 
 .header-nav h1{
+    
     margin-left: 50px;
     
 }
@@ -49,14 +50,16 @@
 
 .container1{
     text-align: center;
-    /*background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Mangal_das_Gar%C3%A7as_DSC_8656_%289514030210%29.jpg');*/
-    background-image: url('/design/fundo.png');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Mangal_das_Gar%C3%A7as_DSC_8656_%289514030210%29.jpg');
+    /*background-image: url('/design/allan.jpg');*/
     background-repeat: no-repeat;
-    /*background-size: 1900px 650px;*/
-    background-size: cover;
+    background-size: 1900px 750px;
+    /*background-size: cover;*/
     background-attachment: fixed ;
+    
 
     height: 620PX;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,7 +71,9 @@
     justify-content: center;
     flex-direction: column;
     width: auto;
-    height: 600px; 
+    height: 600px;
+    
+    
 }
 
 
@@ -102,6 +107,7 @@ h1{
 
 *{
     font-family: poppins;
+    
 }
 
 .recomendacoes{
