@@ -17,11 +17,11 @@ var map = L.map('map').setView([0, 0], 15);
         }).addTo(map);*/
 
         /* Cria o Triangulo*/
-        var polygon = L.polygon([
+        /*var polygon = L.polygon([
             [-1.448517, -48.491839],
             [-1.448517, -48.491839],
             [-1.448517, -48.491839]
-        ]).addTo(map);
+        ]).addTo(map);*/
 
         /* Texto ao clicar no icone localizador*/
         marker.bindPopup("<b>Olá</b><br>Você está aqui").openPopup();
@@ -30,22 +30,22 @@ var map = L.map('map').setView([0, 0], 15);
         /*texto ao clicar triângulo */
         polygon.bindPopup("I am a polygon.");
 
-        var popup = L.popup()
+        /*var popup = L.popup()
         .setLatLng([-1.448517, -48.491839])
         .setContent("Localização atual")
-        .openOn(map);
+        .openOn(map);*/
 
 
         var popup = L.popup();
 
-        function onMapClick(e) {
+        /*function onMapClick(e) {
             popup
                 .setLatLng(e.latlng)
                 .setContent("You clicked the map at " + e.latlng.toString())
                 .openOn(map);
         }
 
-map.on('click', onMapClick);
+map.on('click', onMapClick);*/
 
 
 
