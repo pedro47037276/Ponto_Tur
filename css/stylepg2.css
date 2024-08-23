@@ -1,0 +1,161 @@
+.body{
+
+    display: block;
+}
+
+h1{
+   
+    color: #7FFF00
+}
+
+.btn-abrir-menu{
+    align-self:end;
+    font-size:50px;
+    color: black; 
+
+
+}
+
+
+.topo{
+  
+    display:flex;
+    justify-content:space-between;
+
+}
+
+
+.locall{
+
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background-color: c;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: 40px;
+    
+
+}
+
+.locall img{
+    width: 100%;
+    height: 250px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.locall{
+    display: inline-block;
+    border-radius: 20px;
+    text-align: center;
+    margin: 0px 20px 80px 30px;
+    background-color: rgb(255, 255, 255);
+    width: 450px;
+    height: 550px;
+    box-shadow: rgba(1, 58, 11, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    border: 1px solid rgba(18, 19, 18, 0.068);
+    transition: 500ms linear;
+}
+ .locall p{
+    font weight:1000px;
+    color: black;
+ }
+
+ .locall1{
+    border-radius:25px;
+    text-align:center;
+    background: #14cc1c;
+ }
+
+ .cards{
+    margin-top:30px;
+
+ }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .cards1 img{
+    width: 100%;
+    height: 250px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.cards1{
+    margin-top:30px;
+    display: inline-block;
+    border-radius: 20px;
+    text-align: center;
+    margin: 0px 20px 80px 30px;
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    height: 500px;
+    box-shadow: rgba(1, 58, 11, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    border: 1px solid rgba(18, 19, 18, 0.068);
+    transition: 500ms linear;
+}
+
+
+
+.cards1 h1{
+    color: #14CC1C;
+    font-weight: 700;
+}
+
+.cards1 p{
+    margin: 10px 20px 40px 20px;
+    font-weight: 1000;
+    font-size: 1rem;
+
+}
+
+
+
+.cards1 a{
+    text-decoration: none;
+    padding: 10px 70px 10px 70px;
+    background-color: #14CC1C;
+    border-radius: 10px;
+    color: white;
+}
+.cards1 a:hover{
+    transform: scale(1.1);
+
+}   
+
+.mapa{
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+.pesq{
+    margin-top:30px;
+
+    
+    color:;
+    font-weight:1000;
+    
+
+
+    
+
+}
