@@ -26,9 +26,9 @@ var map = L.map('map').setView([0, 0], 15);
         /* Texto ao clicar no icone localizador*/
         marker.bindPopup("<b>Olá</b><br>Você está aqui").openPopup();
         /* Texto ao clicar no císculo vermelho*/
-        circle.bindPopup("I am a circle.");
+        /*circle.bindPopup("I am a circle.");*/
         /*texto ao clicar triângulo */
-        polygon.bindPopup("I am a polygon.");
+        /*polygon.bindPopup("I am a polygon.");*/
 
         /*var popup = L.popup()
         .setLatLng([-1.448517, -48.491839])
