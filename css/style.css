@@ -5,12 +5,142 @@
     background-color: rgb(255, 255, 255);  
 }*/
 
+.header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 254, 248);
+    width:100%;
+    height: 140px;
+    
+    
+}
 
+.header h1{ 
+    margin-left: 145px;
+    font-size: 3rem;
+    color: #14cc1c;
+    font-family: poppins;
+    font-weight: 700;
+    
+}
+
+.header nav a{
+    text-decoration: none;
+    color: black;
+    font-family: poppins;
+    font-weight: 2rem;
+    
+}
+.header nav ul{
+   list-style-type: none;
+   margin-right: 120px;
+   
+}
+.header nav ul li{
+    display: inline-block;
+    padding: 0 40px;
+    
+}
+
+.destaque{
+    background-color: #14cc1c;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    padding: 7px;
+}
+
+.section-inicial{
+    height: 750PX;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 254, 248);
+    margin: auto;
+}
+
+.parte-textual{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+    width: 45%;
+    height: 700px;
+    font-family: poppins;
+
+}
+
+.btns-cad-ent{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 25px;
+    margin-top: 25px;
+    margin-left: 50px;
+    width: 600px;
+    
+ 
+}
+
+.btns-cad-ent a{
+    text-align: center;
+    text-decoration: none;
+}
+
+.cadastrar{
+    background-color: #14cc1c;
+    border-radius: 5px;
+    color: white;
+    padding-left: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 50px;
+}
+
+.entrar{
+    border: 1px solid rgba(0, 0, 0, 0.596);
+    border-radius: 5px;
+    padding-left: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 60px;
+    color: rgb(0, 0, 0);
+}
+
+.parte-textual h1{
+    font-size: 3.3rem;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.parte-textual h2{
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    font-weight: 400;
+}
+
+.parte-imagens{
+    height: 700px;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.parte-imagens img{
+    border-radius: 20px;
+    width: 100%;
+    height: 95%;
+}
+
+
+
+/*
 .header-nav{
     display:flex;
     justify-content: space-between;
     /*background-color: blue;*/
-    background-color: rgb(255, 255, 255);
+   /* background-color: rgb(255, 255, 255);
     width:100%;
     padding:10px;
 }
@@ -19,7 +149,7 @@
     
     margin-left: 50px;
     
-}
+}*/
 
 /*.header-nav nav{
     align-items: center;
@@ -32,7 +162,7 @@
     
 }
 */
-
+/*
 .header-nav nav a{
     text-decoration: none;
     color: black;
@@ -46,16 +176,16 @@
     display: inline-block;
     padding: 0 40px;
     
-}
-
+}*/
+/*
 .container1{
     text-align: center;
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Mangal_das_Gar%C3%A7as_DSC_8656_%289514030210%29.jpg');
     /*background-image: url('/design/allan.jpg');*/
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;
     background-size: 1900px 750px;
     /*background-size: cover;*/
-    background-attachment: fixed ;
+    /*background-attachment: fixed ;
     
 
     height: 620PX;
@@ -63,9 +193,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+}*/
 
-.header-conteudo{
+/*.header-conteudo{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,7 +204,7 @@
     height: 600px;
     
     
-}
+}*/
 
 
 .cards{
