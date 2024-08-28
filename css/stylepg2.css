@@ -4,7 +4,7 @@
 }
 
 h1{
-   
+    margin-left:50px;
     color: #7FFF00
 }
 
@@ -12,16 +12,39 @@ h1{
     align-self:end;
     font-size:50px;
     color: black; 
-
+    display:none;
 
 }
-
+.menu-mobile{
+    display:none;
+}
+.desktop ul li a{
+ list-style-type:none;
+ text-decoration:none;
+} 
+.desktop nav ul li{
+    display:inline-block;
+    padding:0 40px;
+}
+.desktop li a{
+    color:black;
+}
+.desktop{
+    display:flex;
+    justify-content: space-between;
+    /*background-color: blue;*/
+    background-color: white;
+    width:100%;
+    padding:10px;
+    align-items:center;
+}
 
 .topo{
-  
+    align-items:center;
+    justify-content:center;
     display:flex;
     justify-content:space-between;
-
+    
 }
 
 
@@ -158,4 +181,62 @@ h1{
 
     
 
+}
+@media(max-width: 800px){
+   .btn-abrir-menu{
+    display:block;
+    align-self:center;
+   }
+   .btn-abrir-menu i{
+    color:#14CC1C;
+    font-size:40px;
+   }
+   .btn-fechar{
+    color:#14CC1C;
+    font-size:40px;
+    padding:20px;
+   }
+   .menu-mobile{
+    background-color:black;
+    width:0;
+    height:40vh;
+    position:absolute;
+    top: 0;
+    right: 0;
+    display:flex;
+    justify-content:center;
+    align-items:baseline;
+    text-align:left;
+    overflow:hidden;
+    transition:.2s;
+   }
+   .menu-mobile.abrir-menu{
+    width:70%;
+   }
+    .menu-mobile nav{
+        width:100%;
+    }
+    .menu-mobile nav ul{
+        list-style-type:none;
+    }
+    .menu-mobile nav a{
+       font-size: 24px;
+       text-decoration:none;
+       color:white;
+       padding: 20px 0;
+       display:block;
+       transition:.5s;
+    }
+    .menu-mobile nav a:hover{
+        background-color:white;
+        color:black;
+        box-shadow: 0 0 20px white;
+       }
+    .desktop ul{
+        display:none;
+    }   
+        
+     
+
+    
 }
