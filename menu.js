@@ -1,11 +1,11 @@
 
-let btnMenu = document.getElementById('btn-menu')
-let menu = document.getElementById('menu-mobile')
-let btnFechar = document.getElementById('fechar')
+let btnMenu1 = document.getElementById('btn-menu1')
+let menu1 = document.getElementById('menu-mobile1')
+let btnFechar1 = document.getElementById('fechar1')
 
-btnMenu.addEventListener('click', ()=>{
-      menu.classList.add('abrir-menu')
+btnMenu1.addEventListener('click', ()=>{
+      menu1.classList.add('abrir-menu')
 })
-btnFechar.addEventListener('click', ()=>{
-      menu.classList.remove('abrir-menu')
+btnFechar1.addEventListener('click', ()=>{
+      menu1.classList.remove('abrir-menu')
 })

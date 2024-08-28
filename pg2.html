@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
     <link rel="stylesheet" href="css/stylepg2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +17,9 @@
     <script src="menu.js" defer></script>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <!--<script src="/node_modules/leaflet/dist/leaflet.js"></script>-->
 
 
@@ -29,57 +28,56 @@
 <body>
 
 
- 
-<div class="topo">
-    <a href="index.html"><h1>Ponto Tur</h1></a>
 
-    <div class="desktop">
-        <h1>Ponto Tur</h1>
-   <nav>
-    <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="#">Conta</a></li>
-      <li><a href="#">Favorito</a></li>
-      <li><a href="#">Historico</a></li>
-    </ul>
-   </nav>
-    </div>
-   
+    <div class="topo">
 
-        <div class="btn-abrir-menu" id="btn-menu">
+
+        <div class="desktop">
+            <a href="index.html">
+                <h1>Ponto Tur</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Conta</a></li>
+                    <li><a href="#">Favorito</a></li>
+                    <li><a href="#">Historico</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="btn-abrir-menu1" id="btn-menu1">
             <i class="bi bi-list"></i>
         </div>
-     <div class="menu-mobile" id="menu-mobile">
-        <div class="btn-fechar" id="fechar">
-            <i class="bi bi-x-lg"></i>
-        </div> 
-       <nav>
-         <ul>
-           <li><a href="#">Início</a></li>
-           <li><a href="#">Conta</a></li>
-           <li><a href="#">Favorito</a></li>
-           <li><a href="#">Historico</a></li>
-         </ul>
+        <div class="menu-mobile1" id="menu-mobile1">
+            <div class="btn-fechar1" id="fechar1">
+                <i class="bi bi-x-lg"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Conta</a></li>
+                    <li><a href="#">Favorito</a></li>
+                    <li><a href="#">Historico</a></li>
+                </ul>
 
-       </nav>
-
-    </div>   
-</div>
-
-
-
-<div id="map" class="map"></div>
+            </nav>
+        </div>
+    </div>
 
 
 
+    <div id="map" class="map"></div>
 
- <section class="locall1">
 
 
-    
-    <input type="search" name="q" class="pesq" placeholder="PESQUISAR"><i class="bi bi-search"></i>
 
-  
+    <section class="locall1">
+
+
+
+        <input type="search" name="q" class="pesq" placeholder="PESQUISAR"><i class="bi bi-search"></i>
+
+
         <div class="cards1">
 
             <img src="https://timaonet.com.br/uploads/images/image_750x_65df3e31d1c18.jpg" alt="">
@@ -127,8 +125,8 @@
 
         </div>
 
- </section>
+    </section>
 
 
- <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
