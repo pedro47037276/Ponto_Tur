@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="stylepg3.css">
-    <title>Ponto tur | Cadastro</title>
+    <title>Ponto Tur | Cadastro</title>
 </head>
 
 <body>
@@ -19,25 +19,21 @@
                 
                 <input type="text" placeholder="Nome">
                 <input type="email" placeholder="Email">
-                <input type="senha" placeholder="Senha">
+                <input type="password" placeholder="Senha">
                 <button>Criar</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            
             <h1 class="nomesite2">Ponto Tur</h1>
             <form>                
                 <h1>Entrar</h1>
-             
-                <input type="email" placeholder="Email">
-                <input type="senha" placeholder="Senha">
+                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="password" name="password" id="password" placeholder="Senha">
                 <a href="#">Esqueceu Sua Senha?</a>
-                <button>Entrar</button>
+                <button type="button" onclick="login()">Entrar</button>
             </form>
         </div>
         <div class="toggle-container">
-
-            
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
                     <h1>Bem Vindo!</h1>
@@ -53,6 +49,8 @@
         </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
     <script src="scriptlogcad.js"></script>
 </body>
 
