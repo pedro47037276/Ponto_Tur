@@ -46,7 +46,12 @@
     padding: 0 40px;
     
 }
-
+.menu-mobile2{
+    display:none;
+}
+.btn-abrir-menu2{
+    display:none;
+}
 .destaque{
     background-color: #14cc1c;
     border-radius: 5px;
@@ -489,7 +494,7 @@ h1{
         height: 100px;
         margin-bottom: 100px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
     
     }
 
@@ -499,6 +504,7 @@ h1{
         color: #14cc1c;
         font-family: poppins;
         font-weight: 700;
+        font-size:32px;
     }
 
 
@@ -538,30 +544,65 @@ h1{
 
     /*Menu Mobile*/
 
-    .menu-mobile{
-        background-color: black;
-        height:25vh;
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 99999;
-        width: 50%;
+    .btn-abrir-menu2{
+        display:block;
+        color:#14CC1C;
+        font-size:45px;
+        align-self:center;
     }
-    .menu-mobile nav ul{
-        text-align: start;
+    .btn-fechar2{
+        color:#14CC1C;
+        font-size:45px;
+        align-self:baseline;
+    
     }
-    .menu-mobile nav ul li a{
-        color: #14CC1C;
-        font-size: 20px;
-        font-weight: 300;
-        padding: 0px 4%;
-        display: flex;
-        flex-direction: column;
+    .btn-fechar2 i{
+        display:block;
+        position:absolute;
+    } 
+    .menu-mobile2{
+        width:0;
+        height:0;
+        background:black;
+        position:absolute;
+        top:0;
+        right:0;
+        transition:.5s;
+        display:flex;
+        align-items:center;
+        justify-content:flex-end;
+        text-align:center;
+        overflow:hidden;
+        z-index:99;
     }
-    .menu-mobile nav ul li a:hover{
-        background-color: #fff;
+    .menu-mobile2 nav{
+        width:100%;
+    } 
+    .menu-mobile2 nav ul{
+        list-style-type:none;
     }
-
+    .menu-mobile2 nav a{
+        font-size:28px;
+        text-decoration:none;
+        color:white;
+        display:block;
+        transition:.5s;
+        padding:20px;
+    }
+    
+    .menu-mobile2 nav a:hover{
+        background:white;
+        color:black;
+        box-shadow:0 0 20px white;
+    }
+    .menu-mobile2.abrir-menu2{
+        width:67%;
+        height:46vh;
+        z-index:99;
+    }  
+    .desktop2 nav{
+        display:none;
+    }
 
     /*Parte dos cards de locais mais visitados*/
 

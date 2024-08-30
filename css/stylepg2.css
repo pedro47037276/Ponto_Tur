@@ -21,14 +21,14 @@ a{
 
 
 
-.btn-abrir-menu{
+.btn-abrir-menu1{
     align-self:end;
     font-size:50px;
     color: black; 
     display:none;
 
 }
-.menu-mobile{
+.menu-mobile1{
     display:none;
 }
 .desktop ul li a{
