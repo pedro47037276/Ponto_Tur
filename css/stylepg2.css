@@ -21,14 +21,14 @@ a{
 
 
 
-.btn-abrir-menu{
+.btn-abrir-menu1{
     align-self:end;
     font-size:50px;
     color: black; 
     display:none;
 
 }
-.menu-mobile{
+.menu-mobile1{
     display:none;
 }
 .desktop ul li a{
@@ -201,15 +201,17 @@ a{
     align-self:center;
 }
 .btn-fechar1{
-    color:#14CC1C;
-    font-size:45px;
+    color:#000000;
+    font-size:35px;
     align-self:baseline;
 
 } 
 .menu-mobile1{
+    backdrop-filter: blur(10px);
+    border-radius:15px ;
     width:0;
     height:0;
-    background:black;
+    background:#ffffff48;
     position:absolute;
     top:0;
     right:0;
@@ -228,22 +230,22 @@ a{
     list-style-type:none;
 }
 .menu-mobile1 nav a{
-    font-size:28px;
+    font-size:20px;
     text-decoration:none;
-    color:white;
+    color:rgb(0, 0, 0);
     display:block;
     transition:.5s;
     padding:20px;
 }
 
 .menu-mobile1 nav a:hover{
-    background:white;
+    background:rgb(255, 255, 255);
     color:black;
-    box-shadow:0 0 20px white;
+    box-shadow:0 0 20px rgb(0, 0, 0);
 }
 .menu-mobile1.abrir-menu{
     width:60%;
-    height:43vh;
+    height:35vh;
     z-index:99;
 }  
     
