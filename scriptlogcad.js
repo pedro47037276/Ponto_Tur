@@ -57,7 +57,7 @@ function register1() {
                 displayName: name
             }).then(() => {
                 console.log('Nome atualizado:', user.displayName);
-                window.location.href = "pg2.html"
+                window.location.href = "indexcadlog.html"
                 // Redirecionar ou outra ação
             }).catch((error) => {
                 console.error('Erro ao atualizar nome:', error);
