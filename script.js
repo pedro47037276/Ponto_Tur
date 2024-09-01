@@ -1,5 +1,5 @@
 
-var map = L.map('map').setView([0, 0], 15);
+var map = L.map('map').setView([0, 0], 19);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -56,7 +56,7 @@ if (navigator.geolocation) {
         var lon = position.coords.longitude;
 
         // Centraliza o mapa na localização do usuário
-        map.setView([lat, lon], 13);
+        map.setView([lat, lon], 19);
 
         // Adiciona um marcador na localização atual
         L.marker([lat, lon]).addTo(map)
