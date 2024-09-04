@@ -32,7 +32,11 @@ body{
     margin-bottom: 25px;
 }
 
-.header nav a{
+.desktop2{
+    margin-top: 23px;
+}
+
+.link_nav{
     text-decoration: none;
     color: black;
     font-family: poppins;
@@ -40,9 +44,20 @@ body{
     
 }
 
-.header a:hover{
+.link_nav:hover{
     color: #14CC1C;
    
+}
+
+.dcb_local{
+    text-decoration: none;
+    background-color: #14cc1c;
+    border-radius: 5px;
+    color: white;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
 }
 .header nav ul{
    list-style-type: none;
@@ -51,7 +66,7 @@ body{
 }
 .header nav ul li{
     display: inline-block;
-    padding: 0 40px;
+    padding: 0 30px;
     
 }
 .menu-mobile2{
