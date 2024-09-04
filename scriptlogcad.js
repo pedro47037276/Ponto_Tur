@@ -67,3 +67,25 @@ function register1() {
             console.error('Erro ao registrar:', error.message);
         });
 }
+
+//cria uma validação de de login
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const errorMessage = document.getElementById('error-message');
+    
+// limapar messagem de erro
+    errorMessage.textContent = '';
+    // Verifica se os campos não estão vazios
+if (email === '' || password === '') {
+    errorMessage.textContent = 'Usuário e senha são obrigatórios.';
+    return;
+  }
+
+// Exemplo de validação adicional (como comprimento mínimo da senha)
+if (password.length < 6) {
+    errorMessage.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+    return;
+  }
+});

@@ -25,12 +25,13 @@
         </div>
         <div class="form-container sign-in">
             <h1 class="nomesite2">Ponto Tur</h1>
-            <form>                
+            <form id="loginForm">                
                 <h1>Entrar</h1>
                 <input type="email" name="email" id="email" placeholder="Email">
                 <input type="password" name="password" id="password" placeholder="Senha">
                 <a href="#">Esqueceu Sua Senha?</a>
-                <button type="button" onclick="login()">Entrar</button>
+                <button  type="submit" onclick="login()">Entrar</button>
+                <p id="error-message" style="color: red"></p>
             </form>
         </div>
         <div class="toggle-container">
