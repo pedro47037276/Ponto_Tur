@@ -68,24 +68,39 @@ function register1() {
         });
 }
 
-//cria uma validação de de login
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+    event.preventDefault(); // Impedir o envio do formulário
+  
+    // Obter os valores dos campos
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
-    const errorMessage = document.getElementById('error-message');
-    
-// limapar messagem de erro
-    errorMessage.textContent = '';
-    // Verifica se os campos não estão vazios
-if (email === '' || password === '') {
-    errorMessage.textContent = 'Usuário e senha são obrigatórios.';
-    return;
-  }
-
-// Exemplo de validação adicional (como comprimento mínimo da senha)
-if (password.length < 6) {
-    errorMessage.textContent = 'A senha deve ter pelo menos 6 caracteres.';
-    return;
-  }
-});
+  
+    // Limpar mensagens de erro e bordas vermelhas
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('passwordError').textContent = '';
+    document.getElementById('email').classList.remove('error');
+    document.getElementById('password').classList.remove('error');
+  
+    let isValid = true; // Controle de validação
+  
+    // Validação do campo de email
+    if (email === '') {
+      document.getElementById('email').classList.add('error');
+      document.getElementById('emailError').textContent = 'Por favor, insira seu email';
+      isValid = false;
+    }
+  
+    // Validação do campo de senha
+    if (password === '') {
+      document.getElementById('password').classList.add('error');
+      document.getElementById('passwordError').textContent = 'Por favor, insira sua senha';
+      isValid = false;
+    }
+  
+    // Se o formulário estiver válido
+    if (isValid) {
+      alert('Formulário válido! senha ou email inválido');
+      // Aqui você pode permitir o envio do formulário
+      // this.submit(); // Descomente esta linha para enviar o formulário de verdade
+    }
+  });

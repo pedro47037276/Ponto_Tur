@@ -28,11 +28,23 @@
             <form id="loginForm">                
                 <h1>Entrar</h1>
                 <input type="email" name="email" id="email" placeholder="Email">
+                <span id="emailError" style="color: red"></span><br>
                 <input type="password" name="password" id="password" placeholder="Senha">
+                <span id="passwordError" style="color:red"></span><br>
                 <a href="#">Esqueceu Sua Senha?</a>
                 <button  type="submit" onclick="login()">Entrar</button>
-                <p id="error-message" style="color: red"></p>
+                
             </form>
+            <style>
+                span {
+                    color: rgb(255, 0, 149);
+                    font-size: 12px;
+                }
+                .erro {
+                    border: 2px solid red;
+                    outline: none;
+                }
+            </style>
         </div>
         <div class="toggle-container">
             <div class="toggle">
