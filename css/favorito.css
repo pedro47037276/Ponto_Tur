@@ -2,6 +2,7 @@
     margin:0;
     padding:0;   
     box-sizing:border-box;
+    font-family:poppins;
    }
    body{
    background-color:#c9d6ff;    
@@ -21,6 +22,13 @@
        min-height:780px;
        text-align:center;
    }
+   .seta{
+    color:white;
+    display:flex;
+    font-size:30px;
+    text-decoration:none;
+   }
+   
    .text{
    color:black;
    align-self:center;
