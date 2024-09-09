@@ -205,7 +205,7 @@ a{
 
     .btn-abrir-menu1{
         display:block;
-        color:#14CC1C;
+        color:black;
         font-size:45px;
         align-self:center;
     }
@@ -246,12 +246,14 @@ a{
         display:block;
         transition:.5s;
         padding:20px;
+        padding-left:76px;
     }
 
     .menu-mobile1 nav a:hover{
         background:rgb(255, 255, 255);
         color:black;
         box-shadow:0 0 20px rgb(0, 0, 0);
+        width:60%;
     }
     .menu-mobile1.abrir-menu{
         width:100%;
