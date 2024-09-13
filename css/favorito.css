@@ -41,7 +41,7 @@
    display:inline-block;
    align-content:center;
    }
-   .historico{
+   .favorito{
        
        border-radius:1px;
        box-shadow:0 5px 15px rgba(0,0,0,0.35);
@@ -55,7 +55,7 @@
        margin-top:47px;
        display:inline-block;
    }
-   .historico ul li{
+   .favorito ul li{
        list-style-type:none;
        display:flex;
        flex-direction:row;
@@ -63,7 +63,7 @@
        font-size:20px; 
        padding:10px;
    }
-   .historico ul i{
+   .favorito ul i{
        color:#14CC1C;
    }
    .tipos{
