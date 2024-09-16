@@ -1,3 +1,7 @@
+body{
+    overflow: hidden;
+    
+}
 *{
     font-family: poppins;
     padding: 0%;
@@ -12,7 +16,7 @@ a{
 
 .map{
     width: 100%;
-    height: 580px;
+    height: 580vh;
     background-color: #14CC1C;
     position: absolute;
     z-index: 0;
@@ -266,5 +270,117 @@ a{
     .desktop nav{
         display:none;
     }
-
+    .sidebar{
+        display: none;
+    }
 }
+
+
+  
+
+
+.sidebar {
+    border: solid 8px rgba(59, 52, 52, 0.699);
+    border-radius: 20px;
+    margin-top: 10px;
+    width: 500px;
+    background-color: #ffffff;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 84%;
+    overflow-y: auto; /* Permite rolagem vertical se o conteúdo exceder a altura da sidebar */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+.content {
+    margin-left: 250px; /* Espaço para a sidebar */
+    padding: 20px;
+    flex: 1;
+}
+
+.pesq5{
+    height: 40px;
+    font-weight: 1000;
+    margin-left: 5px;
+    width: 700px;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.color-button {
+    background-color: #000000; /* Cor padrão do botão */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.color-button:hover {
+    background-color: #0056b3; /* Cor quando o mouse está sobre o botão */
+}
+
+.color-button:active {
+    background-color: #000000; /* Cor quando o botão é clicado */
+    transform: scale(0.98); /* Leve diminuição do botão ao ser clicado */
+}
+
+
+
+
+
+
+
+
+
+.rec{
+    color: #000000;
+    text-align: center;
+    margin:20px;
+}
+.descri{
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
