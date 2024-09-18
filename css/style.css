@@ -601,11 +601,13 @@ h1{
 
     .btn-abrir-menu2{
         display:block;
-        color:#14CC1C;
+        color:#000000;
         font-size:45px;
         align-self:center;
     }
     .btn-fechar2{
+        color:#000000;
+        font-size:35px;
         color:#000000;
         font-size:35px;
         align-self:baseline;
@@ -636,6 +638,8 @@ h1{
         width:100%;
     } 
     .menu-mobile2 nav ul{
+        display: flex;
+        flex-direction: column;
         list-style-type:none;
     }
     .menu-mobile2 nav a{
