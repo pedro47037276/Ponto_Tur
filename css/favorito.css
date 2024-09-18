@@ -106,7 +106,10 @@
        margin-left:7px;
        margin-top:10px;
    }
-   
+   .button2:active{
+    background-color:black;
+    transform: scale(0.98);
+   }
    .button1{
        background-color:#007bff;
        
@@ -121,6 +124,9 @@
    .button1:hover{
        background-color:red;
        
+   }
+   .button1:active{
+    background-color:black;
    }
    .Pesquisa{
        align-items:center;
