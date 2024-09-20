@@ -42,19 +42,31 @@ function addProductsToScreen(card) {
         //Verifica se o campo de busca está vazio ou se o item é igual ao pesquisado
         //if ((filter == '') || !filter == "" && product.item == filter) {
 
-        const div = document.createElement('div');
-        //Adiciona classe ao produto criado
-        div.className ='cards1';
+        if(card.visita == true){
 
-            const titulo = document.createElement('h1')
-            titulo.innerHTML = card.nome;
-            div.appendChild(titulo);
+            const div = document.createElement('div');
+            //Adiciona classe ao produto criado
+            div.className ='cards1';
 
-            const desc = document.createElement('p')
-            desc.innerHTML = card.descricao;
-            div.appendChild(desc);
+                const img = document.createElement('img');
+                img.innerHTML = '';
+                img.src = card.img;
+                div.appendChild(img);
+                
+                
+                const titulo = document.createElement('h1');
+                titulo.innerHTML = card.nome;
+                div.appendChild(titulo);
 
-        secao.appendChild(div);
+                const desc = document.createElement('p');
+                desc.innerHTML = card.descricao;
+                div.appendChild(desc);
+
+            secao.appendChild(div);
+
+        } 
+
+        
    
         /*}else {
         }*/
