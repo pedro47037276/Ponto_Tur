@@ -23,6 +23,13 @@
     <!--<script src="/node_modules/leaflet/dist/leaflet.js"></script>-->
 
 
+    <!-- leaflet-routing-machine-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+
 </head>
 
 <body>
@@ -35,16 +42,25 @@
                 <h1>Ponto Tur</h1>
             </a>
 
-            <input class="pesq5" type="search" name="q" placeholder="Pesquisar locais">ㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button class="color-button"><i class="bi bi-search"></i></button>
+            <input class="pesq5" type="search" name="q" placeholder="Pesquisar locais"><button class="color-button"><i class="bi bi-search"></i></button>
             <nav>
                 <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="#">Conta</a></li>
-                    <li><a href="favorito.html">Favorito</a></li>
+                    <li><a id="inicio2" href="index.html">Início</a></li>
+                    <li><a id="cont2" href="#">Conta</a></li>
+                    <li><a id="favorit2" href="favorito.html">Favorito</a></li>
             
                     <!--<li><a href="#">Historico</a></li>-->
+                    
                 </ul>
+                
             </nav>
+            <div class="seletor-idioma">
+                <label for="idioma">Escolha o idioma:</label>
+                <select id="idioma" onchange="traduzirPagina()">
+                    <option value="pt">Português</option>
+                    <option value="en">Inglês</option>
+                </select>
+            </div>
         </div>
         <div class="btn-abrir-menu1" id="btn-menu1">
             <i class="bi bi-list"></i>
@@ -55,14 +71,16 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html"><i class="bi bi-house-door"></i> Início</a></li>
-                    <li><a href="#"><i class="bi bi-person-fill-gear"></i> Conta</a></li>
-                    <li><a href="favorito.html"><i class="bi bi-star-fill"></i> Favorito</a></li>
+                    <li><a id="ini2" href="index.html"><i class="bi bi-house-door"></i> Início</a></li>
+                    <li><a id="cont2" href="#"><i class="bi bi-person-fill-gear"></i> Conta</a></li>
+                    <li><a id="favorit2" href="favorito.html"><i class="bi bi-star-fill"></i> Favorito</a></li>
                     
                     <!--<li><a href="#"><i class="bi bi-clock-history"></i> Historico</a></li>-->
                 </ul>
+                
 
             </nav>
+            
         </div>
     </div>
 
@@ -251,4 +269,5 @@
 
 
     <script src="script.js"></script>
+    <script src="tradução.js"></script>
 </body>
