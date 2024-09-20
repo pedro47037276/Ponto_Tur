@@ -23,10 +23,19 @@
         <div class="desktop2">
             <nav>
                 <ul>
-                    <li><a href="#" class="link_nav">Inicio</a></li>
-                    <li><a href="#" class="link_nav">Conta</a></li>
-                    <li><a href="favorito.html" class="link_nav">Favorito</a></li>
-                    <li><a href="pg2.html" class="dcb_local">Descobrir locais</a></li>
+                    <li><a href="#" id="inicio" class="link_nav">Inicio</a></li>
+                    <li><a href="#" id="conta" class="link_nav">Conta</a></li>
+                    <li><a href="favorito.html" id="favorito" class="link_nav">Favorito</a></li>
+                    <li><a href="pg2.html" class="dcb_local" id="locais">Descobrir locais</a></li>
+                    <li>
+                        <div class="seletor-idioma">
+                            <label for="idioma">Escolha o idioma:</label>
+                            <select id="idioma" onchange="traduzirPagina()">
+                                <option value="pt">Português</option>
+                                <option value="en">Inglês</option>
+                            </select>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -46,7 +55,6 @@
                     <li><a href="#" class="link_nav"><i class="bi bi-house-door"></i>Inicio</a></li>
                     <li><a href="#" class="link_nav"><i class="bi bi-person-fill-gear"></i>Conta</a></li>
                     <li><a href="favorito.html" class="link_nav"><i class="bi bi-star-fill"></i>Favorito</a></li>
-                   <!-- <li><a href="#" class="link_nav"><i class="bi bi-clock-history"></i>Histórico</a></li>-->
                     <li><a href="pg2.html" class="link_nav"><i class="bi bi-geo-alt-fill"></i>Descobrir locais</a></li>
                 </ul>
 
@@ -56,12 +64,12 @@
 
     <section class="section-inicial">
         <div class="parte-textual">
-            <h1 class="titulo1"> O <span class="destaque">melhor</span> guia, <br> para o melhor passeio!</h1>
-            <h2 class="titulo2">Crie sua conta e veja os vários locais para conhecer <br> e se divertir em Belém.</h2>
+            <h1 id="titulo1" class="titulo1"> O <span class="destaque">melhor</span> guia, <br> para o melhor passeio!</h1>
+            <h2 id="titulo2" class="titulo2">Crie sua conta e veja os vários locais para conhecer <br> e se divertir em Belém.</h2>
     
             <div class="btns-cad-ent">
-                <a href="indexcadlog.html" class="cadastrar">CADASTRAR</a>
-                <a href="indexcadlog.html" class="entrar">ENTRAR</a>
+                <a href="indexcadlog.html" id="cadastrar" class="cadastrar">CADASTRAR</a>
+                <a href="indexcadlog.html" id="entrar" class="entrar">ENTRAR</a>
             </div>
     
     
@@ -75,53 +83,16 @@
     
     </section>
 
-    <!--<header class="container1">
-        <div class="header-nav">
-            <h1>Ponto<span>Tur</span> </h1>
-          
-            <nav>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Conta</a></li>
-                    <li><a href="#">Favorito</a></li>
-                    <li><a href="#">Historico</a></li>
-                </ul>
-            </nav>
-             
-        </div>
-        
-        <div class="header-conteudo">
-            <h1 class="titulo1"> O <span class="destaque">melhor</span> guia, para o melhor passeio!</h1>
-            <h2 class="titulo2">Crie sua conta e veja os varios locais para conhecer e se divertir em Belém</h2>
-        
-            <div class="cadrar"><a href="#" >CADASTRAR
-            </a></div>
-
-
-            <div class="cadrar1"><a href="#">ENTRAR
-            </a></div>
-        
-         
-        </div>
-        
-
-    </header>-->
-
-    <!--<div class="btn-abrir-menu">
-            <i class="bi bi-list"></i>
-        </div>
-        -->
-
-
+   
 
 
     <section class="cards">
 
-        <div class="cards2">
+        <div id="tc2" class="cards2">
 
             <img src="https://cdn-icons-png.flaticon.com/512/235/235861.png" alt="">
-            <h1>Onde Ir?</h1>
-            <p>Descubra novos locais para passar o tempo em família ou amigos </p>
+            <h1 id="ir">Onde Ir?</h1>
+            <p id="descubra" >Descubra novos locais para passar o tempo em família ou amigos </p>
 
 
 
@@ -133,8 +104,8 @@
         <div class="cards2">
 
             <img src="https://cdn-icons-png.flaticon.com/512/854/854894.png" alt="">
-            <h1>Como Chegar?</h1>
-            <p>Com facilidade e segurança você pode ir aonde desejar e conhecer novos lugares</p>
+            <h1 id="como_chegar">Como Chegar?</h1>
+            <p id="cp2">Com facilidade e segurança você pode ir aonde desejar e conhecer novos lugares</p>
 
 
 
@@ -147,20 +118,20 @@
 
             <img src="https://images.vexels.com/media/users/3/151869/isolated/preview/767ca771755f4675d4063c03e17c8595-icone-de-lista-de-verificacao-medica.png"
                 alt="">
-            <h1>O que Fazer?</h1>
-            <p>Saiba todos os serviços oferecidos ao seu local de passeio</p>
+            <h1 id="ch1">O que Fazer?</h1>
+            <p id="cp3">Saiba todos os serviços oferecidos ao seu local de passeio</p>
 
 
         </div>
 
-        <a href="pg2.html">DESCOBRIR LOCAIS</a>
+        <a id="descobrir1" href="pg2.html">DESCOBRIR LOCAIS</a>
     </section>
 
 
 
     <section class="recomendacoes" id="recomendacao">
 
-        <h1 class="titulo">LOCAIS MAIS VISITADOS</h1>
+        <h1 id="local_visit" class="titulo">LOCAIS MAIS VISITADOS</h1>
 
         <div class="cards1">
 
@@ -239,6 +210,8 @@
             <a href="#">IR</a>
         </div>
 
+        
+
     </section>
 
 
@@ -249,6 +222,8 @@
     <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
     <script src="recomendacao.js"></script>
+    <script src="tradução.js"></script>
+    
 </body>
 
 </html>

@@ -1,7 +1,7 @@
-body{
+/*body{
     overflow: hidden;
     
-}
+}*/
 *{
     font-family: poppins;
     padding: 0%;
@@ -22,7 +22,7 @@ a{
     z-index: 0;
 }
 
-
+.locall1{display:none;}
 
 .btn-abrir-menu1{
     align-self:end;
@@ -77,7 +77,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    display:none;
 }
 
 .cards{
@@ -147,138 +147,6 @@ a{
     font-weight:1000;
     
 }
-
-@media(max-width: 800px){
-    .map{
-        max-width: 100%;
-        height: 600px;
-        position: absolute;
-        z-index: 0;
-        /*z-index:98;*/
-    }
-
-    .locall1{
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        z-index: 1;
-
-    }
-    .cards1 img{
-        width: 100%;
-        height: 250px;
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-    }
-    
-    .cards1{
-        display: inline-block;
-        border-radius: 20px;
-        text-align: center;
-        margin: 0px 20px 80px 20px;
-        background-color: rgb(255, 255, 255);
-        max-width: 87%;
-        height: 500px;
-        
-    }
-    .pesquisar{
-        margin-bottom: 50px;
-        margin-top: 5px;
-        width: 100%;
-        
-      
-    }
-
-    .pesq{
-        /*margin-top:30px;*/
-        padding: 10px 15px;
-        width: 70%;
-        height: 40px;
-        font-size: 1rem;
-        font-weight: 400;
-        border-radius: 25px;
-        border: none;
-    }
-
-    i{
-        margin-left: 20px;
-    }
-
-    .btn-abrir-menu1{
-        display:block;
-        color:black;
-        font-size:45px;
-        align-self:center;
-    }
-    .btn-fechar1{
-        color:#000000;
-        font-size:35px;
-        align-self:baseline;
-
-    } 
-    .menu-mobile1{
-        backdrop-filter: blur(10px);
-        border-radius:15px ;
-        width:0;
-        height:0;
-        background:#ffffff48;
-        position:absolute;
-        top:0;
-        right:0;
-        transition:.5s;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        text-align:justify;
-        overflow:hidden;
-        z-index:99;
-    }
-    .menu-mobile1 nav{
-        width:100%;
-        
-    } 
-    .menu-mobile1 nav ul{
-        list-style-type:none;
-    }
-    .menu-mobile1 nav a{
-        font-size:20px;
-        text-decoration:none;
-        color:rgb(0, 0, 0);
-        display:block;
-        transition:.5s;
-        padding:20px;
-        padding-left:76px;
-    }
-
-    .menu-mobile1 nav a:hover{
-        background:rgb(255, 255, 255);
-        color:black;
-        box-shadow:0 0 20px rgb(0, 0, 0);
-        width:60%;
-    }
-    .menu-mobile1.abrir-menu{
-        width:100%;
-        height:50vh;
-        z-index:99;
-
-    }  
-        
-        
-    .desktop nav{
-        display:none;
-    }
-    .sidebar{
-        display: none;
-    }
-}
-
-
-  
-
-
 .sidebar {
     border: solid 8px rgba(59, 52, 52, 0.699);
     border-radius: 20px;
@@ -290,6 +158,7 @@ a{
     position: fixed;
     height: 84%;
     overflow-y: auto; /* Permite rolagem vertical se o conteúdo exceder a altura da sidebar */
+    overflow:auto;
 }
 
 .sidebar h2 {
@@ -367,6 +236,169 @@ a{
 .descri{
     color: #000000;
 }
+
+@media(max-width: 800px){
+    .map{
+        max-width: 100%;
+        height: 600px;
+        position: absolute;
+        z-index: 0;
+        /*z-index:98;*/
+    }
+
+    .locall1{
+        max-width: 96%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 1;
+        border:solid 8px rgba(59, 52, 52, 0.699);
+        color:white;
+        background-color:white;
+        overflow:hidden;
+    }
+    .locall1 a{
+        background:#14CC1C;
+        padding:10px 70px 10px 70px;
+        border-radius:10px;
+        display:flex;
+        justify-content:center;
+        width:10px;
+        align-items:center;
+        margin-left:114px;
+        margin-top:37px;
+        color:white;
+    }
+    .locall1 p{
+        color:black;
+    }
+    .locall1 h1{
+        color:#14CC1C;
+    }
+    .cards2 img{
+        width: 100%;
+        height: 250px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+    }
+    
+    .cards2{
+        display: inline-block;
+        border-radius: 20px;
+        text-align: center;
+        margin: 0px 20px 80px 20px;
+        background-color: rgb(255, 255, 255);
+        max-width: 87%;
+        height: 500px;
+        
+    }
+    .pesquisar{
+        margin-bottom: 50px;
+        margin-top: 5px;
+        width: 100%;
+        
+      
+    }
+
+    .pesq{
+        /*margin-top:30px;*/
+        padding: 10px 15px;
+        width: 70%;
+        height: 40px;
+        font-size: 1rem;
+        font-weight: 400;
+        border-radius: 25px;
+        border: none;
+        border:solid 2px;
+    }
+
+    i{
+        margin-left: 20px;
+        color:black;
+    }
+
+    .btn-abrir-menu1{
+        display:block;
+        color:black;
+        font-size:45px;
+        align-self:center;
+    }
+    .btn-fechar1{
+        color:#000000;
+        font-size:35px;
+        align-self:baseline;
+
+    } 
+    .menu-mobile1{
+        backdrop-filter: blur(10px);
+        border-radius:15px ;
+        width:0;
+        height:0;
+        background:#ffffff48;
+        position:absolute;
+        top:0;
+        right:0;
+        transition:.5s;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:justify;
+        overflow:hidden;
+        z-index:99;
+    }
+    .menu-mobile1 nav{
+        width:100%;
+        
+    } 
+    .menu-mobile1 nav ul{
+        list-style-type:none;
+    }
+    .menu-mobile1 nav a{
+        font-size:20px;
+        text-decoration:none;
+        color:rgb(0, 0, 0);
+        display:block;
+        transition:.5s;
+        padding:20px;
+        padding-left:76px;
+    }
+
+    .menu-mobile1 nav a:hover{
+        background:rgb(255, 255, 255);
+        color:black;
+        box-shadow:0 0 20px rgb(0, 0, 0);
+        width:60%;
+    }
+    .menu-mobile1.abrir-menu{
+        width:100%;
+        height:50vh;
+        z-index:99;
+
+    }  
+        
+        
+    .desktop nav{
+        display:none;
+    }
+    .sidebar{
+        display: none;
+    }
+    .pesq5{
+        display:none;
+    }
+    .color-button{
+        display:none;
+    }
+
+    
+}
+
+
+  
+
+
 
 
 
