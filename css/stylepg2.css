@@ -314,7 +314,7 @@ a{
 }
 
 .sidebar ul li a:hover {
-    background-color: #575757;
+    background-color: rgb(87, 87, 87);
 }
 
 .content {
@@ -378,6 +378,54 @@ a{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sidebar  {
+    position: absolute;
+    left: -0px; /* Escondido inicialmente */
+    width: 17px;
+    height: 85%;
+    background-color: #ffffff;
+    color: white;
+    transition: left 0.3s;
+    padding: 20px;
+}
+
+.sidebar.open {
+    width: 470px;
+    left: 0; /* Mostra o menu quando aberto */
+}
+
+.sidebar toggle-button {
+    justify-content: flex-end;
+    display:flex;
+
+    
+ 
+}
 
 
 

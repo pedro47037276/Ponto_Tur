@@ -22,3 +22,10 @@ btnMenu2.addEventListener('click', ()=>{
 btnFechar2.addEventListener('click', ()=>{
       menu2.classList.remove('abrir-menu2')
 })
+
+
+
+
+
+
+
