@@ -99,7 +99,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   
     // Se o formulário estiver válido
     if (isValid) {
-      alert('Formulário válido! senha ou email inválido');
+      alert('Formulário válido!');
       // Aqui você pode permitir o envio do formulário
       // this.submit(); // Descomente esta linha para enviar o formulário de verdade
     }
