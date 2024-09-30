@@ -55,7 +55,7 @@ a{
 }
 
 .topo{
-
+    
     display:flex;
     justify-content:space-between;
     
@@ -202,7 +202,7 @@ a{
 }
 
 .color-button {
-    background-color: #000000; /* Cor padrão do botão */
+    background-color: #14CC1C; /* Cor padrão do botão */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -216,12 +216,16 @@ a{
 }
 
 .color-button:active {
-    background-color: #000000; /* Cor quando o botão é clicado */
+    background-color: #00ff37; /* Cor quando o botão é clicado */
     transform: scale(0.98); /* Leve diminuição do botão ao ser clicado */
 }
 
 
-
+.ptur{
+    margin-left: 145px;
+    font-weight: 1000px;
+    color: #14CC1C;
+}
 
 
 
