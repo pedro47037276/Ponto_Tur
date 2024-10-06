@@ -13,40 +13,86 @@
     <title>Favoritos</title>
 </head>
 <body>
-    <div class="container3">
-    <a class="seta" href="pg2.html"><i  class="bi bi-arrow-left"></i></a>
-    <h1 class="text">FAVORITOS</h1>
-    
+    <header class="header">
 
-     <div class="favorito">
-         <div class="Pesquisa">
-        <input type="search" class="search-bar" placeholder="Pesquisar..."><button class="button2"><i class="bi bi-search"></i></button>
-         </div>
-         <div class="excluir">
-            <button class="button1"><i class="bi bi-trash"></i>Excluir Favoritos</button>
-         </div>
-        <div class="tipos">
-         
-         
-         <h2>Local</h2>
-         <h2>Ir</h2>
-        </div> 
+        <h1 class="nome_pg">| Favoritos</h1>
+        <a href="index.html" class="nome_mobile"><h1 class="nome_pg_mobile">PontoTur</h1></a>
         
-        <ul>
-            <hr class="linhas">
+        
+        <div class="desktop2">
+            <nav>
+                <ul>
+                    <li></li>
+                    <li><a href="index.html" id="inicio" class="link_nav">Inicio</a></li>
+                    <li>
+                        <input type="search" class="search-bar" class="Pesquisa" placeholder="Pesquisar..."><button class="button2"><i class="bi bi-search"></i></button>
+                    </li>
+                    <li>
+                        <button class="button1"><i class="bi bi-trash"></i>Excluir Favoritos</button>
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="btn-abrir-menu2" id="btn-menu2">
+            <i class="bi bi-list"></i>
+        </div>
+        <div class="menu-mobile2" id="menu-mobile2">
+            <div class="btn-fechar2" id="fechar2">
+                <i class="bi bi-x-lg"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="link_nav"><i class="bi bi-house-door"></i>Inicio</a></li>
+                    <li><a href="#" class="link_nav"><i class="bi bi-person-fill-gear"></i>Conta</a></li>
+                    <li>
+                        <button class="button1"><i class="bi bi-trash"></i>Excluir Favoritos</button>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+
+        
+        
+    </header>
+
+    <div class="container3">
+        <a class="seta" href="pg2.html"><i  class="bi bi-arrow-left"></i></a>
+        <h1 class="text">FAVORITOS</h1>
+    
+        
+        <div class="favorito">
             
-            <li>lugar1<a href="#"><i class="bi bi-arrow-right"></i></a></li>
-            <hr class="linhas">
-            <li>lugar2<a href="#"><i class="bi bi-arrow-right"></i></a></li>
-            <hr class="linhas">
-            <li>lugar3<a href="#"><i class="bi bi-arrow-right"></i></a></li>
-            <hr class="linhas">
+            <div class="pesq_mobile">
+                <input type="search" class="search-bar-mobile" class="Pesquisa" placeholder="Pesquisar..."><button class="button2"><i class="bi bi-search"></i></button>
+            </div>
+
             
+            <div class="tipos">
+                
+                <h2>Local</h2>
+                <h2>Ir</h2>
+            </div> 
             
-        </ul>
-     </div>
+            <ul>
+                <hr class="linhas">
+                
+                <li>lugar1<a href="#"><i class="bi bi-arrow-right"></i></a></li>
+                <hr class="linhas">
+                <li>lugar2<a href="#"><i class="bi bi-arrow-right"></i></a></li>
+                <hr class="linhas">
+                <li>lugar3<a href="#"><i class="bi bi-arrow-right"></i></a></li>
+                <hr class="linhas">
+                
+                
+            </ul>
+        </div>
     </div>
 
-    
+    <script src="menu2.js"></script>
 </body>
 </html>
