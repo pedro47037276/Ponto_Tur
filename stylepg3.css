@@ -214,14 +214,23 @@ body{
 
 }
 .iconesite2{
-    color: 	#000000;
+    color: 	#14CC1C;
     font-size: 32px;
     text-decoration: none;
     margin: 15px 0 10px;
+    transition: background-color 0.2s ease;
+}
+.iconesite2:hover{
+    background-color:#14CC1C;
+    border-radius: 10px;
+    color: white;
 }
 .esenha{
     color: 	#000000;
     font-size: 13px;
     text-decoration: none;
     margin: 15px 0 10px;
+}
+.tipoH1{
+    color: #14CC1C;
 }
