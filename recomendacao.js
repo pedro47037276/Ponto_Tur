@@ -62,6 +62,12 @@ function addProductsToScreen(card) {
                 desc.innerHTML = card.descricao;
                 div.appendChild(desc);
 
+                const link = document.createElement('a');
+                link.href = 'pg2.html';
+                link.innerHTML = "IR";
+                link.className = 'link_recomendados';
+                div.appendChild(link);
+
             secao.appendChild(div);
 
         } 

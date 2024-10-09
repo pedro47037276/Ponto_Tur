@@ -327,7 +327,7 @@ h1{
 
 
 
-.cards1 a{
+.cards1 .link_recomendados{
     text-decoration: none;
     padding: 10px 70px 10px 70px;
     background-color: #14CC1C;
@@ -335,12 +335,6 @@ h1{
     color: white;
     
 }
-
-.cards1 a:hover{
-    transform: scale(1.1);
-
-}
-
 
 .cards2 img{  
     width: 70px;
