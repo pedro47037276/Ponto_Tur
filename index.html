@@ -26,16 +26,9 @@
                 <ul>
                     <li><a href="#" id="conta" class="link_nav">Conta</a></li>
                     <li><a href="favorito.html" id="favorito" class="link_nav">Favorito</a></li>
-                    <li>
-                        <div class="seletor-idioma">
-                            <label for="idioma">Escolha o idioma:</label>
-                            <select id="idioma" onchange="traduzirPagina()">
-                                <option value="pt">Português</option>
-                                <option value="en">Inglês</option>
-                            </select>
-                        </div>
-                    </li>
                     <li><a href="pg2.html" class="dcb_local" id="locais">Descobrir locais</a></li>
+                    
+                    <div class="gtranslate_wrapper"></div>
                     
                 </ul>
             </nav>
@@ -57,6 +50,7 @@
                     <li><a href="#" class="link_nav"><i class="bi bi-person-fill-gear"></i>Conta</a></li>
                     <li><a href="favorito.html" class="link_nav"><i class="bi bi-star-fill"></i>Favorito</a></li>
                     <li><a href="pg2.html" class="link_nav"><i class="bi bi-geo-alt-fill"></i>Descobrir locais</a></li>
+                    <div class="gtranslate_wrapper"></div>
                 </ul>
 
             </nav>
@@ -226,6 +220,8 @@
     <script src="recomendacao.js"></script>
     <script src="tradução.js"></script>
     
+    <script>window.gtranslateSettings = {"default_language":"pt","languages":["pt","fr","de","it","es","en"],"wrapper_selector":".gtranslate_wrapper","switcher_horizontal_position":"right","switcher_vertical_position":"top","float_switcher_open_direction":"bottom","alt_flags":{"en":"usa","pt":"brazil","es":"argentina","fr":"quebec"}}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 </body>
 
 </html>
