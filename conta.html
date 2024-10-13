@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/conta.css">
+    <link rel="shortcut icon" href="imgs/log.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Acessar Minha Conta</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Minha Conta</h1>
+        <div class="account-info">
+            <h2>Email</h2>
+            <p id="email"></p>
+        </div>
+    </div>
+    
+    <!-- Adiciona o SDK do Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js" type="module"></script>
+
+    <!-- Agora o script da sua aplicação também precisa ser marcado como módulo -->
+    <script src="conta.js" type="module"></script>
+</body>
+</html>
