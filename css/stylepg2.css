@@ -1,11 +1,12 @@
-/*body{
+body{
     overflow: hidden;
     
-}*/
+}
 *{
     font-family: poppins;
     padding: 0%;
     margin: 0%;
+
 }
 
 a{
@@ -50,7 +51,7 @@ a{
     justify-content: space-between;
     background-color: white;
     width:100%;
-    padding:10px;
+    padding:20px;
     align-items:center;
 }
 
@@ -195,8 +196,8 @@ a{
 .pesq5{
     height: 40px;
     font-weight: 1000;
-    margin-left: 5px;
-    width: 700px;
+    margin-left: -331px;
+    width: 288px;
     padding-left: 10px;
     border-radius: 5px;
 }
@@ -222,7 +223,7 @@ a{
 
 
 .ptur{
-    margin-left: 145px;
+    margin-right: 145px;
     font-weight: 1000px;
     color: #14CC1C;
 }
@@ -407,8 +408,15 @@ a{
 
 
 
+.testt{
+    display: flex;
+}
+  
 
 
+.testt2{
+    display: flex;
+}
 
 
 
