@@ -397,7 +397,7 @@ a{
         display:none;
     }
 
-    
+    body{ overflow: inherit;}
 }
 
 
