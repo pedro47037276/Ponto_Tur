@@ -113,17 +113,15 @@ map.on('click', onMapClick);*/
 
 
 navigator.geolocation.getCurrentPosition(success);*/
-
-
-if('geolocation' in navigator){
-    navigator.geolocation.watchPosition(function(pos){
+if ('geolocation' in navigator) {
+    navigator.geolocation.watchPosition(function (pos) {
         //console.log(position);
 
         var map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 20);
-    
-        if (map === undefined){
+
+        if (map === undefined) {
             map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 20);
-        } else{
+        } else {
             map.remove();
             map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 20);
         }
@@ -132,35 +130,35 @@ if('geolocation' in navigator){
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
-    
-        // CRIAR ROTA
-        L.Routing.control({
-            waypoints: [
-            L.latLng(pos.coords.latitude, pos.coords.longitude),
-            L.latLng(-1.4560646164723035, -48.501267232480984)
-            ]
-        }).addTo(map);
-    
-        // criar e apontar icone do local
+
+        // Marcador na localização atual do usuário
         var marker = L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map);
         marker.bindPopup("<p>Você está aqui</p>").openPopup();
 
-    },function(){
-        alert("Não foi possível obter sua localização")
+        // Adicionando outro marcador na coordenada especificada
+        var secondMarker = L.marker([-1.452551009839002, -48.48102006530643]).addTo(map);
 
-            var map = L.map('map').setView([0, 0], 19);
+        // Adicionando uma imagem no popup do segundo marcador
+        var popupContent = `
+            <p>"Basílica neoclássica construída em 1909, com vitrais ornamentados e mosaicos brilhantes."</p>
+            <img src="https://firebasestorage.googleapis.com/v0/b/ponto-tur-5e4db.appspot.com/o/basilica_de_nazare%2Fbasilica.png?alt=media&token=29fd245d-f298-418c-bfe0-df4d4fea2beb" alt="Imagem do local" width="200" />
+        `;
+
+        secondMarker.bindPopup(popupContent).openPopup();
+
+    }, function () {
+        alert("Não foi possível obter sua localização");
+
+        var map = L.map('map').setView([0, 0], 19);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
         var marker = L.marker([-1.448517, -48.491839]).addTo(map);
+        marker.bindPopup("<b>Olá</b><br>Você está aqui").openPopup();
+    });
 
-        marker.bindPopup("<b>Olá</b><br>Você está aqui").openPopup();  
-    
-    })
- 
-}else{
-    alert("Não foi possível obter sua localização")
-    
+} else {
+    alert("Não foi possível obter sua localização");
 }
