@@ -112,7 +112,7 @@ map.on('click', onMapClick);*/
 
 
 
-navigator.geolocation.getCurrentPosition(success);*/
+navigator.geolocation.getCurrentPosition(success);*/ 
 if ('geolocation' in navigator) {
     navigator.geolocation.watchPosition(function (pos) {
         //console.log(position);
@@ -145,6 +145,78 @@ if ('geolocation' in navigator) {
         `;
 
         secondMarker.bindPopup(popupContent).openPopup();
+
+         // Adicionando outro marcador na coordenada especificada
+         var treeMarker = L.marker([-1.4300126896827277, -48.456781028470964]).addTo(map);
+        
+        // Adicionando uma imagem no popup do terceiro marcador
+        var popupContent = `
+            <p>"Jardim botânico urbano e preservação da natureza com abundante fauna e flora."</p>
+            <img src="https://firebasestorage.googleapis.com/v0/b/ponto-tur-5e4db.appspot.com/o/img_rodrigo_alves%2Fcaverna.png?alt=media&token=aea7f36a-7f06-4a19-b545-fbd2712eed27" alt="Imagem do local" width="200" />
+        `;
+
+        treeMarker.bindPopup(popupContent).openPopup();
+
+        // add outro marke pont tur
+
+         var forMarker = L.marker([-1.4633563177188824, -48.49563371830424]).addTo(map);
+        var popupContent = `
+            <p>Centro com lojas e barracas de artesanato de Belém, moda e joias em convento restaurado do século 18.  </p>
+            <img src="https://firebasestorage.googleapis.com/v0/b/ponto-tur-5e4db.appspot.com/o/Espa%C3%A7o%20S%C3%A3o%20Jos%C3%A9%20Liberto%2Ffoto1.png?alt=media&token=c18d7d75-0381-4266-9e08-9e1820bd5ba4" alt="Imagem do local" width="200" />
+            
+        `;
+        forMarker.bindPopup(popupContent).openPopup();
+        // // add outro marke pont tur
+
+        // var forMarker = L.marker([]).addTo(map);
+        // var popupContent = `
+        //     <p></p>
+        //     <img src=""
+            
+        // `;
+        // forMarker.bindPopup(popupContent).openPopup();
+        // // add outro marke pont tur
+
+        // var forMarker = L.marker([]).addTo(map);
+        // var popupContent = `
+        //     <p></p>
+        //     <img src=""
+            
+        // `;
+        // forMarker.bindPopup(popupContent).openPopup();
+        // // add outro marke pont tur
+
+        // var forMarker = L.marker([]).addTo(map);
+        // var popupContent = `
+        //     <p></p>
+        //     <img src=""
+            
+        // `;
+        // forMarker.bindPopup(popupContent).openPopup();
+        // // add outro marke pont tur
+
+        // var forMarker = L.marker([]).addTo(map);
+        // var popupContent = `
+        //     <p></p>
+        //     <img src=""
+            
+        // `;
+        // forMarker.bindPopup(popupContent).openPopup();
+        // // add outro marke pont tur
+
+        // var forMarker = L.marker([]).addTo(map);
+        // var popupContent = `
+        //     <p></p>
+        //     <img src=""
+            
+        // `;
+        // forMarker.bindPopup(popupContent).openPopup();
+
+
+
+
+
+
 
     }, function () {
         alert("Não foi possível obter sua localização");
