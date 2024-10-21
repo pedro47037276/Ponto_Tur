@@ -49,7 +49,9 @@ a{
 .desktop{
     display:flex;
     justify-content: space-between;
-    background-color: white;
+    background-color: rgb(255, 254, 248);   
+    box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);
+    z-index: 2;
     width:100%;
     padding:20px;
     align-items:center;
@@ -85,55 +87,118 @@ a{
     margin-top:30px;
 }
 
-.cards1 img{
-    width: 100%;
-    height: 250px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-}
-
 .cards1{
-    margin-top:30px;
-    display: inline-block;
-    border-radius: 20px;
+    border: 1px solid #00000017;
+    margin-top:20px;
+    display: flex; 
+    border-radius: 5px;
     text-align: center;
-    margin: 0px 20px 80px 30px;
-    background-color: rgb(255, 255, 255);
-    width: 400px;
-    height: 500px;
-    box-shadow: rgba(1, 58, 11, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-    border: 1px solid rgba(18, 19, 18, 0.068);
+    /*margin: 0px 20px 80px 30px;*/
+    background-color: #ffffff;
+    width: 100%;
+    height: 230px;
+    box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);
+ 
+    
+    /*box-shadow: rgba(1, 58, 11, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;*/
+    /*border: 1px solid rgba(18, 19, 18, 0.068);
     transition: 500ms linear;
-    overflow-y: hidden;
+    overflow-y: hidden;*/
+   
+}
+
+.cards1 img{
+    /*border-bottom-right-radius: 150px;*/
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.cards1 .imagem{
+    width: 45%;
+    padding: 10px;
+    
+    
 }
 
 
+.cards1 .conteudo{
+    border-radius: 10px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
 
-.cards1 h1{
+
+.cards1 .conteudo h1{
     color: #14CC1C;
     font-weight: 700;
+    font-size: 18px;
+    margin: 10px 0px 10px 0px;
+    width: 90%;
+    text-align: left;
 }
 
-.cards1 p{
-    margin: 10px 20px 40px 20px;
-    font-weight: 1000;
-    font-size: 1rem;
-
+.cards1 .conteudo p{
+    color: #000000;
+    font-weight: 600;
+    /* font-size: 1rem; */
+    font-size: 13px;
+    max-width: 90%;
+    overflow: hidden;
+    height: 57%;
+    margin-bottom: 2px;
+    text-align: left;
 }
 
 
 
-.cards1 a{
+.conteudo .links{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    height: 35px;
+    margin-bottom: 10px;
+    
+    width: 100%;
+}
+
+.cards1 .favoritar{
+    font-size: 20px;
+    width: 50%;
+    height: 88%;
+    padding: 3px 50px 3px 50px;
+    color: #14CC1C;
+}
+
+.cards1 .ir{
+    width: 50%;
+    height: 88%;
+    margin-right: 20px;
+    border-radius: 5px;
+    padding: 2px 50px 2px 50px;
+    background-color: #14CC1C;
+    /* border-radius: 10px; */
+    color: white;
+}
+
+
+/* .cards1 a{
     text-decoration: none;
-    padding: 10px 70px 10px 70px;
+    /*padding: 15px 10px 10px 10px;
     background-color: #14CC1C;
     border-radius: 10px;
     color: white;
-}
-.cards1 a:hover{
+} */
+    
+/* .cards1 a:hover{
     transform: scale(1.1);
 
-}   
+}  */
+
+
 
 .mapa{
     width: 100%;
@@ -149,15 +214,15 @@ a{
     
 }
 .sidebar {
-    border: solid 8px rgba(59, 52, 52, 0.699);
-    border-radius: 20px;
-    margin-top: 10px;
+    /*border-right: solid 1px rgba(59, 52, 52, 0.699);
+    /*border-radius: 20px;*/
+    /*margin-top: 5px;*/
     width: 500px;
-    background-color: #ffffff;
     color: white;
-    padding: 20px;
+
+    /* padding: 20px; */
     position: fixed;
-    height: 84%;
+    height: 100%;
     overflow-y: auto; /* Permite rolagem vertical se o conteúdo exceder a altura da sidebar */
     overflow:auto;
 }
@@ -204,7 +269,7 @@ a{
 
 .color-button {
     background-color: #14CC1C; /* Cor padrão do botão */
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 10px 15px;
     font-size: 15px;
@@ -228,15 +293,10 @@ a{
     color: #14CC1C;
 }
 
-
-
-
-
-
 .rec{
     color: #000000;
     text-align: center;
-    margin:20px;
+    margin-bottom:40px;
 }
 .descri{
     color: #000000;
@@ -401,13 +461,6 @@ a{
 }
 
 
-  
-
-
-
-
-
-
 .testt{
     display: flex;
 }
@@ -420,46 +473,20 @@ a{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .sidebar  {
     position: absolute;
-    left: -0px; /* Escondido inicialmente */
-    width: 17px;
-    height: 85%;
-    background-color: #ffffff;
+    left: -5px; /* Escondido inicialmente */
+    width: 50px;
+    height: 90%;
+    background-color: rgb(255, 254, 248); 
     color: white;
     transition: left 0.3s;
-    padding: 20px;
+    padding: 19px;
 }
 
 .sidebar.open {
-    width: 470px;
+    /*width: 470px*/
+    width: 590px;
     left: 0; /* Mostra o menu quando aberto */
 }
 
@@ -470,6 +497,7 @@ a{
     
  
 }
+
 
 
 
