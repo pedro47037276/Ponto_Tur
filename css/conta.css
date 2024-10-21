@@ -9,6 +9,14 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
+.sair{ 
+    width: 30px;
+    background-color: #14cc1c;
+}
+.sair i {
+font-size: 25px;
+}
+
 
 .container {
     width: 100%;

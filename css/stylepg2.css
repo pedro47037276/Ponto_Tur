@@ -475,27 +475,33 @@ a{
 
 .sidebar  {
     position: absolute;
-    left: -5px; /* Escondido inicialmente */
-    width: 50px;
+    left: 0px; /* Escondido inicialmente */
+    width: 600px;
     height: 90%;
     background-color: rgb(255, 254, 248); 
     color: white;
     transition: left 0.3s;
-    padding: 19px;
+    padding: 9px;
 }
 
 .sidebar.open {
     /*width: 470px*/
-    width: 590px;
+    width: 0px;
     left: 0; /* Mostra o menu quando aberto */
 }
 
 .sidebar toggle-button {
     justify-content: flex-end;
-    display:flex;
+    display: block;
 
     
  
+}
+
+.toggle-button{
+    margin-left: 20px;
+    padding: 2px;
+    background-color: #ffffff;
 }
 
 
