@@ -265,8 +265,20 @@ navigator.geolocation.getCurrentPosition(success);*/
             const data = doc.data();
 
             // Verificação de segurança
-            if (data.localizacao && data.localizacao.latitude && data.localizacao.longitude && data.descricao) {
-                console.log(`Marcador adicionado: ${data.nome}, Lat: ${data.localizacao.latitude}, Lng: ${data.localizacao.longitude}`);
+            if (data.localizacao !== undefined && data.localizacao.latitude !== undefined && data.localizacao.longitude !== undefined && data.descricao !== undefined ) {
+                // console.log(`Marcador adicionado: ${data.nome}, Lat: ${data.localizacao.latitude}, Lng: ${data.localizacao.longitude}`);
+                const marker = L.marker([data.localizacao.latitude, data.localizacao.longitude]).addTo(map);
+
+                // Popup com nome, imagem e descrição
+                const popupContent = `
+                <b>${data.nome}</b><br>
+                <img src="${data.img}" alt="${data.nome}" style="width:100%; height:auto;"><br>
+                <p>${data.descricao}</p>
+                <p><b>Localização:</b> Lat: ${data.localizacao.latitude}, Lng: ${data.localizacao.longitude}</p>
+              `;
+              
+              // Adiciona o popup ao marcador
+              marker.bindPopup(popupContent);
 
                 if (data.visita) { // Filtrar apenas locais visitáveis
                     // Cria o marcador
