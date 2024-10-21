@@ -436,7 +436,7 @@ h1{
     background-color: #14CC1C;
     text-align: center;
 }
-
+.tradu{display: none;}
 
 @media(max-width: 800px){
 
@@ -660,7 +660,10 @@ h1{
     .desktop2 nav{
         display:none;
     }
-
+    .tradu{
+        display: block;
+    }
+    
     /*Parte dos cards de locais mais visitados*/
 
     .recomendacoes{
