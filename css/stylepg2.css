@@ -306,20 +306,20 @@ a{
     .map{
         max-width: 100%;
         height: 600px;
-        position: absolute;
+        position: absolute;     
         z-index: 0;
         /*z-index:98;*/
     }
 
     .locall1{
-        max-width: 96%;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         position: absolute;
         z-index: 1;
-        border:solid 8px rgba(59, 52, 52, 0.699);
+        /*border:solid 8px rgba(59, 52, 52, 0.699);*/
         color:white;
         background-color:white;
         overflow:hidden;
@@ -528,7 +528,7 @@ a{
     }
     .sidebar{
         display: none;
-    }
+    } 
     .pesq5{
         display:none;
     }
@@ -536,7 +536,12 @@ a{
         display:none;
     }
 
+    .toggle-button{
+        display: none;
+    }
+
     body{ overflow: inherit;}
+    
 }
 
 
