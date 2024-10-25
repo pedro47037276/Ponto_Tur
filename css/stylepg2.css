@@ -102,8 +102,8 @@ a{
     
     /*box-shadow: rgba(1, 58, 11, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;*/
     /*border: 1px solid rgba(18, 19, 18, 0.068);
-    transition: 500ms linear;
-    overflow-y: hidden;*/
+    transition: 500ms linear;*/
+    
    
 }
 
@@ -321,8 +321,8 @@ a{
         z-index: 1;
         /*border:solid 8px rgba(59, 52, 52, 0.699);*/
         color:white;
-        background-color:white;
-        overflow:hidden;
+        background-color:rgb(255, 254, 248);
+        
     }
     .cards{
         margin-top:30px;
@@ -330,14 +330,15 @@ a{
     
     .cards1{
         border: 1px solid #00000017;
-        margin-top:15px;
+        margin-top:18px;
         display: flex; 
         border-radius: 5px;
         text-align: center;
         /*margin: 0px 20px 80px 30px;*/
         background-color: #ffffff;
-        width: 90%;
+        width: 95%;
         min-height: 120px;
+        max-height: 180px;
         box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);
      
         
@@ -389,6 +390,7 @@ a{
         max-height: 57%;
         margin-bottom: 2px;
         text-align: left;
+        overflow-y: auto;
     }
     
     
@@ -397,7 +399,7 @@ a{
         display: flex;
         align-items: end;
         justify-content: end;
-        height: 35px;
+        
         margin-bottom: 10px;
         
         width: 100%;
@@ -450,9 +452,10 @@ a{
         height: 40px;
         font-size: 1rem;
         font-weight: 400;
-        border-radius: 25px;
+        border-radius: 15px;
         border: none;
-        border:solid 2px;
+        border:solid 1px;
+       
     }
 
     .pesquisar i{
