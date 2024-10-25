@@ -18,7 +18,7 @@ a{
 .map{
     width: 100%;
     height: 580vh;
-    background-color: #14CC1C;
+    background-color:#14CC1C;
     position: absolute;
     z-index: 0;
 }
@@ -173,7 +173,7 @@ a{
     color: #14CC1C;
 }
 
-.cards1 .ir{
+.ir{
     width: 50%;
     height: 88%;
     margin-right: 20px;
@@ -184,6 +184,9 @@ a{
     color: white;
 }
 
+.leaflet-container a {
+    color: white;
+}
 
 /* .cards1 a{
     text-decoration: none;
@@ -306,20 +309,20 @@ a{
     .map{
         max-width: 100%;
         height: 600px;
-        position: absolute;     
+        position: absolute;
         z-index: 0;
         /*z-index:98;*/
     }
 
     .locall1{
-        max-width: 100%;
+        max-width: 96%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         position: absolute;
         z-index: 1;
-        /*border:solid 8px rgba(59, 52, 52, 0.699);*/
+        border:solid 8px rgba(59, 52, 52, 0.699);
         color:white;
         background-color:white;
         overflow:hidden;
@@ -330,14 +333,14 @@ a{
     
     .cards1{
         border: 1px solid #00000017;
-        margin-top:15px;
+        margin-top:20px;
         display: flex; 
         border-radius: 5px;
         text-align: center;
         /*margin: 0px 20px 80px 30px;*/
         background-color: #ffffff;
-        width: 90%;
-        min-height: 120px;
+        width: 100%;
+        height: 180px;
         box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);
      
         
@@ -358,7 +361,10 @@ a{
     .cards1 .imagem{
         width: 45%;
         padding: 10px;
+        
+        
     }
+    
     
     .cards1 .conteudo{
         border-radius: 10px;
@@ -373,8 +379,8 @@ a{
     .cards1 .conteudo h1{
         color: #14CC1C;
         font-weight: 700;
-        font-size: 15px;
-        margin: 10px 0px 5px 0px;
+        font-size: 17px;
+        margin: 10px 0px 10px 0px;
         width: 90%;
         text-align: left;
     }
@@ -383,10 +389,10 @@ a{
         color: #000000;
         font-weight: 600;
         /* font-size: 1rem; */
-        font-size: 11px;
+        font-size: 13px;
         max-width: 90%;
         overflow: hidden;
-        max-height: 57%;
+        height: 57%;
         margin-bottom: 2px;
         text-align: left;
     }
@@ -407,18 +413,22 @@ a{
         font-size: 20px;
         width: 50%;
         height: 88%;
-        padding: 3px 10px 3px 10px;
+        padding: 3px 50px 3px 50px;
         color: #14CC1C;
     }
     
-    .cards1 .ir{
+    .ir{
         width: 50%;
         height: 88%;
         margin-right: 20px;
         border-radius: 5px;
-        padding: 1px 30px 1px 30px;
+        padding: 2px 50px 2px 50px;
         background-color: #14CC1C;
         /* border-radius: 10px; */
+        color: white;
+    }
+
+    .leaflet-container a {
         color: white;
     }
     
@@ -525,7 +535,7 @@ a{
     }
     .sidebar{
         display: none;
-    } 
+    }
     .pesq5{
         display:none;
     }
@@ -533,12 +543,7 @@ a{
         display:none;
     }
 
-    .toggle-button{
-        display: none;
-    }
-
     body{ overflow: inherit;}
-    
 }
 
 

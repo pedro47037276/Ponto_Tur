@@ -278,11 +278,11 @@ navigator.geolocation.getCurrentPosition(success);*/
                         nome.innerHTML = data.nome;
                         popupContent.appendChild(nome);
 
-                        // const img = document.createElement('img');
-                        // img.src = data.img;
-                        // img.alt = data.nome;
-                        // img.classList = "imagem";
-                        // popupContent.appendChild(img);
+                        const img = document.createElement('img');
+                        img.src = data.img;
+                        img.alt = data.nome;
+                        img.classList = "cards1 imagem";
+                        popupContent.appendChild(img);
 
                         const descricao = document.createElement('p');
                         descricao.innerHTML = data.descricao;
@@ -290,14 +290,11 @@ navigator.geolocation.getCurrentPosition(success);*/
 
                         const ir = document.createElement('a');
                         ir.innerHTML = "IR";
-                        ir.className = '.cards1 .ir';
+                        ir.classList = 'ir';
                         ir.href = "#";
                         popupContent.appendChild(ir);
-
-                   
-                
-            
-
+                    
+                           
                 // `
                 // <b>${data.nome}</b><br>
                 // <img src="${data.img}" alt="${data.nome}" style="width:100%; height:auto;"><br>
@@ -419,95 +416,6 @@ function addProductsToScreen(card) {
         div.appendChild(div3);
 
         secao.appendChild(div);
-    });
-
-    // CARREGAR CARDS VERSÃO MOBILE \\
-
-    const secao_pg_mapa = document.getElementById('locall1');
-
-    // Cria as linhas da lista de acordo com o conteúdo do banco
-    card.forEach(card => {
-        
-        //Verifica se o campo de busca está vazio ou se o item é igual ao pesquisado
-        //if ((filter == '') || !filter == "" && product.item == filter) {
-
-            const div = document.createElement('div');
-            //Adiciona classe ao produto criado
-            div.className ='cards1';
-
-                const div2 = document.createElement('div');
-                div2.className = 'imagem';
-
-                    const img = document.createElement('img');
-                    img.innerHTML = '';
-                    img.src = card.img;
-                    div2.appendChild(img);
-
-                
-                div.appendChild(div2);
-
-
-                const div3 = document.createElement('div');
-                div3.className = 'conteudo';
-
-                    const titulo = document.createElement('h1');
-                    titulo.innerHTML = card.nome;
-                    div3.appendChild(titulo);
-
-                    const desc = document.createElement('p');
-                    desc.innerHTML = card.descricao;
-                    div3.appendChild(desc);
-
-                    const div4 = document.createElement('div');
-                    div4.className = 'links';
-
-                        const fav = document.createElement('a');
-                        fav.href = '#';
-                        fav.className = 'favoritar';
-
-                            const icon = document.createElement('i');
-                            icon.className= 'bi bi-bookmarks-fill';
-                            fav.appendChild(icon);
-                                                  
-                        div4.appendChild(fav);
-
-                        const ir = document.createElement('a');
-                        ir.href = '#';
-                        ir.innerHTML = "IR";
-                        ir.className = 'ir';
-                        div4.appendChild(ir);
-
-                        // const ir = document.createElement('a');
-                        // innerHeight = 'Ir';
-                        // fav.className = 'ir';
-                        // div4.appendChild(ir);
-
-                    div3.appendChild(div4);
-
-                
-                div.appendChild(div3);
-                
-                
-                // const titulo = document.createElement('h1');
-                // titulo.innerHTML = card.nome;
-                // div.appendChild(titulo);
-
-                // const desc = document.createElement('p');
-                // desc.innerHTML = card.descricao;
-                // div.appendChild(desc);
-
-                // const link = document.createElement('a');
-                // link.href = 'pg2.html';
-                // link.innerHTML = "IR";
-                // link.className = 'link_recomendados';
-                // div.appendChild(link);
-
-            secao_pg_mapa.appendChild(div);
-
-        
-   
-        /*}else {
-        }*/
     });
 }
 
