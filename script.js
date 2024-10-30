@@ -249,7 +249,7 @@ navigator.geolocation.getCurrentPosition(success);*/
   const db = firebase.firestore();
 
   // Inicialize o mapa com Leaflet
-  const map = L.map('map').setView([-23.550520, -46.633308], 12); // São Paulo com zoom inicial ajustado
+  const map = L.map('map').setView([-1.45502, -48.5024], 19); // Mude o 14 para o zoom inicial desejado
 
   // Adicionar camadas do OpenStreetMap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -271,6 +271,7 @@ navigator.geolocation.getCurrentPosition(success);*/
 
                 // Popup com nome, imagem e descrição
                 const popupContent = document.createElement('div');
+                
                 
                     // document.createElement('div');
 
@@ -331,20 +332,96 @@ navigator.geolocation.getCurrentPosition(success);*/
             }
         });
 
-        // Ajustar o mapa para mostrar todos os marcadores
-        if (bounds.length > 0) {
-            map.fitBounds(bounds);
-        } else {
-            console.log("Nenhum marcador foi carregado.");
+                // Ajustar o mapa para mostrar todos os marcadores
+                if (bounds.length > 0) {
+                    map.fitBounds(bounds, { padding: [300, 1800 ] }); // Ajuste o zoom para mostrar todos os marcadores
+                } else {
+                    console.log("Nenhum marcador foi carregado.");
+                }
+            }).catch((error) => {
+                console.error("Erro ao pegar documentos: ", error);
+            });
         }
-    }).catch((error) => {
-        console.error("Erro ao pegar documentos: ", error);
-    });
-  }
 
   // Carregar os marcadores quando a página for carregada
   loadMarkers();
 
+
+
+
+  //Acessa o firebase
+function busca_info() {
+    firebase.firestore()
+        //Acessa a coleção especificada dentro do firebase
+        .collection('ponto_tur')
+
+        //Baixa as funções de dentro do firebase e chama a função que as coloca na tela
+        .get().then(snapshot => {
+            const card = snapshot.docs.map(doc => doc.data())
+           // cleanProductsFromScreen()
+            addProductsToScreen(card);
+        })
+
+}
+
+function addProductsToScreen(card) {
+    const secao = document.getElementById('sidebar');
+    
+    card.forEach(card => {
+        const div = document.createElement('div');
+        div.className = 'cards1';
+
+        const div2 = document.createElement('div');
+        div2.className = 'imagem';
+
+        const img = document.createElement('img');
+        img.src = card.img;
+        div2.appendChild(img);
+        div.appendChild(div2);
+
+        const div3 = document.createElement('div');
+        div3.className = 'conteudo';
+
+        const titulo = document.createElement('h1');
+        titulo.innerHTML = card.nome;
+        div3.appendChild(titulo);
+
+        const desc = document.createElement('p');
+        desc.innerHTML = card.descricao;
+        div3.appendChild(desc);
+
+        const div4 = document.createElement('div');
+        div4.className = 'links';
+
+        const fav = document.createElement('a');
+        fav.href = '#';
+        fav.className = 'favoritar';
+
+        const icon = document.createElement('i');
+        icon.className = 'bi bi-bookmarks-fill';
+        fav.appendChild(icon);
+        div4.appendChild(fav);
+
+        const ir = document.createElement('a');
+        ir.href = '#';
+        ir.innerHTML = 'IR';
+        ir.className = 'ir';
+
+        // Adicionar o event listener para o botão IR
+        ir.addEventListener('click', () => {
+            traceRoute(card.localizacao.latitude, card.localizacao.longitude);
+        });
+
+        div4.appendChild(ir);
+        div3.appendChild(div4);
+        div.appendChild(div3);
+
+        secao.appendChild(div);
+    });
+}
+
+//     // CARREGAR CARDS VERSÃO MOBILE \\
+// Função para carregar marcadores do Firebase
 function busca_info() {
     firebase.firestore()
         .collection('ponto_tur')
@@ -356,11 +433,6 @@ function busca_info() {
             console.error("Erro ao buscar informações:", error);
         });
 }
-
-
-//     // CARREGAR CARDS VERSÃO MOBILE \\
-// Função para carregar marcadores do Firebase
-
 
 // Função para adicionar produtos na tela para o contêiner especificado
 function addProductsToScreen(cardData, containerId) {
