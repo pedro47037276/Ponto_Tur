@@ -12,26 +12,51 @@
     <title>Acessar Minha Conta</title>
 </head>
 
-
 <body>
-    <div class="container">
-        <button><div class="sair"> <a href="index.html"> <i class="bi bi-arrow-return-left"></i></a></div></button>
-         <h1>Minha Conta</h1>
-        
-        <div class="account-info">
-            <h2>Email</h2>
-            <p id="email"></p>
+    <header class="header">
+        <h1>| Minha Conta</h1>
+        <nav>
+            <ul>
+                <li><a class="link_nav" href="index.html">Início</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container3">
+        <div class="favorito">
+            <h2>Perfil</h2>
+            <ul>
+                <li>
+                    <span>Email:</span>
+                    <span id="email">Seu Email</span>
+                </li>
+                <li>
+                    <button class="button2" onclick="excluirConta()">Excluir Conta</button>
+                </li>
+            </ul>
+
+            <h2>Redefinir Senha</h2>
+            <ul>
+                <li>
+                    <span>Email de recuperação:</span>
+                </li>
+                <li>
+                    <button class="button2" onclick="redefinirSenha()">Redefinir Senha</button>
+                    <input type="email" id="resetEmail" placeholder="Digite seu email">
+                   
+                </li>
+            </ul>
+
+            <button class="button1" onclick="sair()">Sair</button>
         </div>
     </div>
-    
-    
-    
-    
+
     <!-- Adiciona o SDK do Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js" type="module"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js" type="module"></script>
 
-    <!-- Agora o script da sua aplicação também precisa ser marcado como módulo -->
+    <!-- Script da aplicação -->
     <script src="conta.js" type="module"></script>
 </body>
 </html>
