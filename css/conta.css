@@ -2,47 +2,99 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Poppins, sans-serif;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-.sair{ 
-    width: 30px;
-    background-color: #14cc1c;
-}
-.sair i {
-font-size: 25px;
-}
-
-
-.container {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 254, 248);
     width: 100%;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    margin-top: 30px;
 }
 
-h1 {
+.header h1 {
+    margin-left: 145px;
+    font-size: 2rem;
+    color: #14cc1c;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.header nav ul {
+    list-style-type: none;
+    margin-right: 120px;
+}
+
+.header nav ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.link_nav {
+    text-decoration: none;
+    color: black;
+}
+
+.link_nav:hover {
+    color: #14CC1C;
+}
+
+.container3 {
+    background-color: rgb(255, 254, 248);
+    border-radius: 1px;
+    width: 100%;
+    min-height: 100vh;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.account-info {
-    text-align: left;
+.favorito {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin: 80px auto;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 20px;
 }
 
-.account-info h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+.favorito ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-#email {
-    font-size: 16px;
-    font-weight: bold;
+.favorito ul li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.button1, .button2 {
+    background-color: #14CC1C;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.button1:hover {
+    background-color: red;
+}
+
+.button1:active {
+    background-color: black;
+}
+
+.button2 {
+    margin-left: 10px;
+}
+
+.button2:active {
+    background-color: black;
 }
