@@ -9,13 +9,8 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
-.sair{ 
-    width: 30px;
-    background-color: #14cc1c;
-}
-.sair i {
-font-size: 25px;
-}
+
+
 
 
 .container {
@@ -31,6 +26,7 @@ font-size: 25px;
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    
 }
 
 .account-info {
@@ -40,6 +36,7 @@ h1 {
 .account-info h2 {
     font-size: 18px;
     margin-bottom: 10px;
+    
 }
 
 #email {

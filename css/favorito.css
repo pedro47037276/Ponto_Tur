@@ -175,6 +175,7 @@
     padding:10px 20px;
     transition:background-color 0.2s ease;
     border:none;
+    
 }
 .button1:hover{
     background-color:red;
@@ -203,7 +204,9 @@
     display: none;
 }
 
-
+.button3{
+    display: none;
+}
 @media(max-width: 800px) {
 
     .header{
@@ -353,9 +356,9 @@
         transform: scale(0.98);
     }
 
-    .button1{
+    .button3{
         background-color:#007bff;
-            
+        margin-top: 14px;    
         border-radius:4px;
         font-size:14px;
         color:white;
@@ -363,12 +366,13 @@
         padding:10px 20px;
         transition:background-color 0.2s ease;
         border:none;
+        display: inline;
     }
-        .button1:hover{
+        .button3:hover{
             background-color:red;
             
         }
-        .button1:active{
+        .button3:active{
          background-color:black;
         }
         .Pesquisa{
