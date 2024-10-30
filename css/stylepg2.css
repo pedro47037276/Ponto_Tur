@@ -1,10 +1,7 @@
 body{
     overflow: hidden;
-    background-color: #f0f0f0; /* Cor de fundo inicial */
-    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
-    
-    
 }
+
 *{
     font-family: poppins;
     padding: 0%;
@@ -225,8 +222,7 @@ a{
     /*border-radius: 20px;*/
     /*margin-top: 5px;*/
     width: 500px;
-    color: white;
-
+    
     /* padding: 20px; */
     position: fixed;
     height: 100%;
@@ -235,7 +231,10 @@ a{
 }
 
 .sidebar h2 {
-    margin-top: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #14CC1C;
+    text-align: center;
 }
 
 .sidebar ul {
