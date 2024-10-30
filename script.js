@@ -270,12 +270,47 @@ navigator.geolocation.getCurrentPosition(success);*/
                 const marker = L.marker([data.localizacao.latitude, data.localizacao.longitude]).addTo(map);
 
                 // Popup com nome, imagem e descrição
-                const popupContent = `
-                <b>${data.nome}</b><br>
-                <img src="${data.img}" alt="${data.nome}" style="width:100%; height:auto;"><br>
-                <p>${data.descricao}</p>
-                <p><b>Localização:</b> Lat: ${data.localizacao.latitude}, Lng: ${data.localizacao.longitude}</p>
-              `;
+                const popupContent = document.createElement('div');
+                
+                    // document.createElement('div');
+
+                        const nome = document.createElement('b');
+                        nome.innerHTML = data.nome;
+                        popupContent.appendChild(nome);
+
+                        const img = document.createElement('img');
+                        img.src = data.img;
+                        img.alt = data.nome;
+                        img.classList = "cards1 imagem";
+                        popupContent.appendChild(img);
+
+                        const descricao = document.createElement('p');
+                        descricao.innerHTML = data.descricao;
+                        popupContent.appendChild(descricao);
+
+                        const ir = document.createElement('a');
+                        ir.innerHTML = "IR";
+                        ir.classList = 'ir';
+                        ir.href = "#";
+                        popupContent.appendChild(ir);
+                    
+                           
+                // `
+                // <b>${data.nome}</b><br>
+                // <img src="${data.img}" alt="${data.nome}" style="width:100%; height:auto;"><br>
+                // <p>${data.descricao}</p>
+                // <a href="#" style=" width: 50%;
+                // // height: 88%;
+                // // margin-right: 20px;
+                // // border-radius: 5px;
+                // // padding: 2px 50px 2px 50px;
+                // // background-color: #14CC1C;
+                // // /* border-radius: 10px; */
+                // // color: white;">IR</a>            
+                // `
+                ;
+
+
               
               // Adiciona o popup ao marcador
               marker.bindPopup(popupContent);
@@ -284,14 +319,7 @@ navigator.geolocation.getCurrentPosition(success);*/
                     // Cria o marcador
                     const marker = L.marker([data.localizacao.latitude, data.localizacao.longitude]).addTo(map);
                     
-                    // Popup com nome, imagem e descrição
-                    const popupContent = `
-                      <b>${data.nome}</b><br>
-                      <img src="${data.img}" alt="${data.nome}" style="width:100%; height:auto;"><br>
-                      <p>${data.descricao}</p>
-                      <p><b>Localização:</b> Lat: ${data.localizacao.latitude}, Lng: ${data.localizacao.longitude}</p>
-                    `;
-                    
+                 
                     // Adiciona o popup ao marcador
                     marker.bindPopup(popupContent);
                     
@@ -335,98 +363,142 @@ function busca_info() {
 
 }
 
-  function addProductsToScreen(card) {
-    //captura o conteudo do input
-    //const filter = document.getElementById('search').value;
-
+function addProductsToScreen(card) {
     const secao = document.getElementById('sidebar');
     
-    
-    // Cria as linhas da lista de acordo com o conteúdo do banco
     card.forEach(card => {
-        
-        //Verifica se o campo de busca está vazio ou se o item é igual ao pesquisado
-        //if ((filter == '') || !filter == "" && product.item == filter) {
+        const div = document.createElement('div');
+        div.className = 'cards1';
 
-            const div = document.createElement('div');
-            //Adiciona classe ao produto criado
-            div.className ='cards1';
+        const div2 = document.createElement('div');
+        div2.className = 'imagem';
 
-                const div2 = document.createElement('div');
-                div2.className = 'imagem';
+        const img = document.createElement('img');
+        img.src = card.img;
+        div2.appendChild(img);
+        div.appendChild(div2);
 
-                    const img = document.createElement('img');
-                    img.innerHTML = '';
-                    img.src = card.img;
-                    div2.appendChild(img);
+        const div3 = document.createElement('div');
+        div3.className = 'conteudo';
 
-                
-                div.appendChild(div2);
+        const titulo = document.createElement('h1');
+        titulo.innerHTML = card.nome;
+        div3.appendChild(titulo);
 
+        const desc = document.createElement('p');
+        desc.innerHTML = card.descricao;
+        div3.appendChild(desc);
 
-                const div3 = document.createElement('div');
-                div3.className = 'conteudo';
+        const div4 = document.createElement('div');
+        div4.className = 'links';
 
-                    const titulo = document.createElement('h1');
-                    titulo.innerHTML = card.nome;
-                    div3.appendChild(titulo);
+        const fav = document.createElement('a');
+        fav.href = '#';
+        fav.className = 'favoritar';
 
-                    const desc = document.createElement('p');
-                    desc.innerHTML = card.descricao;
-                    div3.appendChild(desc);
+        const icon = document.createElement('i');
+        icon.className = 'bi bi-bookmarks-fill';
+        fav.appendChild(icon);
+        div4.appendChild(fav);
 
-                    const div4 = document.createElement('div');
-                    div4.className = 'links';
+        const ir = document.createElement('a');
+        ir.href = '#';
+        ir.innerHTML = 'IR';
+        ir.className = 'ir';
 
-                        const fav = document.createElement('a');
-                        fav.href = '#';
-                        fav.className = 'favoritar';
+        // Adicionar o event listener para o botão IR
+        ir.addEventListener('click', () => {
+            traceRoute(card.localizacao.latitude, card.localizacao.longitude);
+        });
 
-                            const icon = document.createElement('i');
-                            icon.className= 'bi bi-bookmarks-fill';
-                            fav.appendChild(icon);
-                                                  
-                        div4.appendChild(fav);
+        div4.appendChild(ir);
+        div3.appendChild(div4);
+        div.appendChild(div3);
 
-                        const ir = document.createElement('a');
-                        ir.href = '#';
-                        ir.innerHTML = "IR";
-                        ir.className = 'ir';
-                        div4.appendChild(ir);
-
-                        // const ir = document.createElement('a');
-                        // innerHeight = 'Ir';
-                        // fav.className = 'ir';
-                        // div4.appendChild(ir);
-
-                    div3.appendChild(div4);
-
-                
-                div.appendChild(div3);
-                
-                
-                // const titulo = document.createElement('h1');
-                // titulo.innerHTML = card.nome;
-                // div.appendChild(titulo);
-
-                // const desc = document.createElement('p');
-                // desc.innerHTML = card.descricao;
-                // div.appendChild(desc);
-
-                // const link = document.createElement('a');
-                // link.href = 'pg2.html';
-                // link.innerHTML = "IR";
-                // link.className = 'link_recomendados';
-                // div.appendChild(link);
-
-            secao.appendChild(div);
-
-        
-   
-        /*}else {
-        }*/
+        secao.appendChild(div);
     });
 }
 
+//     // CARREGAR CARDS VERSÃO MOBILE \\
+// Função para carregar marcadores do Firebase
+function busca_info() {
+    firebase.firestore()
+        .collection('ponto_tur')
+        .get().then(snapshot => {
+            const cardData = snapshot.docs.map(doc => doc.data());
+            addProductsToScreen(cardData, 'sidebar');  // Carregar para o desktop
+            addProductsToScreen(cardData, 'locall1');   // Carregar para o mobile
+        }).catch(error => {
+            console.error("Erro ao buscar informações:", error);
+        });
+}
 
-busca_info()
+// Função para adicionar produtos na tela para o contêiner especificado
+function addProductsToScreen(cardData, containerId) {
+    const container = document.getElementById(containerId);
+    
+    if (!container) {
+        console.error(`Contêiner com ID "${containerId}" não encontrado.`);
+        return;
+    }
+
+    cardData.forEach(card => {
+        const div = document.createElement('div');
+        div.className = 'cards1';
+
+        // Imagem do card
+        const divImage = document.createElement('div');
+        divImage.className = 'imagem';
+
+        const img = document.createElement('img');
+        img.src = card.img;
+        img.alt = card.nome;
+        divImage.appendChild(img);
+        div.appendChild(divImage);
+
+        // Conteúdo do card
+        const divContent = document.createElement('div');
+        divContent.className = 'conteudo';
+
+        const titulo = document.createElement('h1');
+        titulo.textContent = card.nome;
+        divContent.appendChild(titulo);
+
+        const desc = document.createElement('p');
+        desc.textContent = card.descricao;
+        divContent.appendChild(desc);
+
+        // Links do card
+        const divLinks = document.createElement('div');
+        divLinks.className = 'links';
+
+        const fav = document.createElement('a');
+        fav.href = '#';
+        fav.className = 'favoritar';
+        fav.innerHTML = '<i class="bi bi-bookmarks-fill"></i>';
+        divLinks.appendChild(fav);
+
+        const ir = document.createElement('a');
+        ir.href = '#';
+        ir.textContent = 'IR';
+        ir.className = 'ir';
+
+        // Event listener para o botão "IR" - chamada da função traceRoute
+        ir.addEventListener('click', () => {
+            traceRoute(card.localizacao.latitude, card.localizacao.longitude);
+        });
+
+        divLinks.appendChild(ir);
+        divContent.appendChild(divLinks);
+        div.appendChild(divContent);
+
+        // Adicionar card no contêiner específico (desktop ou mobile)
+        container.appendChild(div);
+    });
+}
+
+// Chamada inicial para buscar e renderizar os cards
+busca_info();
+
+
+

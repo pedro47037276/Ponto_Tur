@@ -1,5 +1,8 @@
 body{
     overflow: hidden;
+    background-color: #f0f0f0; /* Cor de fundo inicial */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+    
     
 }
 *{
@@ -18,7 +21,7 @@ a{
 .map{
     width: 100%;
     height: 580vh;
-    background-color: #14CC1C;
+    background-color:#14CC1C;
     position: absolute;
     z-index: 0;
 }
@@ -49,8 +52,9 @@ a{
 .desktop{
     display:flex;
     justify-content: space-between;
-    background-color: rgb(255, 254, 248);   
-    box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);
+    background-color: rgb(255, 254, 248);  
+    box-shadow: 0px 15px 27px -16px rgba(255, 255, 255, 0.1); 
+    
     z-index: 2;
     width:100%;
     padding:20px;
@@ -96,14 +100,14 @@ a{
     /*margin: 0px 20px 80px 30px;*/
     background-color: #ffffff;
     width: 100%;
-    min-height: 230px;
+    height: 230px;
     box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);
  
     
     /*box-shadow: rgba(1, 58, 11, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;*/
     /*border: 1px solid rgba(18, 19, 18, 0.068);
-    transition: 500ms linear;
-    overflow-y: hidden;*/
+    transition: 500ms linear;*/
+    
    
 }
 
@@ -149,7 +153,7 @@ a{
     max-width: 90%;
     overflow: hidden;
     height: 57%;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     text-align: left;
 }
 
@@ -159,7 +163,7 @@ a{
     display: flex;
     align-items: end;
     justify-content: space-between;
-    min-height: 35px;
+    height: 35px;
     margin-bottom: 10px;
     
     width: 100%;
@@ -173,7 +177,7 @@ a{
     color: #14CC1C;
 }
 
-.cards1 .ir{
+.ir{
     width: 50%;
     height: 88%;
     margin-right: 20px;
@@ -184,6 +188,9 @@ a{
     color: white;
 }
 
+.leaflet-container a {
+    color: white;
+}
 
 /* .cards1 a{
     text-decoration: none;
@@ -303,6 +310,10 @@ a{
 }
 
 @media(max-width: 800px){
+    .toggle-button {
+        display: none;
+    }
+
     .map{
         max-width: 100%;
         height: 600px;
@@ -312,17 +323,17 @@ a{
     }
 
     .locall1{
-        max-width: 96%;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         position: absolute;
         z-index: 1;
-        border:solid 8px rgba(59, 52, 52, 0.699);
+        
         color:white;
-        background-color:white;
-        overflow:hidden;
+        background-color:rgb(255, 254, 248);
+        
     }
     
     .cards{
@@ -331,14 +342,15 @@ a{
     
     .cards1{
         border: 1px solid #00000017;
-        margin-top:20px;
+        margin-top:18px;
         display: flex; 
         border-radius: 5px;
         text-align: center;
         /*margin: 0px 20px 80px 30px;*/
         background-color: #ffffff;
-        width: 100%;
-        height: 180px;
+        width: 95%;
+        min-height: 120px;
+        max-height: 180px;
         box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);
      
         
@@ -393,6 +405,7 @@ a{
         height: 57%;
         margin-bottom: 2px;
         text-align: left;
+        overflow-y: auto;
     }
     
     
@@ -401,7 +414,7 @@ a{
         display: flex;
         align-items: end;
         justify-content: end;
-        height: 35px;
+        
         margin-bottom: 10px;
         
         width: 100%;
@@ -423,6 +436,10 @@ a{
         padding: 2px 50px 2px 50px;
         background-color: #14CC1C;
         /* border-radius: 10px; */
+        color: white;
+    }
+
+    .leaflet-container a {
         color: white;
     }
     
@@ -454,9 +471,10 @@ a{
         height: 40px;
         font-size: 1rem;
         font-weight: 400;
-        border-radius: 25px;
+        border-radius: 15px;
         border: none;
-        border:solid 2px;
+        border:solid 1px;
+       
     }
 
     .pesquisar i{
@@ -538,6 +556,8 @@ a{
     }
 
     body{ overflow: inherit;}
+
+  
 }
 
 
@@ -554,11 +574,11 @@ a{
 
 
 .sidebar  {
-    position: absolute;
+
     left: 0px; /* Escondido inicialmente */
     width: 600px;
     height: 90%;
-    background-color: rgb(255, 254, 248); 
+    background-color: rgb(255, 255, 255); 
     color: white;
     transition: left 0.3s;
     padding: 9px;
@@ -568,6 +588,7 @@ a{
     /*width: 470px*/
     width: 0px;
     left: 0; /* Mostra o menu quando aberto */
+
 }
 
 .sidebar toggle-button {
@@ -579,8 +600,15 @@ a{
 }
 
 .toggle-button{
+     border-radius: 55px;
+    right: -15px;
+    position: relative;
+    font-size: 20px;
     margin-left: 20px;
     padding: 2px;
+    background-color: #ffffff;
+}
+.sidebar .i{
     background-color: #ffffff;
 }
 
@@ -590,3 +618,9 @@ a{
 
 
 
+
+.é i{
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+}
