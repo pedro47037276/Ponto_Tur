@@ -77,7 +77,7 @@ body{
     padding: 10px 15px;
     font-size: 13px;
     border-radius: 8px;
-    width: 100%;
+    width: 76%;
     outline: none;
 }
 
@@ -233,4 +233,58 @@ body{
 }
 .tipoH1{
     color: #14CC1C;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mostar{
+    align-items: flex-end;
+    display: flex;
+    
+}
+
+.mostar .but{
+    background-color: #fff;
+    margin: 8px;
+    font-size: 10px;
+    padding: 10px;
+
+}
+.mostar i{
+    font-size: 15px;
+    color: #14CC1C;
+    font-weight: 1000px;
+}
+
+
+.mostar2 i{
+    font-size: 15px;
+    color: #14CC1C;
+    font-weight: 1000px;
+}
+
+.mostar2 .but{
+    background-color: #fff;
+    margin: 8px;
+    font-size: 10px;
+    padding: 10px;
+
+}
+
+.mostar2{
+    align-items: flex-end;
+    display: flex;
+    
 }

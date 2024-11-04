@@ -104,3 +104,73 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
       // this.submit(); // Descomente esta linha para enviar o formulário de verdade
     }
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function toggleSenha() {
+    const senhaInput = document.getElementById('senha');
+    const tipoAtual = senhaInput.getAttribute('type');
+
+    if (tipoAtual === 'password') {
+        senhaInput.setAttribute('type', 'text');
+    } else {
+        senhaInput.setAttribute('type', 'password');
+    }
+}
+
+function toggleConfirmarSenha() {
+    const confirmarSenhaInput = document.getElementById('confirmarSenha');
+    const tipoAtual = confirmarSenhaInput.getAttribute('type');
+
+    if (tipoAtual === 'password') {
+        confirmarSenhaInput.setAttribute('type', 'text');
+    } else {
+        confirmarSenhaInput.setAttribute('type', 'password');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function toggleSenha2() {
+    const senhaInput = document.getElementById('senha2');
+    const tipoAtual = senhaInput.getAttribute('type');
+
+    if (tipoAtual === 'password') {
+        senhaInput.setAttribute('type', 'text');
+    } else {
+        senhaInput.setAttribute('type', 'password');
+    }
+}

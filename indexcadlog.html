@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="stylepg3.css">
     <link rel="shortcut icon" href="imgs/log.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Ponto Tur | Cadastro</title>
 </head>
 
@@ -20,8 +21,15 @@
                 
                 <input type="text" name="text" placeholder="Nome">
                 <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Senha">
-                <input type="password" name="text" placeholder="Confirmar Senha">
+                <div class="mostar">
+                <input type="password" id="senha" placeholder="Senha"/>
+                <button class="but" type="button" onclick="toggleSenha()"><i class="bi bi-eye"></i></button>
+                </div>
+
+                <div class="mostar">
+                <input type="password" id="confirmarSenha" placeholder="Confirmar Senha" />
+                <button class="but" type="button" onclick="toggleConfirmarSenha()"><i class="bi bi-eye"></i></button>
+            </div>
                 <button type="button" onclick="register1()">Criar</button>
             </form>
         </div>
@@ -31,7 +39,10 @@
                 <h1 class="tipoH1">Entrar</h1>
                 <input type="email" name="email" id="email" placeholder="Email">
                 <span id="emailError" style="color: red"></span><br>
-                <input type="password" name="password" id="password" placeholder="Senha">
+                <div class="mostar2">
+                <input type="password" id="senha2" placeholder="Senha"/>
+                <button class="but" type="button" onclick="toggleSenha2()"><i class="bi bi-eye"></i></button>
+            </div>
                 <span id="passwordError" style="color:red"></span><br>
                 <a href="#" class="esenha">Esqueceu Sua Senha?</a>
                 <button  type="submit" onclick="login()">Entrar</button>
