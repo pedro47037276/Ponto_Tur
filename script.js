@@ -294,6 +294,11 @@ navigator.geolocation.getCurrentPosition(success);*/
                         ir.classList = 'ir';
                         ir.href = "#";
                         popupContent.appendChild(ir);
+
+                        // Adicionar o event listener para o botão IR
+                        ir.addEventListener('click', () => {
+                            traceRoute(data.localizacao.latitude, data.localizacao.longitude);
+                        });
                     
                            
                 // `
