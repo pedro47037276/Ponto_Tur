@@ -449,7 +449,247 @@
             display:none;
         }
 
-
+        @media(max-width: 375px){
+            .header{
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: rgb(255, 254, 248);
+                width:436px;
+                height: 100px;
+                margin-top: 30px;
+            
+            }
+        
+            .nome_pg{
+                display: none;
+            }
+        
+            .nome_mobile{
+                display: flex;
+                
+            }
+            
+            .nome_mobile h1{ 
+              
+                margin: 0px 0px 0px 30px;
+               
+                font-size: 2rem;
+                color: #14CC1C;
+               
+                font-family: poppins;
+                font-weight: 700;
+                
+            }
+        
+        
+            body{
+                background-color:#c9d6ff;    
+                background: linear-gradiant(to right, #6A5ACD);    
+                height:100vh;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+        
+                
+            .container3{
+                background-color:#14CC1C;
+                border-radius:1px;
+                box-shadow:0 5px 15px rgba(0,0,0,0.35);
+                width:460px;
+                max-width:117%;
+                min-height:780px;
+                text-align:center;
+            }
+                
+                
+            .text{
+                color:black;
+                align-self:center;
+                border-radius:20px;
+                margin-top:82px;
+                text-align:center;
+                background-color:white;
+                width:230px;
+                margin-left:0px;
+                display:inline-block;
+                align-content:center;
+            }
+        
+            .favorito{
+                    
+                border-radius:1px;
+                box-shadow:0 5px 15px rgba(0,0,0,0.35);
+                width:401px;
+                max-width:100%;
+                min-height:610px;
+                align-items:center;
+                background-color:white;
+                border-radius:10px;
+                margin-left:30px;
+                margin-top:47px;
+                display:inline-block;
+            }
+                
+            .favorito ul li{
+                list-style-type:none;
+                display:flex;
+                flex-direction:row;
+                justify-content:space-around;
+                font-size:20px; 
+                padding:10px;
+            }
+            
+            .favorito ul i{
+                color:#14CC1C;
+            }
+        
+            .tipos{
+                align-items:center;
+                display:flex;
+                flex-direction:row;
+                justify-content:space-around;
+                padding:10px;
+            }
+        
+            .excluir{
+                text-align:center;
+                margin-top:14px;
+                margin-bottom:4px;
+                    
+            }
+                
+            .pesq_mobile{
+                display: block;
+            
+            }
+        
+            .search-bar-mobile{
+                width:300px;
+                border-radius:4px 0 0 4px;
+                background-color:#0079063d;
+                margin-left:10px;
+                font-size:16px;
+                margin-top:10px;
+                border:1px solid #ccc;
+                box-sizing:border-box;
+                padding:11px;
+            }
+                
+            .button2{
+                background-color:#007bff;
+                color:white;
+                border-radius:4px;
+                font-size:16px;
+                font-weight:1000;
+                cursor:pointer;
+                padding:10px 20px;
+                transition:background-color 0.2s ease;
+                border:none;
+                margin-left:7px;
+                margin-top:10px;
+            }
+        
+            .button2:active{
+                background-color:black;
+                transform: scale(0.98);
+            }
+        
+            .button3{
+                background-color:#007bff;
+                margin-top: 14px;    
+                border-radius:4px;
+                font-size:14px;
+                color:white;
+                cursor:pointer;
+                padding:10px 20px;
+                transition:background-color 0.2s ease;
+                border:none;
+                display: inline;
+            }
+                .button3:hover{
+                    background-color:red;
+                    
+                }
+                .button3:active{
+                 background-color:black;
+                }
+                .Pesquisa{
+                    align-items:center;
+                    display:flex;
+                    justify-content:center;
+                }
+        
+                .btn-abrir-menu2{
+                    display:block;
+                    color:#000000;
+                    font-size:45px;
+                    align-self:center;
+                }
+                .btn-fechar2{
+                    color:#000000;
+                    font-size:35px;
+                    color:#000000;
+                    font-size:35px;
+                    align-self:baseline;
+                
+                }
+                .btn-fechar2 i{
+                    display:block;
+                    position:absolute;
+                } 
+                .menu-mobile2{
+                    backdrop-filter:blur(10px);
+                    border-radius:15px;
+                    width:0;
+                    height:0;
+                    background:#ffffff48;
+                    position:absolute;
+                    top:0;
+                    right:0;
+                    transition:.5s;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    text-align:justify;
+                    overflow:hidden;
+                    z-index:99;
+                }
+                .menu-mobile2 nav{
+                    width:100%;
+                } 
+                .menu-mobile2 nav ul{
+                    display: flex;
+                    flex-direction: column;
+                    list-style-type:none;
+                }
+                .menu-mobile2 nav a{
+                    font-size:19px;
+                    text-decoration:none;
+                    color:rgb(0, 0, 0);
+                    display:block;
+                    transition:.5s;
+                    padding:20px;
+                    padding-left:125px;
+                }
+                
+                .menu-mobile2 nav a:hover{
+                    background:rgb(255, 255, 255);
+                    color:black;
+                    box-shadow:0 0 20px rgb(0, 0, 0);
+                    width:90%;
+                }
+                .menu-mobile2.abrir-menu2{
+                    width:100%;
+                    height:50vh;
+                    z-index:99;
+                }  
+                .desktop2 nav{
+                    display:none;
+                }
+        }
 
 }
 
