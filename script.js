@@ -353,78 +353,6 @@ navigator.geolocation.getCurrentPosition(success);*/
 
 
 
-
-  //Acessa o firebase
-function busca_info() {
-    firebase.firestore()
-        //Acessa a coleção especificada dentro do firebase
-        .collection('ponto_tur')
-
-        //Baixa as funções de dentro do firebase e chama a função que as coloca na tela
-        .get().then(snapshot => {
-            const card = snapshot.docs.map(doc => doc.data())
-           // cleanProductsFromScreen()
-            addProductsToScreen(card);
-        })
-
-}
-
-function addProductsToScreen(card) {
-    const secao = document.getElementById('sidebar');
-    
-    card.forEach(card => {
-        const div = document.createElement('div');
-        div.className = 'cards1';
-
-        const div2 = document.createElement('div');
-        div2.className = 'imagem';
-
-        const img = document.createElement('img');
-        img.src = card.img;
-        div2.appendChild(img);
-        div.appendChild(div2);
-
-        const div3 = document.createElement('div');
-        div3.className = 'conteudo';
-
-        const titulo = document.createElement('h1');
-        titulo.innerHTML = card.nome;
-        div3.appendChild(titulo);
-
-        const desc = document.createElement('p');
-        desc.innerHTML = card.descricao;
-        div3.appendChild(desc);
-
-        const div4 = document.createElement('div');
-        div4.className = 'links';
-
-        const fav = document.createElement('a');
-        fav.href = '#';
-        fav.className = 'favoritar';
-
-        const icon = document.createElement('i');
-        icon.className = 'bi bi-bookmarks-fill';
-        fav.appendChild(icon);
-        div4.appendChild(fav);
-
-        const ir = document.createElement('a');
-        ir.href = '#';
-        ir.innerHTML = 'IR';
-        ir.className = 'ir';
-
-        // Adicionar o event listener para o botão IR
-        ir.addEventListener('click', () => {
-            traceRoute(card.localizacao.latitude, card.localizacao.longitude);
-        });
-
-        div4.appendChild(ir);
-        div3.appendChild(div4);
-        div.appendChild(div3);
-
-        secao.appendChild(div);
-    });
-}
-
 //     // CARREGAR CARDS VERSÃO MOBILE \\
 // Função para carregar marcadores do Firebase
 function busca_info() {
@@ -432,79 +360,172 @@ function busca_info() {
         .collection('ponto_tur')
         .get().then(snapshot => {
             const cardData = snapshot.docs.map(doc => doc.data());
-            addProductsToScreen(cardData, 'sidebar');  // Carregar para o desktop
-            addProductsToScreen(cardData, 'locall1');   // Carregar para o mobile
+            cards_desktop(cardData);  // Carregar para o desktop
+            cards_mobile(cardData);   // Carregar para o mobile
         }).catch(error => {
             console.error("Erro ao buscar informações:", error);
         });
 }
 
+function mostra_conteudo_local(){
+    document.getElementById('fundo').style.display = 'none';
+    document.getElementById('sidebar_local').style.display = 'block';
+
+}
+
+
+
 // Função para adicionar produtos na tela para o contêiner especificado
-function addProductsToScreen(cardData, containerId) {
-    const container = document.getElementById(containerId);
-    
-    if (!container) {
-        console.error(`Contêiner com ID "${containerId}" não encontrado.`);
-        return;
-    }
+function cards_mobile(cardData) {
+
+    const container2 = document.getElementById('locall1');
+    // if (!container) {
+    //     console.error(`Contêiner com ID "${containerId}" não encontrado.`);
+    //     return;
+    // }
+
 
     cardData.forEach(card => {
+
         const div = document.createElement('div');
         div.className = 'cards1';
 
-        // Imagem do card
-        const divImage = document.createElement('div');
-        divImage.className = 'imagem';
+            // Imagem do card
+            const divImage = document.createElement('div');
+            divImage.className = 'imagem';
 
-        const img = document.createElement('img');
-        img.src = card.img;
-        img.alt = card.nome;
-        divImage.appendChild(img);
-        div.appendChild(divImage);
+                const img = document.createElement('img');
+                img.src = card.img;
+                img.alt = card.nome;
+                divImage.appendChild(img);
 
-        // Conteúdo do card
-        const divContent = document.createElement('div');
-        divContent.className = 'conteudo';
+            div.appendChild(divImage);
 
-        const titulo = document.createElement('h1');
-        titulo.textContent = card.nome;
-        divContent.appendChild(titulo);
+            // Conteúdo do card
+            const divContent = document.createElement('div');
+            divContent.className = 'conteudo';
 
-        const desc = document.createElement('p');
-        desc.textContent = card.descricao;
-        divContent.appendChild(desc);
+                const titulo = document.createElement('h1');
+                titulo.textContent = card.nome;
+                divContent.appendChild(titulo);
 
-        // Links do card
-        const divLinks = document.createElement('div');
-        divLinks.className = 'links';
+                const desc = document.createElement('p');
+                desc.textContent = card.descricao;
+                divContent.appendChild(desc);
 
-        const fav = document.createElement('a');
-        fav.href = '#';
-        fav.className = 'favoritar';
-        fav.innerHTML = '<i class="bi bi-bookmarks-fill"></i>';
-        divLinks.appendChild(fav);
+                // Links do card
+                const divLinks = document.createElement('div');
+                divLinks.className = 'links';
 
-        const ir = document.createElement('a');
-        ir.href = '#';
-        ir.textContent = 'IR';
-        ir.className = 'ir';
+                    const fav = document.createElement('a');
+                    fav.href = '#';
+                    fav.className = 'favoritar';
+                    fav.innerHTML = '<i class="bi bi-bookmarks-fill"></i>';
+                    divLinks.appendChild(fav);
+                        
+                
+                    const ir = document.createElement('a');
+                    ir.href = '#';
+                    ir.textContent = 'IR';
+                    ir.className = 'ir';
+                    divLinks.appendChild(ir)
 
-        // Event listener para o botão "IR" - chamada da função traceRoute
-        ir.addEventListener('click', () => {
-            traceRoute(card.localizacao.latitude, card.localizacao.longitude);
-        });
+                    // Event listener para o botão "IR" - chamada da função traceRoute
+                    ir.addEventListener('click', () => {
+                        traceRoute(card.localizacao.latitude, card.localizacao.longitude);
+                        mostra_conteudo_local();
+                    });
 
-        divLinks.appendChild(ir);
-        divContent.appendChild(divLinks);
-        div.appendChild(divContent);
+                divContent.appendChild(divLinks);
 
-        // Adicionar card no contêiner específico (desktop ou mobile)
-        container.appendChild(div);
+            div.appendChild(divContent);
+        
+        container2.appendChild(div);
+       
+
+      
+    });
+}
+
+// Função para adicionar produtos na tela para o contêiner especificado
+function cards_desktop(cardData) {
+
+    const container2 = document.getElementById('fundo');
+    // if (!container) {
+    //     console.error(`Contêiner com ID "${containerId}" não encontrado.`);
+    //     return;
+    // }
+
+
+    cardData.forEach(card => {
+
+        const div = document.createElement('div');
+        div.className = 'cards1';
+
+            // Imagem do card
+            const divImage = document.createElement('div');
+            divImage.className = 'imagem';
+
+                const img = document.createElement('img');
+                img.src = card.img;
+                img.alt = card.nome;
+                divImage.appendChild(img);
+
+            div.appendChild(divImage);
+
+            // Conteúdo do card
+            const divContent = document.createElement('div');
+            divContent.className = 'conteudo';
+
+                const titulo = document.createElement('h1');
+                titulo.textContent = card.nome;
+                divContent.appendChild(titulo);
+
+                const desc = document.createElement('p');
+                desc.textContent = card.descricao;
+                divContent.appendChild(desc);
+
+                // Links do card
+                const divLinks = document.createElement('div');
+                divLinks.className = 'links';
+
+                    const fav = document.createElement('a');
+                    fav.href = '#';
+                    fav.className = 'favoritar';
+                    fav.innerHTML = '<i class="bi bi-bookmarks-fill"></i>';
+                    divLinks.appendChild(fav);
+                        
+                
+                    const ir = document.createElement('a');
+                    ir.href = '#';
+                    ir.textContent = 'IR';
+                    ir.className = 'ir';
+                    divLinks.appendChild(ir)
+
+                    // Event listener para o botão "IR" - chamada da função traceRoute
+                    ir.addEventListener('click', () => {
+                        traceRoute(card.localizacao.latitude, card.localizacao.longitude);
+                        mostra_conteudo_local();
+                    });
+
+                divContent.appendChild(divLinks);
+
+            div.appendChild(divContent);
+        
+        container2.appendChild(div);
+       
+
+      
     });
 }
 
 // Chamada inicial para buscar e renderizar os cards
 busca_info();
+
+
+
+
+
 
 
 

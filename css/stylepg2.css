@@ -623,3 +623,14 @@ a{
     text-align: center;
     display: flex;
 }
+
+
+.fundo{
+    margin-bottom: 80px;
+}
+
+.sidebar_local{
+    display: none;
+    height: 100%;
+    background-color: #0056b3;
+}
