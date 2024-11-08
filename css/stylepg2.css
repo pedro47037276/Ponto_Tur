@@ -341,14 +341,16 @@ a{
     
     .cards1{
         border: 1px solid #00000017;
-        margin-top:18px;
-        display: flex; 
+        margin-top:10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         border-radius: 5px;
         text-align: center;
         /*margin: 0px 20px 80px 30px;*/
         background-color: #ffffff;
-        width: 95%;
-        min-height: 120px;
+        width: 90%;
+        min-height: 500px;
         max-height: 180px;
         box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);
      
@@ -368,7 +370,7 @@ a{
     }
     
     .cards1 .imagem{
-        width: 45%;
+        width: 95%;
         padding: 10px;
         
         
@@ -377,7 +379,7 @@ a{
     
     .cards1 .conteudo{
         border-radius: 10px;
-        width: 55%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -391,7 +393,7 @@ a{
         font-size: 17px;
         margin: 10px 0px 10px 0px;
         width: 90%;
-        text-align: left;
+        text-align: center;
     }
     
     .cards1 .conteudo p{
@@ -403,7 +405,7 @@ a{
         overflow: hidden;
         height: 57%;
         margin-bottom: 2px;
-        text-align: left;
+        text-align: center;
         overflow-y: auto;
     }
     
@@ -411,11 +413,6 @@ a{
     
     .conteudo .links{
         display: flex;
-        align-items: end;
-        justify-content: end;
-        
-        margin-bottom: 10px;
-        
         width: 100%;
     }
     

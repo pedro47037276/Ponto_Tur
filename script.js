@@ -375,7 +375,7 @@ function mostra_conteudo_local(){
 
 
 
-// Função para adicionar produtos na tela para o contêiner especificado
+// Função para adicionar cards no mobile
 function cards_mobile(cardData) {
 
     const container2 = document.getElementById('locall1');
@@ -447,7 +447,7 @@ function cards_mobile(cardData) {
     });
 }
 
-// Função para adicionar produtos na tela para o contêiner especificado
+// Função para adicionar cards no desktop
 function cards_desktop(cardData) {
 
     const container2 = document.getElementById('fundo');
