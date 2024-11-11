@@ -362,14 +362,16 @@ function busca_info() {
             const cardData = snapshot.docs.map(doc => doc.data());
             cards_desktop(cardData);  // Carregar para o desktop
             cards_mobile(cardData);   // Carregar para o mobile
+            // info_do_local(cardData);
         }).catch(error => {
             console.error("Erro ao buscar informações:", error);
         });
 }
 
-function mostra_conteudo_local(){
+function esconde_sidebar_desktop(){
     document.getElementById('fundo').style.display = 'none';
-    document.getElementById('sidebar_local').style.display = 'block';
+    document.getElementById('sidebar_info_local').style.display = 'block';
+    // info_do_local();
 
 }
 
@@ -433,7 +435,7 @@ function cards_mobile(cardData) {
                     // Event listener para o botão "IR" - chamada da função traceRoute
                     ir.addEventListener('click', () => {
                         traceRoute(card.localizacao.latitude, card.localizacao.longitude);
-                        mostra_conteudo_local();
+                        esconde_sidebar();
                     });
 
                 divContent.appendChild(divLinks);
@@ -458,7 +460,7 @@ function cards_desktop(cardData) {
 
 
     cardData.forEach(card => {
-
+        
         const div = document.createElement('div');
         div.className = 'cards1';
 
@@ -504,18 +506,60 @@ function cards_desktop(cardData) {
 
                     // Event listener para o botão "IR" - chamada da função traceRoute
                     ir.addEventListener('click', () => {
+                        const filter = titulo.textContent;
+                        // console.log(filter)
                         traceRoute(card.localizacao.latitude, card.localizacao.longitude);
-                        mostra_conteudo_local();
+                        esconde_sidebar_desktop();
+                        info_do_local(cardData, filter);                        
                     });
 
                 divContent.appendChild(divLinks);
-
             div.appendChild(divContent);
-        
-        container2.appendChild(div);
-       
+        container2.appendChild(div);      
+    });
+}
 
-      
+
+function info_do_local(cardData, filter) {
+    const container3 = document.getElementById('sidebar_info_local');
+    console.log(cardData)
+    console.log(filter)
+    cardData.forEach(card => {
+    
+        if(card.nome == filter){
+
+            const div = document.createElement('div');
+            div.className = 'infos_local';
+
+                const nome_local = document.createElement('h1');
+                nome_local.className = 'nome_local';
+                nome_local.innerHTML = card.nome;
+                div.appendChild(nome_local)
+
+                // Imagem do card
+                const divImage = document.createElement('div');
+                divImage.className = 'secao_imgs';
+
+                    const img = document.createElement('img');
+                    img.src = card.img;
+                    img.alt = card.nome;
+                    img.className = 'imgs_do_local'
+                    divImage.appendChild(img);
+
+                div.appendChild(divImage);
+
+                const desc_local = document.createElement('p');
+                desc_local.className = 'desc_local';
+                desc_local.innerHTML = card.descricao;
+                div.appendChild(desc_local);
+
+                
+                
+               
+            container3.appendChild(div);
+
+            
+        }
     });
 }
 
