@@ -249,7 +249,7 @@ navigator.geolocation.getCurrentPosition(success);*/
   const db = firebase.firestore();
 
   // Inicialize o mapa com Leaflet
-  const map = L.map('map').setView([-1.45502, -48.5024], 19); // Mude o 14 para o zoom inicial desejado
+  const map = L.map('map').setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 14 para o zoom inicial desejado
 
   // Adicionar camadas do OpenStreetMap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -339,7 +339,7 @@ navigator.geolocation.getCurrentPosition(success);*/
 
                 // Ajustar o mapa para mostrar todos os marcadores
                 if (bounds.length > 0) {
-                    map.fitBounds(bounds, { padding: [300, 1800 ] }); // Ajuste o zoom para mostrar todos os marcadores
+                    map.fitBounds(bounds, { padding: [50, 50] }); // Ajuste o zoom para mostrar todos os marcadores
                 } else {
                     console.log("Nenhum marcador foi carregado.");
                 }
