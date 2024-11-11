@@ -42,7 +42,7 @@ function traceRoute(destinationLat, destinationLng, data) {
                     if (i === 0) {
                         // Usar o ícone verde para o marcador de origem
                         return L.marker(wp.latLng, { icon: greenIcon }).bindPopup('Você está aqui!');
-                    } else if (i === nWps - 1) {
+                    } else if (i === nWps - 2) {
                         // Popup no destino com informações
                         const popupContent = `
                             <b>${data.nome}</b><br>
