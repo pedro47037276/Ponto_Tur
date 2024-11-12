@@ -271,28 +271,30 @@ navigator.geolocation.getCurrentPosition(success);*/
 
                 // Popup com nome, imagem e descrição
                 const popupContent = document.createElement('div');
+                popupContent.className = 'card_marcador';
                 
                 
                     // document.createElement('div');
 
                         const nome = document.createElement('b');
+                        nome.classList = 'nome_marcador';
                         nome.innerHTML = data.nome;
                         popupContent.appendChild(nome);
 
                         const img = document.createElement('img');
                         img.src = data.img;
                         img.alt = data.nome;
-                        img.classList = "cards1 imagem";
+                        img.classList = "img_marcador";
                         popupContent.appendChild(img);
 
                         const descricao = document.createElement('p');
+                        descricao.classList = 'desc_marcador';
                         descricao.innerHTML = data.descricao;
                         popupContent.appendChild(descricao);
 
                         const ir = document.createElement('a');
                         ir.innerHTML = "IR";
-                        ir.classList = 'ir';
-                        ir.href = "#";
+                        ir.className= 'ir_marcador';
                         popupContent.appendChild(ir);
 
                         // Adicionar o event listener para o botão IR
