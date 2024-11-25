@@ -249,7 +249,7 @@ navigator.geolocation.getCurrentPosition(success);*/
   const db = firebase.firestore();
 
   // Inicialize o mapa com Leaflet
-  const map = L.map('map').setView([-1.45502, -48.5024], 19); // Mude o 14 para o zoom inicial desejado
+  const map = L.map('map').setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 14 para o zoom inicial desejado
 
   // Adicionar camadas do OpenStreetMap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -271,28 +271,30 @@ navigator.geolocation.getCurrentPosition(success);*/
 
                 // Popup com nome, imagem e descrição
                 const popupContent = document.createElement('div');
+                popupContent.className = 'card_marcador';
                 
                 
                     // document.createElement('div');
 
                         const nome = document.createElement('b');
+                        nome.classList = 'nome_marcador';
                         nome.innerHTML = data.nome;
                         popupContent.appendChild(nome);
 
                         const img = document.createElement('img');
                         img.src = data.img;
                         img.alt = data.nome;
-                        img.classList = "cards1 imagem";
+                        img.classList = "img_marcador";
                         popupContent.appendChild(img);
 
                         const descricao = document.createElement('p');
+                        descricao.classList = 'desc_marcador';
                         descricao.innerHTML = data.descricao;
                         popupContent.appendChild(descricao);
 
                         const ir = document.createElement('a');
                         ir.innerHTML = "IR";
-                        ir.classList = 'ir';
-                        ir.href = "#";
+                        ir.className= 'ir_marcador';
                         popupContent.appendChild(ir);
 
                         // Adicionar o event listener para o botão IR
@@ -339,7 +341,7 @@ navigator.geolocation.getCurrentPosition(success);*/
 
                 // Ajustar o mapa para mostrar todos os marcadores
                 if (bounds.length > 0) {
-                    map.fitBounds(bounds, { padding: [300, 1800 ] }); // Ajuste o zoom para mostrar todos os marcadores
+                    map.fitBounds(bounds, { padding: [50, 50] }); // Ajuste o zoom para mostrar todos os marcadores
                 } else {
                     console.log("Nenhum marcador foi carregado.");
                 }
@@ -362,14 +364,16 @@ function busca_info() {
             const cardData = snapshot.docs.map(doc => doc.data());
             cards_desktop(cardData);  // Carregar para o desktop
             cards_mobile(cardData);   // Carregar para o mobile
+            // info_do_local(cardData);
         }).catch(error => {
             console.error("Erro ao buscar informações:", error);
         });
 }
 
-function mostra_conteudo_local(){
+function esconde_sidebar_desktop(){
     document.getElementById('fundo').style.display = 'none';
-    document.getElementById('sidebar_local').style.display = 'block';
+    document.getElementById('sidebar_info_local').style.display = 'block';
+    // info_do_local();
 
 }
 
@@ -433,7 +437,7 @@ function cards_mobile(cardData) {
                     // Event listener para o botão "IR" - chamada da função traceRoute
                     ir.addEventListener('click', () => {
                         traceRoute(card.localizacao.latitude, card.localizacao.longitude);
-                        mostra_conteudo_local();
+                        esconde_sidebar();
                     });
 
                 divContent.appendChild(divLinks);
@@ -458,7 +462,7 @@ function cards_desktop(cardData) {
 
 
     cardData.forEach(card => {
-
+        
         const div = document.createElement('div');
         div.className = 'cards1';
 
@@ -504,18 +508,60 @@ function cards_desktop(cardData) {
 
                     // Event listener para o botão "IR" - chamada da função traceRoute
                     ir.addEventListener('click', () => {
+                        const filter = titulo.textContent;
+                        // console.log(filter)
                         traceRoute(card.localizacao.latitude, card.localizacao.longitude);
-                        mostra_conteudo_local();
+                        esconde_sidebar_desktop();
+                        info_do_local(cardData, filter);                        
                     });
 
                 divContent.appendChild(divLinks);
-
             div.appendChild(divContent);
-        
-        container2.appendChild(div);
-       
+        container2.appendChild(div);      
+    });
+}
 
-      
+
+function info_do_local(cardData, filter) {
+    const container3 = document.getElementById('sidebar_info_local');
+    console.log(cardData)
+    console.log(filter)
+    cardData.forEach(card => {
+    
+        if(card.nome == filter){
+
+            const div = document.createElement('div');
+            div.className = 'infos_local';
+
+                const nome_local = document.createElement('h1');
+                nome_local.className = 'nome_local';
+                nome_local.innerHTML = card.nome;
+                div.appendChild(nome_local)
+
+                // Imagem do card
+                const divImage = document.createElement('div');
+                divImage.className = 'secao_imgs';
+
+                    const img = document.createElement('img');
+                    img.src = card.img;
+                    img.alt = card.nome;
+                    img.className = 'imgs_do_local'
+                    divImage.appendChild(img);
+
+                div.appendChild(divImage);
+
+                const desc_local = document.createElement('p');
+                desc_local.className = 'desc_local';
+                desc_local.innerHTML = card.descricao;
+                div.appendChild(desc_local);
+
+                
+                
+               
+            container3.appendChild(div);
+
+            
+        }
     });
 }
 
