@@ -669,7 +669,7 @@ a{
 }
 
 .toggle-button{
-     border-radius: 55px;
+    border-radius: 55px;
     right: -15px;
     position: relative;
     font-size: 20px;
@@ -680,7 +680,15 @@ a{
 .sidebar .i{
     background-color: #ffffff;
 }
-
+.toggle-button2{
+    right: -15px;
+    position: relative;
+    font-size: 32px;
+    margin-left: 20px;
+    padding: 2px;
+    background-color: #ffffff;
+    border: none;
+}
 
 
 

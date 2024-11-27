@@ -399,6 +399,9 @@ function info_do_local(cardData, filter) {
 // Chamada inicial para buscar e renderizar os cards
 busca_info();
 
+function voltar(){
+    window.location.href = "pg2.html"  
+}
 
 
 
