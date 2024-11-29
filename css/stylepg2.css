@@ -646,14 +646,15 @@ a{
 
     left: 0px; /* Escondido inicialmente */
     width: 600px;
-    height: 90%;
+    height: 100%;
     background-color: rgb(255, 255, 255); 
     color: white;
     transition: left 0.3s;
-    padding: 9px;
+    padding: 0px;
 }
 
 .sidebar.open {
+    overflow: hidden;
     /*width: 470px*/
     width: 0px;
     left: 0; /* Mostra o menu quando aberto */
