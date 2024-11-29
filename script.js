@@ -340,7 +340,27 @@ function cards_desktop(cardData) {
 
 
 function info_do_local(cardData, filter) {
-    const container3 = document.getElementById('sidebar_info_local');
+    const container3 = document.getElementById('sidebar_info_local')
+
+    const botao = document.createElement('button')
+    botao.className = 'toggle-button2';
+    botao.addEventListener('click', () => {
+        window.location.href = 'pg2.html'
+    }) 
+    
+    
+     
+        const i = document.createElement('i')
+        i.className='bi bi-arrow-left-circle-fill'
+        botao.appendChild(i)
+
+    container3.appendChild(botao)
+
+     
+
+    // <button class="toggle-button2" onclick="voltar()"><i class="bi bi-arrow-left-circle-fill"></i></button>
+
+
     console.log(cardData)
     console.log(filter)
     cardData.forEach(card => {
@@ -370,14 +390,9 @@ function info_do_local(cardData, filter) {
                 const desc_local = document.createElement('p');
                 desc_local.className = 'desc_local';
                 desc_local.innerHTML = card.descricao;
-                div.appendChild(desc_local);
-
-                
-                
-               
-            container3.appendChild(div);
-
-            
+                div.appendChild(desc_local);              
+                             
+            container3.appendChild(div);          
         }
     });
 }
@@ -385,9 +400,7 @@ function info_do_local(cardData, filter) {
 // Chamada inicial para buscar e renderizar os cards
 busca_info();
 
-function voltar(){
-    window.location.href = "pg2.html"  
-}
+
 
 
 
