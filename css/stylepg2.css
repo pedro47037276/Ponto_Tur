@@ -646,7 +646,7 @@ a{
 
     left: 0px; /* Escondido inicialmente */
     width: 600px;
-    height: 100%;
+    height: 96%;
     background-color: rgb(255, 255, 255); 
     color: white;
     transition: left 0.3s;
@@ -752,4 +752,30 @@ a{
     font-weight: 400;
     font-size: 1.2rem;
     width: 90%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.menú-item::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: 0.3s ease;
+}
+
+.menú-item:hover::after{
+    width: 100%;
 }
