@@ -677,6 +677,7 @@ a{
     margin-left: 20px;
     padding: 2px;
     background-color: #ffffff;
+    cursor: pointer;
 }
 .sidebar .i{
     background-color: #ffffff;
@@ -689,6 +690,7 @@ a{
     padding: 2px;
     background-color: #ffffff;
     border: none;
+    cursor: pointer;
 }
 
 
