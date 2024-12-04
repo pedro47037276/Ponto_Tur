@@ -1,4 +1,4 @@
-import voltar from './script.js';
+import {voltar} from './script.js';
 // CONEXÃO COM O BANCO APENAS PARA FAZER A PESQUISA \\
 const search = document.getElementById('search');
 search.addEventListener("click",
@@ -27,8 +27,8 @@ function cards_pesquisados(resultado){
     const container3 = document.getElementById('sidebar_info_local');
     const pesq = document.getElementById('pesquisar');
     
-   // const botao = voltar()
-   // container3.appendChild(botao)
+    const botao = voltar()
+    container3.appendChild(botao)
 
     resultado.forEach(card => {
         if(pesq.value == card.nome){
