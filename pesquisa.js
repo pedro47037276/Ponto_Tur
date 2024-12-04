@@ -1,23 +1,23 @@
+import { esconde_sidebar_desktop } from "./script.js";
+
 // CONEXÃO COM O BANCO APENAS PARA FAZER A PESQUISA \\
 function pesquisa() {
     firebase.firestore()
         .collection('ponto_tur')
         .get().then(snapshot => {
-            const resultado = snapshot.docs.map(doc => doc.data());
+            const resultado = snapshot.docs.map(doc => doc.data());         
             limpar_sideBar();
             cards_pesquisados(resultado);
-            console.log("DEU CERTO");
         }).catch(error => {
             console.error("Erro ao buscar informações:", error);
         });
 }
 
-function esconde_sidebar_desktop(){
-    document.getElementById('fundo').style.display = 'none';
-    document.getElementById('sidebar_info_local').style.display = 'block';
-    // info_do_local();
-
-}
+// function esconde_sidebar_desktop(){
+//     document.getElementById('fundo').style.display = 'none';
+//     document.getElementById('sidebar_info_local').style.display = 'block';
+//     // info_do_local();
+// }
 
 // Função de pesquisa
 function cards_pesquisados(resultado){
@@ -28,6 +28,7 @@ function cards_pesquisados(resultado){
         if(pesq.value == card.nome){
 
             esconde_sidebar_desktop();
+            ServicosPontos()
 
             const div = document.createElement('div');
             div.className = 'infos_local';
@@ -54,20 +55,26 @@ function cards_pesquisados(resultado){
                 desc_local.innerHTML = card.descricao;
                 div.appendChild(desc_local);
 
-                
-                
-               
             container3.appendChild(div);
         };
     });
-    
-
 }
 
 //limpar a tela
 function limpar_sideBar() {
-    clear = document.getElementById('sidebar_info_local');
+    let clear = document.getElementById('sidebar_info_local');
     clear.innerHTML = ""
 };
 
-pesquisa();
+export function ServicosPontos() {
+    db.collection('ponto_tur').doc('estacao_das_docas').collection('servicos')     
+        //Baixa as funções de dentro do firebase e chama a função que as coloca na tela
+        .get().then(snapshot => {
+            const servicos = snapshot.docs.map(doc => doc.data());  
+            servicos.forEach (Servico => {
+                console.log(Servico.nome)
+            });
+        });
+};
+
+document.getElementById("Pesquisa").addEventListener("click", pesquisa)

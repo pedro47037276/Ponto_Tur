@@ -1,4 +1,6 @@
-  // Inicialize o mapa com Leaflet
+import {ServicosPontos} from "./pesquisa.js";
+
+// Inicialize o mapa com Leaflet
   const map = L.map('map').setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 14 para o zoom inicial desejado
 
   // Adicionar camadas do OpenStreetMap
@@ -121,7 +123,7 @@ function busca_info() {
         });
 }
 
-function esconde_sidebar_desktop(){
+export function esconde_sidebar_desktop(){
     document.getElementById('fundo').style.display = 'none';
     document.getElementById('sidebar_info_local').style.display = 'block';
     // info_do_local();
@@ -340,9 +342,8 @@ function cards_desktop(cardData) {
 
 
 function info_do_local(cardData, filter) {
+    ServicosPontos();
     const container3 = document.getElementById('sidebar_info_local');
-    console.log(cardData)
-    console.log(filter)
     cardData.forEach(card => {
     
         if(card.nome == filter){
