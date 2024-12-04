@@ -9,7 +9,7 @@ function pesquisa() {
             const resultado = snapshot.docs.map(doc => doc.data());
             limpar_sideBar();
             cards_pesquisados(resultado);
-            console.log("DEU CERTO");
+           
         }).catch(error => {
             console.error("Erro ao buscar informações:", error);
         });
@@ -34,6 +34,20 @@ function cards_pesquisados(resultado){
         if(pesq.value == card.nome){
 
             esconde_sidebar_desktop();
+
+            if(card.nome == "Casa das Onze Janelas"){
+                buscar_servicos('casa_das_onze_janelas');
+
+            } else if (card.nome == "Estação das Docas"){
+                buscar_servicos('estacao_das_docas');
+
+            } else if (card.nome == "Basílica Santuário de Nossa Senhora de Nazaré"){
+                buscar_servicos('basilica_santuario_de_nossa_senhora_de_nazare');
+
+            } else if (card.nome == "Espaço São José Libertino"){
+                buscar_servicos('espaco_sao_jose_libertino');
+
+            }
 
             const div = document.createElement('div');
             div.className = 'infos_local';
@@ -75,4 +89,30 @@ function limpar_sideBar() {
    let clear = document.getElementById('sidebar_info_local');
     clear.innerHTML = ""
 };
+
+function buscar_servicos(local) {
+    db.collection('ponto_tur').doc(local).collection('servicos')
+        .get()
+        .then(snapshot => {
+            const dados = snapshot.docs.map(doc => doc.data());
+            mostrar_servicos(dados);
+        })
+        .catch(error => {
+            console.error("Erro ao buscar informações:", error);
+        });
+};
+
+function mostrar_servicos(dados) {
+    const container3 = document.getElementById('sidebar_info_local');
+    dados.forEach(servico => {
+            const div = document.createElement('div');
+                const nome_servico = document.createElement('h2');
+                nome_servico.innerHTML = servico.nome
+                div.appendChild(nome_servico);
+
+            container3.appendChild(div);
+            console.log(servico.nome);
+    });
+};
+
 
