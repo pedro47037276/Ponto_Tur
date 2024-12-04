@@ -1,5 +1,6 @@
+  import { traceRoute } from "./rotas.js";
   // Inicialize o mapa com Leaflet
-  const map = L.map('map').setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 14 para o zoom inicial desejado
+  export const map = L.map('map').setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 14 para o zoom inicial desejado
 
   // Adicionar camadas do OpenStreetMap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

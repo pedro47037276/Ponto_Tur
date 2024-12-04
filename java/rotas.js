@@ -1,4 +1,5 @@
-function traceRoute(destinationLat, destinationLng, data) {
+import {map} from "./script.js"
+export function traceRoute(destinationLat, destinationLng, data) {
     // Verificar se a geolocalização está disponível no navegador
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
