@@ -1,6 +1,4 @@
-import {ServicosPontos} from "./pesquisa.js";
-
-// Inicialize o mapa com Leaflet
+  // Inicialize o mapa com Leaflet
   const map = L.map('map').setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 14 para o zoom inicial desejado
 
   // Adicionar camadas do OpenStreetMap
@@ -123,7 +121,7 @@ function busca_info() {
         });
 }
 
-export function esconde_sidebar_desktop(){
+function esconde_sidebar_desktop(){
     document.getElementById('fundo').style.display = 'none';
     document.getElementById('sidebar_info_local').style.display = 'block';
     // info_do_local();
@@ -340,10 +338,28 @@ function cards_desktop(cardData) {
     });
 }
 
+export function voltar(){
+    const botao = document.createElement('button')
+    botao.className = 'toggle-button2';
+    botao.addEventListener('click', () => {
+        window.location.href = 'pg2.html'
+    }) 
+    
+        const i = document.createElement('i')
+        i.className='bi bi-arrow-left-circle-fill'
+        botao.appendChild(i)
+
+    return (botao);
+    }
+
+
 
 function info_do_local(cardData, filter) {
-    ServicosPontos();
-    const container3 = document.getElementById('sidebar_info_local');
+    const container3 = document.getElementById('sidebar_info_local')
+      
+    const botao = voltar()
+    container3.appendChild(botao)
+    
     cardData.forEach(card => {
     
         if(card.nome == filter){
@@ -371,14 +387,9 @@ function info_do_local(cardData, filter) {
                 const desc_local = document.createElement('p');
                 desc_local.className = 'desc_local';
                 desc_local.innerHTML = card.descricao;
-                div.appendChild(desc_local);
-
-                
-                
-               
-            container3.appendChild(div);
-
-            
+                div.appendChild(desc_local);              
+                             
+            container3.appendChild(div);          
         }
     });
 }
@@ -386,9 +397,7 @@ function info_do_local(cardData, filter) {
 // Chamada inicial para buscar e renderizar os cards
 busca_info();
 
-function voltar(){
-    window.location.href = "pg2.html"  
-}
+
 
 
 

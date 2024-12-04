@@ -38,7 +38,7 @@
                 <h1 class="ptur">PontoTur</h1>
             </a>
             <input class="pesq5" id="pesquisar" type="search" name="q" placeholder="Pesquisar locais">
-            <button class="color-button" id="Pesquisa">
+            <button class="color-button" id="search">
                 <i class="bi bi-search"></i>
             </button>
             <nav>
@@ -58,9 +58,9 @@
             <div class="btn-fechar1" id="fechar1">
                 <i class="bi bi-x-lg"></i>
             </div>
-            <nav>
+            <nav class="menuu">
                 <ul>
-                    <li><a id="ini2" href="index.html"><i class="bi bi-house-door"></i> Início</a></li>
+                    <li><a id="ini2" href="index.html" class="menú"><i class="bi bi-house-door"></i> Início</a></li>
                     <li><a id="cont2" href="conta.html"><i class="bi bi-person-fill-gear"></i> Conta</a></li>
                     <li><a id="favorit2" href="favorito.html"><i class="bi bi-star-fill"></i> Favorito</a></li>
                     
@@ -83,10 +83,12 @@
         <div class="fundo" id="fundo">
             <h2>RECOMENDAÇÕES</h2>
         </div>
+        
         <div class="sidebar_info_local" id="sidebar_info_local">
-          <button class="toggle-button2" onclick="voltar()"><i class="bi bi-arrow-left-circle-fill"></i></button>
+            
           <h1>NOME</h1>
         </div>
+        
     </section>
    <!-- Recomendações MOBILE -->
     <section class="locall1" id="locall1">
@@ -100,15 +102,18 @@
 
     <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
-    <script src="conexao_firebase.js"></script>
-    <script src="scriptabr.js"></script>
+    <script src="java/conexao_firebase.js"></script>
+    <script src="java/scriptabr.js"></script>
     
-    <script src="script.js" type="module"></script>
-    <script src="pesquisa.js" type="module"></script>
-    <script src="tradução.js"></script>
+    <script src="java/script.js" type="module"></script>
+    <script src="java/pesquisa.js" type="module"></script>
+    <script src="/java/tradução.js"></script>
     <script>window.gtranslateSettings = {"default_language":"pt","languages":["pt","fr","de","it","es","ja","ru","ar","bg"],"globe_color":"#0000CD","wrapper_selector":".gtranslate_wrapper","flag_size":24,"horizontal_position":"right","vertical_position":"bottom","alt_flags":{"en":"usa","pt":"brazil","es":"argentina","fr":"quebec"},"globe_size":40}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
     
-    <script src="rotas.js"></script>
-    <script src="menu.js" defer></script>    
+    <script src="java/rotas.js"></script>
+    <script src="java/menu.js" defer></script>
+    
+   
+    
 </body>
