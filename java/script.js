@@ -129,6 +129,12 @@ function esconde_sidebar_desktop(){
 
 }
 
+function esconde_locall1(){
+    document.getElementById('locall1').style.display = 'none';
+    document.getElementById('info_local_mobile').style.display = 'block';
+    // document.getElementById('sidebar_info_local').style.display = 'block';
+}
+
 
 
 // Função para adicionar cards no mobile
@@ -188,8 +194,10 @@ function cards_mobile(cardData) {
 
                     // Event listener para o botão "IR" - chamada da função traceRoute
                     ir.addEventListener('click', () => {
+                        const filtro = titulo.textContent;
                         traceRoute(card.localizacao.latitude, card.localizacao.longitude);
-                        esconde_sidebar();
+                        esconde_locall1();
+                        info_do_local_mobile(cardData,filtro);
                     });
 
                 divContent.appendChild(divLinks);
@@ -391,6 +399,46 @@ function info_do_local(cardData, filter) {
                 div.appendChild(desc_local);              
                              
             container3.appendChild(div);          
+        }
+    });
+}
+
+function info_do_local_mobile(cardData, filtro) {
+    const container4 = document.getElementById('info_local_mobile')
+      
+    const botao = voltar()
+    container4.appendChild(botao)
+    
+    cardData.forEach(card => {
+    
+        if(card.nome == filtro){
+
+            const div = document.createElement('div');
+            div.className = 'infos_local';
+
+                const nome_local = document.createElement('h1');
+                nome_local.className = 'nome_local';
+                nome_local.innerHTML = card.nome;
+                div.appendChild(nome_local)
+
+                // Imagem do card
+                const divImage = document.createElement('div');
+                divImage.className = 'secao_imgs';
+
+                    const img = document.createElement('img');
+                    img.src = card.img;
+                    img.alt = card.nome;
+                    img.className = 'imgs_do_local'
+                    divImage.appendChild(img);
+
+                div.appendChild(divImage);
+
+                const desc_local = document.createElement('p');
+                desc_local.className = 'desc_local';
+                desc_local.innerHTML = card.descricao;
+                div.appendChild(desc_local);              
+                             
+            container4.appendChild(div);          
         }
     });
 }
