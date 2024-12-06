@@ -407,7 +407,7 @@ function info_do_local_mobile(cardData, filtro) {
     const container4 = document.getElementById('info_local_mobile')
       
     const botao = voltar()
-    container4.appendChild(botao)
+  
     
     cardData.forEach(card => {
     
@@ -416,25 +416,31 @@ function info_do_local_mobile(cardData, filtro) {
             const div = document.createElement('div');
             div.className = 'infos_local';
 
-                const nome_local = document.createElement('h1');
-                nome_local.className = 'nome_local';
-                nome_local.innerHTML = card.nome;
-                div.appendChild(nome_local)
+                const btn_voltar_e_nome = document.createElement('div');
+                btn_voltar_e_nome.className = 'btn_e_nome';
+
+                    const nome_local = document.createElement('h1');
+                    nome_local.className = 'nome_local_mobile';
+                    nome_local.innerHTML = card.nome;
+                    btn_voltar_e_nome.appendChild(botao);
+                    btn_voltar_e_nome.appendChild(nome_local);
+                    
+                div.appendChild(btn_voltar_e_nome);
 
                 // Imagem do card
                 const divImage = document.createElement('div');
-                divImage.className = 'secao_imgs';
+                divImage.className = 'secao_imgs_mobile';
 
                     const img = document.createElement('img');
                     img.src = card.img;
                     img.alt = card.nome;
-                    img.className = 'imgs_do_local'
+                    img.className = 'imgs_do_local_mobile'
                     divImage.appendChild(img);
 
                 div.appendChild(divImage);
 
                 const desc_local = document.createElement('p');
-                desc_local.className = 'desc_local';
+                desc_local.className = 'desc_local_mobile';
                 desc_local.innerHTML = card.descricao;
                 div.appendChild(desc_local);              
                              
