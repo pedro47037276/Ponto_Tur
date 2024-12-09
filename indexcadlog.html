@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="css/stylepg3.css">
+    <link rel="stylesheet" href="/css/stylepg3.css">
     <link rel="shortcut icon" href="imgs/log.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Ponto Tur | Cadastro</title>
@@ -14,51 +14,51 @@
 <body>
 
     <div class="container" id="container">
+        <!-- Formulário de Registro -->
         <div class="form-container sign-up">
             <h1 class="nomesite2"><a href="index.html" class="iconesite2">Ponto Tur</a></h1>
             <form id="registerForm">
                 <h1 class="tipoH1">Criar Conta</h1>
                 
-                <input type="text" name="text" placeholder="Nome">
-                <input type="email" name="email" placeholder="Email">
+                <input type="text" name="text" placeholder="Nome" class="inputs required" id="name" oninput="nameValidate()">
+                <span class="span-required">Nome deve ter no minimo 3 caracteres</span>
+
+                <input type="email" name="email" placeholder="Email" class="inputs required" id="email" oninput="emailValidate()">
+                <span class="span-required" id="span-email">Digite um email válido</span>
+                
                 <div class="mostar">
-                <input type="password" id="senha" placeholder="Senha"/>
-                <button class="but" type="button" onclick="toggleSenha()"><i class="bi bi-eye"></i></button>
+                    <input type="password" id="senha" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()"/>
+                    <span class="span-required" id="span-password">Senha deve ter no mínimo 8 caracteres</span>
+                    <button class="but" type="button" onclick="toggleSenha()"><i class="bi bi-eye"></i></button>
                 </div>
 
                 <div class="mostar">
-                <input type="password" id="confirmarSenha" placeholder="Confirmar Senha" />
-                <button class="but" type="button" onclick="toggleConfirmarSenha()"><i class="bi bi-eye"></i></button>
-            </div>
-                <button type="button" onclick="register1()">Criar</button>
+                    <input type="password" id="confirmarSenha" placeholder="Confirmar Senha" class="inputs required" oninput="comparePassword()"/>
+                    <span class="span-required" id="span-confimpassword">Senhas devem ser compatíveis</span>
+                    <button class="but" type="button" onclick="toggleConfirmarSenha()"><i class="bi bi-eye"></i></button>
+                </div>
+
+                <button type="submit">Criar</button>
             </form>
         </div>
+
+        <!-- Formulário de Login -->
         <div class="form-container sign-in">
             <h1 class="nomesite2"><a href="index.html" class="iconesite2">Ponto Tur</a></h1>
-            <form id="loginForm">                
+            <form id="loginForm">
                 <h1 class="tipoH1">Entrar</h1>
-                <input type="email" name="email" id="email" placeholder="Email">
-                <span id="emailError" style="color: red"></span><br>
-                <div class="mostar2">
-                <input type="password" id="senha2" placeholder="Senha"/>
-                <button class="but" type="button" onclick="toggleSenha2()"><i class="bi bi-eye"></i></button>
-            </div>
-                <span id="passwordError" style="color:red"></span><br>
-                <a href="#" class="esenha">Esqueceu Sua Senha?</a>
-                <button  type="submit" onclick="login()">Entrar</button>
+                <input type="email" name="email" id="login-email" placeholder="Email">
                 
+                <div class="mostar2">
+                    <input type="password" id="senha2" placeholder="Senha"/>
+                    <button class="but" type="button" onclick="toggleSenha2()"><i class="bi bi-eye"></i></button>
+                </div>
+                
+                <a href="#" class="esenha">Esqueceu Sua Senha?</a>
+                <button type="submit">Entrar</button>
             </form>
-            <style>
-                span {
-                    color: rgb(255, 0, 149);
-                    font-size: 12px;
-                }
-                .erro {
-                    border: 2px solid red;
-                    outline: none;
-                }
-            </style>
         </div>
+
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
@@ -74,13 +74,11 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
-    <script src="java/conexao_firebase.js"></script>
-    <script src="java/scriptlogcad.js"></script>
-    
-    
+    <script src="/java/scriptlogcad.js"></script>
+
 </body>
 
 </html>
