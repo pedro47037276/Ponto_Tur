@@ -413,8 +413,14 @@ function info_do_local_mobile(cardData, filtro) {
     
         if(card.nome == filtro){
 
+            
+
             const div = document.createElement('div');
-            div.className = 'infos_local';
+            div.className = 'infos_local_mobile';
+
+                const linha_sobe_desce = document.createElement('hr');
+                linha_sobe_desce.className = 'linha_sobe_desce';
+                div.appendChild(linha_sobe_desce);
 
                 const btn_voltar_e_nome = document.createElement('div');
                 btn_voltar_e_nome.className = 'btn_e_nome';
