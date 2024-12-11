@@ -1,9 +1,15 @@
   import { traceRoute } from "./rotas.js";
   // Inicialize o mapa com Leaflet
-  export const map = L.map('map').setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 14 para o zoom inicial desejado
+  // Inicialize o mapa com Leaflet, desabilitando o zoom
+export const map = L.map('map', {
+    zoomControl: false,        // Desabilita os botões de zoom
+    scrollWheelZoom: true,    // Desabilita o zoom com o scroll do mouse
+    touchZoom: true          // Desabilita o zoom com toque (em dispositivos móveis)
+}).setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 13 para o zoom inicial desejado
+
 
   // Adicionar camadas do OpenStreetMap
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
   
