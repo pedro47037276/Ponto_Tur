@@ -1,6 +1,9 @@
   import { traceRoute } from "./rotas.js";
   // Inicialize o mapa com Leaflet
   // Inicialize o mapa com Leaflet, desabilitando o zoom
+
+ 
+
 export const map = L.map('map', {
     zoomControl: false,        // Desabilita os botões de zoom
     scrollWheelZoom: true,    // Desabilita o zoom com o scroll do mouse
@@ -12,12 +15,8 @@ export const map = L.map('map', {
    // const latitude = sessionStorage.getItem("latitude");
    
     
-       console.log(sessionStorage.getItem("longitude"));
-       console.log(sessionStorage.getItem("latitude"));
-     if (sessionStorage.getItem("longitude") !== undefined && sessionStorage.getItem("latitude") !== undefined ){
-        const marker = L.marker([sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude")]).addTo(map);
-         traceRoute(sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude"));
-     }
+      
+
   // Adicionar camadas do OpenStreetMap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -70,7 +69,7 @@ export const map = L.map('map', {
                             traceRoute(data.localizacao.latitude, data.localizacao.longitude);
                         });
                     
-                            
+                                 
                 // `
                 // <b>${data.nome}</b><br>
                 // <img src="${data.img}" alt="${data.nome}" style="width:100%; height:auto;"><br>
@@ -121,6 +120,14 @@ export const map = L.map('map', {
   // Carregar os marcadores quando a página for carregada
   loadMarkers();
 
+  console.log(sessionStorage.getItem("longitude"));
+  console.log(sessionStorage.getItem("latitude"));
+ 
+if (sessionStorage.getItem("longitude") !== null && sessionStorage.getItem("latitude") !== null ){
+   const marker = L.marker([sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude")]).addTo(map);
+    traceRoute(sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude"));
+    sessionStorage.clear();
+}
 
 
 //     // CARREGAR CARDS VERSÃO MOBILE \\

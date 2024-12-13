@@ -1,4 +1,4 @@
-import { traceRoute } from "./rotas.js";
+
 /*CONECTAR AO BANCO*/
 
 //Acessa o firebase
@@ -65,8 +65,7 @@ function addProductsToScreen(card) {
                  latitude = sessionStorage.setItem("latitude", card.localizacao.latitude);
                  
                  window.location.href = 'pg2.html'
-                 //let longitude = sessionStorage.getItem("longitude");
-                 //let latitude = sessionStorage.getItem("latitude");
+                 
                     
                     
                 });
