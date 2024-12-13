@@ -1,5 +1,5 @@
 // Importa a função initializeApp do módulo Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -12,6 +12,8 @@ const firebaseConfig = {
 };
 
 // Inicializa o Firebase App
-const app = initializeApp(firebaseConfig);
 
-export default app; // Exporta o app para uso em outros arquivos
+
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
