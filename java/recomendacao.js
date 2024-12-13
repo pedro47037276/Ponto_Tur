@@ -1,4 +1,4 @@
-
+import { traceRoute } from "./rotas.js";
 /*CONECTAR AO BANCO*/
 
 //Acessa o firebase
@@ -52,11 +52,27 @@ function addProductsToScreen(card) {
                 div.appendChild(desc);
 
                 const link = document.createElement('a');
-                link.href = 'pg2.html';
+                link.href = '#';
                 link.innerHTML = "IR";
                 link.className = 'link_recomendados';
                 div.appendChild(link);
+                link.addEventListener('click', () => {
+                 let longitude = "";
+                 let latitude = "";
+                 //window.location.href = 'pg2.html'
 
+                 longitude = sessionStorage.setItem("longitude", card.localizacao.longitude);
+                 latitude = sessionStorage.setItem("latitude", card.localizacao.latitude);
+                 
+                 window.location.href = 'pg2.html'
+                 //let longitude = sessionStorage.getItem("longitude");
+                 //let latitude = sessionStorage.getItem("latitude");
+                    
+                    
+                });
+                
+                
+                
             secao.appendChild(div);
 
         } 

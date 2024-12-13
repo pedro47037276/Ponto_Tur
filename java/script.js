@@ -2,11 +2,22 @@
   // Inicialize o mapa com Leaflet
   export const map = L.map('map').setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 14 para o zoom inicial desejado
 
+   // const longitude  = sessionStorage.getItem("longitude");
+   // const latitude = sessionStorage.getItem("latitude");
+   
+    
+       console.log(sessionStorage.getItem("longitude"));
+       console.log(sessionStorage.getItem("latitude"));
+     if (sessionStorage.getItem("longitude") !== undefined && sessionStorage.getItem("latitude") !== undefined ){
+        const marker = L.marker([sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude")]).addTo(map);
+         traceRoute(sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude"));
+     }
   // Adicionar camadas do OpenStreetMap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
-  
+   
+
   // Função para carregar marcadores do Firestore
   function loadMarkers() {
     const bounds = []; // Array para guardar os limites dos marcadores
@@ -53,7 +64,7 @@
                             traceRoute(data.localizacao.latitude, data.localizacao.longitude);
                         });
                     
-                           
+                            
                 // `
                 // <b>${data.nome}</b><br>
                 // <img src="${data.img}" alt="${data.nome}" style="width:100%; height:auto;"><br>
