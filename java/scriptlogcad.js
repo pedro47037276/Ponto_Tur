@@ -28,31 +28,24 @@ const firebaseConfig = {
 // Inicializar o Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Função de login
-function login() {
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('senha2').value;
+// Função de login com Firebase
+const login = async (email, senha) => {
+    try {
+        const userCredential = await firebase.auth().signInWithEmailAndPassword(email, senha);
+        const user = userCredential.user;
+        console.log('Usuário autenticado:', user.email);
+        window.location.href = "index.html"; // Redireciona após login
+    } catch (error) {
+        console.error('Erro ao fazer login:', error.message);
+        alert('Erro ao fazer login: ' + error.message);
+    }
+};
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            window.location.href = "pg2.html";
-            console.log('Login bem-sucedido:', userCredential.user);
-        })
-        .catch((error) => {
-            displayError('Erro ao fazer login: ' + error.message);
-        });
-}
-
-// Função de registro
+// Função de registro com Firebase
 function register1() {
     const nameInput = document.querySelector('#registerForm input[name="text"]');
     const emailInput = document.querySelector('#registerForm input[name="email"]');
     const passwordInput = document.querySelector('#registerForm input[id="senha"]');
-
-    if (!nameInput || !emailInput || !passwordInput) {
-        console.error('Um ou mais campos do formulário não foram encontrados.');
-        return;
-    }
 
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
@@ -67,7 +60,7 @@ function register1() {
                 displayName: name
             }).then(() => {
                 console.log('Nome atualizado:', user.displayName);
-                window.location.href = "indexcadlog.html";
+                window.location.href = "indexcadlog.html"; // Página após o registro
             }).catch((error) => {
                 console.error('Erro ao atualizar nome:', error);
             });
@@ -79,19 +72,16 @@ function register1() {
 
 // Validação de campos
 function setError(index) {
-    // Adiciona borda vermelha e exibe a mensagem de erro
     campos[index].style.border = '2px solid #e63636';
     spans[index].style.display = 'block';
 }
 
 function removerError(index) {
-    // Remove borda e esconde a mensagem de erro
     campos[index].style.border = '';
     spans[index].style.display = 'none';
 }
 
 function nameValidate() {
-    // Validação do nome (mínimo de 3 caracteres)
     if (campos[0].value.trim().length < 3) {
         setError(0);
     } else {
@@ -100,7 +90,6 @@ function nameValidate() {
 }
 
 function emailValidate() {
-    // Validação do email (regex)
     if (!emailRegex.test(campos[1].value.trim())) {
         setError(1);
     } else {
@@ -109,17 +98,15 @@ function emailValidate() {
 }
 
 function mainPasswordValidate() {
-    // Validação da senha principal (mínimo de 8 caracteres)
     if (campos[2].value.trim().length < 8) {
         setError(2);
     } else {
         removerError(2);
-        comparePassword(); // Verifica se as senhas são iguais
+        comparePassword();
     }
 }
 
 function comparePassword() {
-    // Validação da confirmação de senha
     if (campos[2].value.trim() === campos[3].value.trim() && campos[3].value.trim().length >= 8) {
         removerError(3);
     } else {
@@ -128,7 +115,6 @@ function comparePassword() {
 }
 
 function validateForm() {
-    // Validação geral do formulário
     let isValid = true;
 
     // Nome
@@ -155,7 +141,7 @@ function validateForm() {
         removerError(2);
     }
 
-    // Confirmação da senha
+    // Confirmação de senha
     if (campos[2].value.trim() !== campos[3].value.trim() || campos[3].value.trim().length < 8) {
         setError(3);
         isValid = false;
@@ -166,10 +152,23 @@ function validateForm() {
     return isValid;
 }
 
-// Eventos de validação
+// Evento de validação e registro
 document.getElementById('registerForm').addEventListener('submit', (e) => {
     e.preventDefault();
     if (validateForm()) {
         register1();
+    }
+});
+
+// Evento de validação e login
+document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    const senha = document.getElementById('senha2').value.trim();
+    
+    if (email && senha) {
+        login(email, senha);
+    } else {
+        alert('Por favor, insira e-mail e senha');
     }
 });

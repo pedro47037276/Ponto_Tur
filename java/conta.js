@@ -1,78 +1,36 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getAuth, onAuthStateChanged, sendPasswordResetEmail, deleteUser, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
-import { getFirestore, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import firebaseApp from "./conexao_firebase.js"; // Importa o Firebase App inicializado
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
+const auth = getAuth(firebaseApp); // Usa o app importado para inicializar o Authentication
+const emailSpan = document.getElementById("email");
 
-// Verifica o estado da autenticação
-document.addEventListener('DOMContentLoaded', function() {
+// Verifica se o usuário está logado
+document.addEventListener("DOMContentLoaded", () => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            const email = user.email;
-            document.getElementById('email').innerText = email;
+            // Usuário logado
+            emailSpan.textContent = user.email;
         } else {
-            document.getElementById('email').innerText = 'Usuário não autenticado';
+            // Usuário não está logado
+            emailSpan.textContent = "Não logado";
+            alert("Você precisa estar logado para acessar esta página.");
+            window.location.href = "indexcadlog.html"; // Redireciona para a página de login
         }
     });
 });
 
-// Função para redefinir senha
-window.redefinirSenha = () => {
-    const email = document.getElementById('resetEmail').value;
-    sendPasswordResetEmail(auth, email)
-        .then(() => {
-            alert('Email de redefinição enviado.');
-        })
-        .catch((error) => {
-            console.error('Erro ao enviar email: ', error);
-            alert('Erro: ' + error.message);
-        });
-};
-
-// Função para desativar conta
-window.desativarConta = async () => {
-    const user = auth.currentUser;
-    if (user) {
-        const userRef = doc(firestore, 'usuarios', user.uid);
-        await updateDoc(userRef, { ativo: false })
-            .then(() => {
-                alert('Conta desativada com sucesso.');
-            })
-            .catch((error) => {
-                console.error('Erro ao desativar conta: ', error);
-                alert('Erro: ' + error.message);
-            });
-    } else {
-        alert('Nenhum usuário logado.');
-    }
-};
-
-// Função para excluir conta
-window.excluirConta = async () => {
-    const user = auth.currentUser;
-
-    if (user) {
-        const userRef = doc(firestore, 'usuarios', user.uid);
-        await deleteDoc(userRef);
-        deleteUser(user).then(() => {
-            alert('Conta excluída com sucesso.');
-        }).catch((error) => {
-            console.error('Erro ao excluir conta: ', error);
-            alert('Erro: ' + error.message);
-        });
-    } else {
-        alert('Nenhum usuário logado.');
-    }
-};
-
-// Função para sair da conta
-window.sair = () => {
+// Função para realizar logout
+function sair() {
     signOut(auth)
         .then(() => {
-            alert('Você saiu da conta com sucesso.');
-            window.location.href = 'index.html'; 
+            alert("Você saiu com sucesso.");
+            emailSpan.textContent = "Não logado";
+            window.location.href = "indexcadlog.html";
         })
         .catch((error) => {
-            console.error('Erro ao sair da conta: ', error);
-            alert('Erro: ' + error.message);
+            console.error("Erro ao sair:", error);
+            alert("Não foi possível sair. Tente novamente.");
         });
-};
+}
+
+export { sair };
