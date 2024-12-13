@@ -121,6 +121,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
     
 }
 
@@ -147,28 +148,26 @@ a{
 
 .conteudo .links{
     display: flex;
-    align-items: end;
-    justify-content: space-between;
-    height: 35px;
-    margin-bottom: 10px;
-    
+    justify-content: right;
+    align-items: center;
+    height: 40px;
+    margin: 0px 10px 15px 0px;
     width: 100%;
 }
 
 .cards1 .favoritar{
     font-size: 20px;
-    width: 50%;
+    width: 25%;
     height: 88%;
-    padding: 3px 50px 3px 50px;
     color: #14CC1C;
 }
 
 .ir{
-    width: 50%;
-    height: 88%;
+    width: 45%;
+    height: 95%;
+    padding-top: 5px;
     margin-right: 20px;
-    border-radius: 5px;
-    padding: 2px 50px 2px 50px;
+    border-radius: 5px; 
     background-color: #14CC1C;
     /* border-radius: 10px; */
     color: white;
