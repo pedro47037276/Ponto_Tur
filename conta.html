@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <title>Acessar Minha Conta</title>
 </head>
 
@@ -20,7 +21,6 @@
             <ul>
                 <li><a class="link_nav" href="index.html">Início</a></li>
                 <li><a class="link_nav" href="indexcadlog.html">Entrar ou Cadastrar</a></li>
-
             </ul>
         </nav>
     </header>
@@ -37,7 +37,6 @@
             <ul>
                 <li><a class="link_nav" href="index.html">Início</a></li>
                 <li><a class="link_nav" href="indexcadlog.html">Entrar ou Cadastrar</a></li>
-                
             </ul>
         </nav>
     </div>
@@ -51,25 +50,23 @@
                     <span id="email">Seu Email</span>
                 </li>
                 <li>
-                    <button class="button2" onclick="excluirConta()">Excluir Conta</button>
+                    <button class="button2" id="excluirButton" onclick="excluirConta()">Excluir Conta</button>
                 </li>
             </ul>
-<!-- bugs -->
+
             <h2>Redefinir Senha</h2>
             <ul>
                 <li>
                     <span>Email de recuperação:</span>
                 </li>
                 <li>
-                    <button class="button2" onclick="redefinirSenha()">Redefinir Senha</button>
+                    <button class="button2" id="redefinirButton" onclick="redefinirSenha()">Redefinir Senha</button>
                     <input type="email" id="resetEmail" placeholder="Digite seu email">
-                   
                 </li>
             </ul>
 
-            <button class="button1" onclick="sair()">Sair</button>
+            <button class="button1" id="logoutButton" onclick="sair()">Sair</button>
         </div>
-        
     </div>
 
     <!-- Adiciona o SDK do Firebase -->
@@ -79,7 +76,7 @@
     <script src="java/menu2.js" defer></script>
 
     <!-- Script da aplicação -->
-    <script src="/java/conexao_firebase.js"></script>
     <script src="/java/conta.js" type="module"></script>
 </body>
+
 </html>
