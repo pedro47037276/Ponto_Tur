@@ -88,21 +88,7 @@ export const map = L.map('map', {
                         ir.addEventListener('click', () => {
                             traceRoute(data.localizacao.latitude, data.localizacao.longitude);
                         });
-                    
-                                 
-                // `
-                // <b>${data.nome}</b><br>
-                // <img src="${data.img}" alt="${data.nome}" style="width:100%; height:auto;"><br>
-                // <p>${data.descricao}</p>
-                // <a href="#" style=" width: 50%;
-                // // height: 88%;
-                // // margin-right: 20px;
-                // // border-radius: 5px;
-                // // padding: 2px 50px 2px 50px;
-                // // background-color: #14CC1C;
-                // // /* border-radius: 10px; */
-                // // color: white;">IR</a>            
-                // `
+                      
                 ;
 
 
