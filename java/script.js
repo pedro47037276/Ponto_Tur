@@ -1,24 +1,4 @@
-// conectar ao  banco de dados
-  // Configuração do Firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyCI_287E4XUbQ_fyhO_tyJ72FKRkGZ8hLI",
-    authDomain: "ponto-tur-5e4db.firebaseapp.com",
-    projectId: "ponto-tur-5e4db",
-    storageBucket: "ponto-tur-5e4db.appspot.com",
-    messagingSenderId: "1093552150779",
-    appId: "1:1093552150779:web:bbe89f5f8643414166385e"
-};
-
-// Inicializa o Firebase App
-
-
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-  
-  
-  
-  import { traceRoute } from "./rotas.js";
+import { traceRoute } from "./rotas.js";
   // Inicialize o mapa com Leaflet
   // Inicialize o mapa com Leaflet, desabilitando o zoom
 
@@ -31,8 +11,7 @@ export const map = L.map('map', {
 }).setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 13 para o zoom inicial desejado
 
 
-   // const longitude  = sessionStorage.getItem("longitude");
-   // const latitude = sessionStorage.getItem("latitude");
+   
    
     
       
@@ -44,7 +23,7 @@ export const map = L.map('map', {
    
 
   // Função para carregar marcadores do Firestore
-  function loadMarkers() {
+  export function loadMarkers() {
     const bounds = []; // Array para guardar os limites dos marcadores
 
     db.collection("ponto_tur").get().then((querySnapshot) => {
@@ -60,9 +39,6 @@ export const map = L.map('map', {
                 const popupContent = document.createElement('div');
                 popupContent.className = 'card_marcador';
                 
-                
-                    // document.createElement('div');
-
                         const nome = document.createElement('b');
                         nome.classList = 'nome_marcador';
                         nome.innerHTML = data.nome;
@@ -87,26 +63,12 @@ export const map = L.map('map', {
                         // Adicionar o event listener para o botão IR
                         ir.addEventListener('click', () => {
                             traceRoute(data.localizacao.latitude, data.localizacao.longitude);
+                            
                         });
-                    
-                                 
-                // `
-                // <b>${data.nome}</b><br>
-                // <img src="${data.img}" alt="${data.nome}" style="width:100%; height:auto;"><br>
-                // <p>${data.descricao}</p>
-                // <a href="#" style=" width: 50%;
-                // // height: 88%;
-                // // margin-right: 20px;
-                // // border-radius: 5px;
-                // // padding: 2px 50px 2px 50px;
-                // // background-color: #14CC1C;
-                // // /* border-radius: 10px; */
-                // // color: white;">IR</a>            
-                // `
+                      
                 ;
 
-
-              
+                    
               // Adiciona o popup ao marcador
               marker.bindPopup(popupContent);
 
@@ -139,16 +101,14 @@ export const map = L.map('map', {
 
   // Carregar os marcadores quando a página for carregada
   loadMarkers();
-
-  console.log(sessionStorage.getItem("longitude"));
-  console.log(sessionStorage.getItem("latitude"));
  
 if (sessionStorage.getItem("longitude") !== null && sessionStorage.getItem("latitude") !== null ){
    const marker = L.marker([sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude")]).addTo(map);
-    traceRoute(sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude"));
-    sessionStorage.clear();
+    traceRoute(sessionStorage.getItem("latitude"), sessionStorage.getItem("longitude"));
+    
+    
+    sessionStorage.clear();  
 }
-
 
 //     // CARREGAR CARDS VERSÃO MOBILE \\
 // Função para carregar marcadores do Firebase
@@ -170,27 +130,18 @@ function esconde_sidebar_desktop(){
     document.getElementById('fundo').style.display = 'none';
     document.getElementById('sidebar_info_local').style.display = 'block';
     // info_do_local();
-
 }
 
 function esconde_locall1(){
     document.getElementById('locall1').style.display = 'none';
     document.getElementById('info_local_mobile').style.display = 'block';
-    // document.getElementById('sidebar_info_local').style.display = 'block';
 }
-
-
 
 // Função para adicionar cards no mobile
 function cards_mobile(cardData) {
 
     const container2 = document.getElementById('locall1');
-    // if (!container) {
-    //     console.error(`Contêiner com ID "${containerId}" não encontrado.`);
-    //     return;
-    // }
-
-
+    
     cardData.forEach(card => {
 
         const div = document.createElement('div');
@@ -248,89 +199,15 @@ function cards_mobile(cardData) {
 
             div.appendChild(divContent);
         
-        container2.appendChild(div);
-       
-
-      
+        container2.appendChild(div);      
     });
 }
-
-
-
-// CONEXÃO COM O BANCO APENAS PARA FAZER A PESQUISA \\
-// function pesquisa() {
-//     firebase.firestore()
-//         .collection('ponto_tur')
-//         .get().then(snapshot => {
-//             const resultado = snapshot.docs.map(doc => doc.data());
-//             limpar_sideBar();
-//             cards_pesquisados(resultado);
-//         }).catch(error => {
-//             console.error("Erro ao buscar informações:", error);
-//         });
-// }
-
-// // Função de pesquisa
-// function cards_pesquisados(resultado){
-//     const container3 = document.getElementById('sidebar_info_local');
-//     const pesq = document.getElementById('pesquisar');
-
-//     resultado.forEach(card => {
-//         if(pesq.value == card.nome){
-
-//             esconde_sidebar_desktop();
-
-//             const div = document.createElement('div');
-//             div.className = 'infos_local';
-
-//                 const nome_local = document.createElement('h1');
-//                 nome_local.className = 'nome_local';
-//                 nome_local.innerHTML = card.nome;
-//                 div.appendChild(nome_local)
-
-//                 // Imagem do card
-//                 const divImage = document.createElement('div');
-//                 divImage.className = 'secao_imgs';
-
-//                     const img = document.createElement('img');
-//                     img.src = card.img;
-//                     img.alt = card.nome;
-//                     img.className = 'imgs_do_local'
-//                     divImage.appendChild(img);
-
-//                 div.appendChild(divImage);
-
-//                 const desc_local = document.createElement('p');
-//                 desc_local.className = 'desc_local';
-//                 desc_local.innerHTML = card.descricao;
-//                 div.appendChild(desc_local);
-
-                
-                
-               
-//             container3.appendChild(div);
-//         };
-//     });
-    
-
-// }
-
-// //limpar a tela
-// function limpar_sideBar() {
-//     clear = document.getElementById('sidebar_info_local');
-//     clear.innerHTML = ""
-// };
 
 // Função para adicionar cards no desktop
 function cards_desktop(cardData) {
 
     const container2 = document.getElementById('fundo');
-    // if (!container) {
-    //     console.error(`Contêiner com ID "${containerId}" não encontrado.`);
-    //     return;
-    // }
-
-
+    
     cardData.forEach(card => {
         
         const div = document.createElement('div');
@@ -404,8 +281,6 @@ export function voltar(){
 
     return (botao);
     }
-
-
 
 function info_do_local(cardData, filter) {
     const container3 = document.getElementById('sidebar_info_local')
@@ -501,12 +376,3 @@ function info_do_local_mobile(cardData, filtro) {
 
 // Chamada inicial para buscar e renderizar os cards
 busca_info();
-
-
-
-
-
-
-
-
-
