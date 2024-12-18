@@ -125,8 +125,11 @@ export const map = L.map('map', {
  
 if (sessionStorage.getItem("longitude") !== null && sessionStorage.getItem("latitude") !== null ){
    const marker = L.marker([sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude")]).addTo(map);
-    traceRoute(sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude"));
+    traceRoute(sessionStorage.getItem("latitude"), sessionStorage.getItem("longitude"));
+    
+    
     sessionStorage.clear();
+    
 }
 
 
