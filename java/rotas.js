@@ -1,4 +1,5 @@
 import {map} from "./script.js"
+import { loadMarkers } from "./script.js"
 export function traceRoute(destinationLat, destinationLng, data) {
     // Verificar se a geolocalização está disponível no navegador
     if (navigator.geolocation) {
@@ -44,14 +45,9 @@ export function traceRoute(destinationLat, destinationLng, data) {
                         // Usar o ícone verde para o marcador de origem
                         return L.marker(wp.latLng, { icon: greenIcon }).bindPopup('Você está aqui!');
                     } else if (i === nWps - 1) {
-                        // Popup no destino com informações
-                        const popupContent = `
-                            <b>${data.nome}</b><br>
-                            <img src="${data.img}" alt="${data.nome}" style="width:100%; height:auto; border-radius:5px; margin-top:10px;"><br>
-                            <p style="margin-top:10px;">${data.descricao}</p>
-                            <button onclick="traceRoute(${data.latitude}, ${data.longitude})" style="padding:10px 20px; background-color:#28a745; color:#fff; border:none; border-radius:5px; cursor:pointer; margin-top:10px;">IR</button>
-                        `;
-                        return L.marker(wp.latLng).bindPopup(popupContent);
+
+                        loadMarkers()
+                        
                     }
                 }
             }).addTo(map);

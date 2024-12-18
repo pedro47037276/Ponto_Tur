@@ -31,8 +31,7 @@ export const map = L.map('map', {
 }).setView([-1.4583848091069818, -48.49333947066729], 13); // Mude o 13 para o zoom inicial desejado
 
 
-   // const longitude  = sessionStorage.getItem("longitude");
-   // const latitude = sessionStorage.getItem("latitude");
+   
    
     
       
@@ -44,7 +43,7 @@ export const map = L.map('map', {
    
 
   // Função para carregar marcadores do Firestore
-  function loadMarkers() {
+  export function loadMarkers() {
     const bounds = []; // Array para guardar os limites dos marcadores
 
     db.collection("ponto_tur").get().then((querySnapshot) => {
@@ -60,9 +59,6 @@ export const map = L.map('map', {
                 const popupContent = document.createElement('div');
                 popupContent.className = 'card_marcador';
                 
-                
-                    // document.createElement('div');
-
                         const nome = document.createElement('b');
                         nome.classList = 'nome_marcador';
                         nome.innerHTML = data.nome;
@@ -87,12 +83,12 @@ export const map = L.map('map', {
                         // Adicionar o event listener para o botão IR
                         ir.addEventListener('click', () => {
                             traceRoute(data.localizacao.latitude, data.localizacao.longitude);
+                            
                         });
                       
                 ;
 
-
-              
+                    
               // Adiciona o popup ao marcador
               marker.bindPopup(popupContent);
 
@@ -125,9 +121,6 @@ export const map = L.map('map', {
 
   // Carregar os marcadores quando a página for carregada
   loadMarkers();
-
-  console.log(sessionStorage.getItem("longitude"));
-  console.log(sessionStorage.getItem("latitude"));
  
 if (sessionStorage.getItem("longitude") !== null && sessionStorage.getItem("latitude") !== null ){
    const marker = L.marker([sessionStorage.getItem("longitude"), sessionStorage.getItem("latitude")]).addTo(map);
