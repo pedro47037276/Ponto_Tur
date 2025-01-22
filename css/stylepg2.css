@@ -860,4 +860,39 @@ a{
     margin-bottom: 30px;
 }
 
+/* ESTILO CARDS SERVIÇOS */
 
+.servicos-container{
+    margin-top: 120px;
+}
+
+.servico-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+
+.div_infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.horario{
+    color: #000000;
+}
+
+.servico_nome{
+    color: #000000;
+    font-size: 1.2rem;
+}
+
+.icon_serv{
+    font-size: 60px;
+    
+}
