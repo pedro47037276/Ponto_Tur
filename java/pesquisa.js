@@ -29,29 +29,30 @@ function esconde_sidebar_desktop(){
 function cards_pesquisados(resultado){
     const container3 = document.getElementById('sidebar_info_local');
     const pesq = document.getElementById('pesquisar');
-    
+    limpar_sideBar()
     const botao = voltar()
     container3.appendChild(botao)
 
     resultado.forEach(card => {
         if(pesq.value == card.nome){
-
+            console.log(card);
+            
             esconde_sidebar_desktop();
-            limpar_sideBar()
+
             // if(card.nome == "Casa das Onze Janelas"){
-            //     limpar_sideBar();
+            //     
             //     buscar_servicos('casa_das_onze_janelas');
 
             // } else if (card.nome == "Estação das Docas"){
-            //     limpar_sideBar();
+            //    
             //     buscar_servicos('estacao_das_docas');
 
             // } else if (card.nome == "Basílica Santuário de Nossa Senhora de Nazaré"){
-            //     limpar_sideBar();
+            //     
             //     buscar_servicos('basilica_santuario_de_nossa_senhora_de_nazare');
 
             // } else if (card.nome == "Espaço São José Libertino"){
-            //     limpar_sideBar();
+            //     
             //     buscar_servicos('espaco_sao_jose_libertino');
 
             // }
@@ -93,6 +94,7 @@ function cards_pesquisados(resultado){
             
                 // const serv = buscar_servicos()
                 // div.appendChild(serv)
+                // const nomeLocal = card.nome;
                 buscar_servicos()
                 console.log(mostrar_servicos());
 
