@@ -245,6 +245,13 @@ function cards_desktop(cardData) {
                     fav.className = 'favoritar';
                     fav.innerHTML = '<i class="bi bi-bookmarks-fill"></i>';
                     divLinks.appendChild(fav);
+                    //
+                    document.querySelectorAll('.favoritar').forEach(fav => {
+                        fav.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            window.location.href = 'favorito.html';
+                        });
+                    });
                         
                 
                     const ir = document.createElement('a');
