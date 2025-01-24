@@ -29,9 +29,9 @@ function esconde_sidebar_desktop(){
 function cards_pesquisados(resultado){
     const container3 = document.getElementById('sidebar_info_local');
     const pesq = document.getElementById('pesquisar');
-    limpar_sideBar()
-    const botao = voltar()
-    container3.appendChild(botao)
+    limpar_sideBar();
+    const botao = voltar();
+    container3.appendChild(botao);
 
     resultado.forEach(card => {
         if(pesq.value == card.nome){
@@ -67,7 +67,7 @@ function cards_pesquisados(resultado){
                     const img = document.createElement('img');
                     img.src = card.img;
                     img.alt = card.nome;
-                    img.className = 'imgs_do_local'
+                    img.className = 'imgs_do_local';
                     divImage.appendChild(img);
 
                 div.appendChild(divImage);
@@ -75,7 +75,7 @@ function cards_pesquisados(resultado){
                 const nome_local = document.createElement('h1');
                 nome_local.className = 'nome_local';
                 nome_local.innerHTML = card.nome;
-                div.appendChild(nome_local)
+                div.appendChild(nome_local);
 
                 const desc_local = document.createElement('p');
                 desc_local.className = 'desc_local';
@@ -86,20 +86,17 @@ function cards_pesquisados(resultado){
                 linha.className = 'linha';
                 div.appendChild(linha);
 
-                const titulo_servicos = document.createElement('h2');
-                titulo_servicos.id = "servicos";
-                titulo_servicos.className = 'servicos_h2';
-                titulo_servicos.innerHTML = 'Serviços';
-                div.appendChild(titulo_servicos);
+                
             
                 // const serv = buscar_servicos()
                 // div.appendChild(serv)
                 // const nomeLocal = card.nome;
-                buscar_servicos()
+                buscar_servicos();
                 console.log(mostrar_servicos());
 
             container3.appendChild(div);
 
+            
         };
     });
 

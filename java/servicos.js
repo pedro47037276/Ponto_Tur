@@ -27,6 +27,12 @@ export function mostrar_servicos(ptservicos) {
     const sidebar_serv = document.createElement('section');
     sidebar_serv.className = 'servicos-container';
 
+    const titulo_servicos = document.createElement('h1');
+    titulo_servicos.id = "servicos";
+    titulo_servicos.className = 'titulo_servicos';
+    titulo_servicos.innerHTML = 'Serviços';
+    sidebar_serv.appendChild(titulo_servicos);
+
     ptservicos.forEach(servico => {
         if (!servico.nome || !servico.descricao) {
             console.warn("ServiÃ§o com dados incompletos:", servico);
@@ -36,33 +42,51 @@ export function mostrar_servicos(ptservicos) {
         const div = document.createElement('div');
         div.className = 'servico-item';
 
-        const icon = document.createElement('a');
-        icon.href = '#';
-        icon.innerHTML = '<i class="bi bi-shop-window"></i>';
-        icon.className = 'icon_serv';
-        div.appendChild(icon);
+            const div_infos = document.createElement('div');
+            div_infos.className = 'div_infos';
+            div.appendChild(div_infos);
 
-        const div_infos = document.createElement('div');
-        div_infos.className = 'div_infos';
-        div.appendChild(div_infos);
+                const icon = document.createElement('a');
+                icon.href = '#';
+                icon.innerHTML = '<i class="bi bi-shop-window"></i>';
+                icon.className = 'icon_serv';
+                div_infos.appendChild(icon);
 
-        const h5 = document.createElement('h5');
-        h5.innerText = servico.nome;
-        h5.className = 'servico_nome';
-        div_infos.appendChild(h5);
+                
 
-        // const p = document.createElement('p');
-        // p.innerText = servico.descricao;
-        // div.appendChild(p);
+                const div_nome_hr = document.createElement('div');
+                div_nome_hr.className = 'nome_hora';
+                
+                    const h5 = document.createElement('h5');
+                    h5.innerText = servico.nome;
+                    h5.className = 'servico_nome';
+                    div_nome_hr.appendChild(h5);
 
-        if (servico.funcionamento) {
-            const funcionamento = document.createElement('p');
-            funcionamento.innerText = `Funcionamento: ${servico.funcionamento}`;
-            funcionamento.className = 'horario'
-            div_infos.appendChild(funcionamento);
-        }
+                    const categoria = document.createElement('p');
+                    categoria.className = 'categoria_serv';
+                    categoria.innerHTML = servico.tipo;
+                    div_nome_hr.appendChild(categoria);
 
-        sidebar_serv.appendChild(div);
+                    if (servico.funcionamento) {
+                        const funcionamento = document.createElement('p');
+                        funcionamento.innerText = `Funcionamento: ${servico.funcionamento}`;
+                        funcionamento.className = 'horario'
+                        div_nome_hr.appendChild(funcionamento);
+                    }
+
+                div_infos.appendChild(div_nome_hr);
+
+                const div_desc = document.createElement('div');
+                div_desc.className = 'descricao_servico';
+
+                    const p = document.createElement('p');
+                    p.innerText = servico.descricao;
+                    p.className = 'desc_servico';
+                    div_desc.appendChild(p);
+
+                div.appendChild(div_desc);
+
+            sidebar_serv.appendChild(div);
     });
 
     document.getElementById('sidebar_info_local').appendChild(sidebar_serv);
