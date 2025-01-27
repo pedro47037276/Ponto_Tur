@@ -8,6 +8,11 @@ function pesquisa() {
     firebase.firestore()
         .collection('ponto_tur')
         .get().then(snapshot => {
+            snapshot.forEach(doc=> {
+                console.log(doc.id);
+
+            });
+
             const resultado = snapshot.docs.map(doc => doc.data());
             limpar_sideBar();
             cards_pesquisados(resultado);
@@ -39,24 +44,7 @@ function cards_pesquisados(resultado){
             
             esconde_sidebar_desktop();
 
-            // if(card.nome == "Casa das Onze Janelas"){
-            //     
-            //     buscar_servicos('casa_das_onze_janelas');
-
-            // } else if (card.nome == "Estação das Docas"){
-            //    
-            //     buscar_servicos('estacao_das_docas');
-
-            // } else if (card.nome == "Basílica Santuário de Nossa Senhora de Nazaré"){
-            //     
-            //     buscar_servicos('basilica_santuario_de_nossa_senhora_de_nazare');
-
-            // } else if (card.nome == "Espaço São José Libertino"){
-            //     
-            //     buscar_servicos('espaco_sao_jose_libertino');
-
-            // }
-
+            
             const div = document.createElement('div');
             div.className = 'infos_local';
 
@@ -91,7 +79,27 @@ function cards_pesquisados(resultado){
                 // const serv = buscar_servicos()
                 // div.appendChild(serv)
                 // const nomeLocal = card.nome;
-                buscar_servicos();
+                // buscar_servicos(x);
+                if(card.nome == "Casa das Onze Janelas"){
+                    var x = 'casa_das_onze_janelas';
+                    buscar_servicos(x);
+    
+                } else if (card.nome == "Estação das Docas"){
+                    var x = 'estacao_das_docas';
+                    buscar_servicos(x);
+    
+                } else if (card.nome == "Basílica Santuário de Nossa Senhora de Nazaré"){
+                    var x = 'basilica_santuario_de_nossa_senhora_de_nazare';
+                    buscar_servicos(x);
+    
+                } else if (card.nome == "Espaço São José Libertino"){
+                    var x = 'espaco_sao_jose_libertino';
+                    buscar_servicos(x);
+    
+                }   else if (card.nome == "Ilha do Combú"){
+                    var x = 'ilha_do_cumbú';
+                    buscar_servicos(x);
+                }
                 console.log(mostrar_servicos());
 
             container3.appendChild(div);

@@ -1,13 +1,14 @@
-export function buscar_servicos() {
+export function buscar_servicos(x) {
 
     firebase.firestore()
         .collection('ponto_tur')
-        .doc('estacao_das_docas')
+        .doc(x)
         .collection('servicos')
         .get()
         .then(snapshot => {
             if (!snapshot.empty) {
                 const ptservicos = snapshot.docs.map(doc => doc.data());
+                console.log(ptservicos);
                 mostrar_servicos(ptservicos);
             } else {
                 console.warn("Nenhum serviÃ§o encontrado.");
@@ -34,10 +35,10 @@ export function mostrar_servicos(ptservicos) {
     sidebar_serv.appendChild(titulo_servicos);
 
     ptservicos.forEach(servico => {
-        if (!servico.nome || !servico.descricao) {
-            console.warn("ServiÃ§o com dados incompletos:", servico);
-            return;
-        }
+        // if (!servico.nome || !servico.descricao) {
+        //     console.warn("ServiÃ§o com dados incompletos:", servico);
+        //     return;
+        // }
 
         const div = document.createElement('div');
         div.className = 'servico-item';
@@ -46,11 +47,35 @@ export function mostrar_servicos(ptservicos) {
             div_infos.className = 'div_infos';
             div.appendChild(div_infos);
 
-                const icon = document.createElement('a');
-                icon.href = '#';
-                icon.innerHTML = '<i class="bi bi-shop-window"></i>';
-                icon.className = 'icon_serv';
-                div_infos.appendChild(icon);
+                if(servico.tipo == 'Restaurante'){
+                    const icon =document.createElement('img');
+                    icon.src = 'icones/restaurante.png';
+                    icon.className = 'icones';
+                    div_infos.appendChild(icon);
+
+                } else if (servico.tipo == 'Sorveteria'){
+                    const icon =document.createElement('img');
+                    icon.src = 'icones/sorveteria.png';
+                    icon.className = 'icones';
+                    div_infos.appendChild(icon);
+
+                } else if (servico.tipo == 'Doce'){
+                    const icon =document.createElement('img');
+                    icon.src = 'icones/Doceteria.png';
+                    icon.className = 'icones';
+                    div_infos.appendChild(icon);
+                } 
+                else if (servico.tipo == 'Teatro'){
+                    const icon =document.createElement('img');
+                    icon.src = 'icones/teatro.png';
+                    icon.className = 'icones';
+                    div_infos.appendChild(icon);
+                }
+                // const icon = document.createElement('a');
+                // icon.href = '#';
+                // icon.innerHTML = '<i class="bi bi-shop-window"></i>';
+                // icon.className = 'icon_serv';
+                // div_infos.appendChild(icon);
 
                 
 
@@ -76,7 +101,8 @@ export function mostrar_servicos(ptservicos) {
 
                 div_infos.appendChild(div_nome_hr);
 
-                const div_desc = document.createElement('div');
+               if (servico.descricao )
+               {const div_desc = document.createElement('div');
                 div_desc.className = 'descricao_servico';
 
                     const p = document.createElement('p');
@@ -84,7 +110,7 @@ export function mostrar_servicos(ptservicos) {
                     p.className = 'desc_servico';
                     div_desc.appendChild(p);
 
-                div.appendChild(div_desc);
+                div.appendChild(div_desc);}
 
             sidebar_serv.appendChild(div);
     });
