@@ -240,20 +240,50 @@ function cards_desktop(cardData) {
                 const divLinks = document.createElement('div');
                 divLinks.className = 'links';
 
-                    const fav = document.createElement('a');
-                    fav.href = '#';
-                    fav.className = 'favoritar';
-                    fav.innerHTML = '<i class="bi bi-bookmarks-fill"></i>';
-                    divLinks.appendChild(fav);
-                    //
-                    document.querySelectorAll('.favoritar').forEach(fav => {
-                        fav.addEventListener('click', (event) => {
-                            event.preventDefault();
-                            window.location.href = 'favorito.html';
-                        });
-                    });
-                        
+                const fav = document.createElement('a');
+                fav.href = '#';
+                fav.className = 'favoritar';
                 
+                // Criar o ícone separadamente
+                const icon = document.createElement('i');
+                icon.className = 'bi bi-bookmarks-fill';
+                fav.appendChild(icon);
+                
+                divLinks.appendChild(fav);
+                
+                // Adicionar o event listener
+                fav.addEventListener('click', (event) => {
+                    event.preventDefault();
+                
+                    // Obter os dados do ponto (nome, descrição, imagem, localização)
+                    const nome = titulo.textContent;  // Nome do local
+                    const descricao = card.descricao; // Descrição do local
+                    const imgSrc = card.img;          // Imagem do local
+                    const latitude = card.localizacao.latitude;  // Latitude
+                    const longitude = card.localizacao.longitude; // Longitude
+                
+                    // Criar objeto de favorito
+                    const favorito = { nome, descricao, imgSrc, latitude, longitude };
+                
+                    // Verificar se já existe um array de favoritos no localStorage
+                    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+                
+                    // Verificar se o ponto já está nos favoritos
+                    const index = favoritos.findIndex(fav => fav.nome === nome);
+                
+                    if (index === -1) {
+                        // Adicionar o favorito no array
+                        favoritos.push(favorito);
+                        localStorage.setItem('favoritos', JSON.stringify(favoritos)); // Atualiza o localStorage
+                        alert('Ponto adicionado aos favoritos!');
+                    } else {
+                        alert('Este ponto já está nos favoritos!');
+                    }
+                
+                    // Navegar para a página de favoritos
+                    window.location.href = 'favorito.html';
+                });
+                                
                     const ir = document.createElement('a');
                     ir.href = '#';
                     ir.textContent = 'IR';

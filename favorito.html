@@ -13,11 +13,10 @@
     <title>Favoritos</title>
 </head>
 <body>
+    <div id="favoritos-container"></div>
     <header class="header">
-
         <h1 class="nome_pg">| Favoritos</h1>
         <a href="index.html" class="nome_mobile"><h1 class="nome_pg_mobile">PontoTur</h1></a>
-        
         
         <div class="desktop2">
             <nav>
@@ -30,13 +29,10 @@
                     <li>
                         <button class="button1"><i class="bi bi-trash"></i>Excluir Favoritos</button>
                     </li>
-                    
-                    
                 </ul>
             </nav>
         </div>
         
-
         <div class="btn-abrir-menu2" id="btn-menu2">
             <i class="bi bi-list"></i>
         </div>
@@ -48,52 +44,58 @@
                 <ul>
                     <li><a href="#" class="link_nav"><i class="bi bi-house-door"></i>Inicio</a></li>
                     <li><a href="#" class="link_nav"><i class="bi bi-person-fill-gear"></i>Conta</a></li>
-                    <li>
-                        
-                    </li>
                 </ul>
-
             </nav>
         </div>
-         
-         
-        
     </header>
 
     <div class="container3">
-        <a class="seta" href="pg2.html"><i  class="bi bi-arrow-left"></i></a>
+        <a class="seta" href="pg2.html"><i class="bi bi-arrow-left"></i></a>
         <h1 class="text">FAVORITOS</h1>
-    
         
         <div class="favorito">
-            
             <div class="pesq_mobile">
                 <input type="search" class="search-bar-mobile" class="Pesquisa" placeholder="Pesquisar..."><button class="button2"><i class="bi bi-search"></i></button>
             </div>
 
-             <button class="button3"><i class="bi bi-trash"></i>Excluir Favoritos</button>
+            <button class="button3"><i class="bi bi-trash"></i>Excluir Favoritos</button>
             <div class="tipos">
-                
                 <h2>Local</h2>
                 <h2>Ir</h2>
             </div> 
             
             <ul>
                 <hr class="linhas">
-                
-                <li>lugar1<a href="#"><i class="bi bi-arrow-right"></i></a></li>
+                <li id="lugar1">lugar1<a href="#"><i class="bi bi-arrow-right"> </i></a></li>
                 <hr class="linhas">
                 <li>lugar2<a href="#"><i class="bi bi-arrow-right"></i></a></li>
                 <hr class="linhas">
                 <li>lugar3<a href="#"><i class="bi bi-arrow-right"></i></a></li>
                 <hr class="linhas">
-                
-                
             </ul>
         </div>
     </div>
 
-    <script src="java/menu2.js"></script>
-    
-</body>
-</html>
+    <!-- Carregar o Firebase antes de outros scripts -->
+    <!-- Incluindo o Firebase via CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <Script src="java/favoritos.js"></Script>
+
+<script>
+// Configuração do Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyCI_287E4XUbQ_fyhO_tyJ72FKRkGZ8hLI",
+    authDomain: "ponto-tur-5e4db.firebaseapp.com",
+    projectId: "ponto-tur-5e4db",
+    storageBucket: "ponto-tur-5e4db.appspot.com",
+    messagingSenderId: "1093552150779",
+    appId: "1:1093552150779:web:bbe89f5f8643414166385e"
+};
+
+// Inicializa o Firebase App
+firebase.initializeApp(firebaseConfig);
+
+// Inicializa o Firestore
+const db = firebase.firestore();
+</script>
