@@ -70,14 +70,12 @@ export function mostrar_servicos(ptservicos) {
                     icon.src = 'icones/teatro.png';
                     icon.className = 'icones';
                     div_infos.appendChild(icon);
+                } else {
+                    const icon =document.createElement('img');
+                    icon.src = 'icones/cumbu.png';
+                    icon.className = 'icones';
+                    div_infos.appendChild(icon);
                 }
-                // const icon = document.createElement('a');
-                // icon.href = '#';
-                // icon.innerHTML = '<i class="bi bi-shop-window"></i>';
-                // icon.className = 'icon_serv';
-                // div_infos.appendChild(icon);
-
-                
 
                 const div_nome_hr = document.createElement('div');
                 div_nome_hr.className = 'nome_hora';

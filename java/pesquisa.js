@@ -96,11 +96,67 @@ function cards_pesquisados(resultado){
                     var x = 'espaco_sao_jose_libertino';
                     buscar_servicos(x);
     
-                }   else if (card.nome == "Ilha do Combú"){
+                }  else if (card.nome == "Ilha do Combú"){
                     var x = 'ilha_do_cumbú';
                     buscar_servicos(x);
+
+                } else if (card.nome == "Mercado de São Braz"){
+                    var x = 'Mercado de São Braz';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Bosque Rodrigues Alves"){
+                    var x = 'bosque_rodrigo_alves';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Museu de Arte Sacra"){
+                    var x = 'igreja_santo_alexandre';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Mangal das Garças"){
+                    var x = 'mangal_das_garcas';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Ilha do Mosqueiro"){
+                    var x = 'mosqueiro';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Museu Paraense Emílio Goeldi"){
+                    var x = 'museu_emilio_ goeldi';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Orla de Icoaraci"){
+                    var x = 'orla_de_icoraci';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Porto Futuro"){
+                    var x = 'porto_futuro';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Praça Batista Campos"){
+                    var x = 'praca_batista_campos';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Praça Brasil"){
+                    var x = 'praca_brasil';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Praia do Cotijuba"){
+                    var x = 'praia_do_cotijuba';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Praça da República"){
+                    var x = 'praça da republica';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Ver o Peso"){
+                    var x = 'ver_o_peso_comercio';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Ver o Rio"){
+                    var x = 'ver_o_rio';
+                    buscar_servicos(x);
                 }
-                console.log(mostrar_servicos());
+             
 
             container3.appendChild(div);
 

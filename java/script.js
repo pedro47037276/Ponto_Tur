@@ -332,11 +332,6 @@ function info_do_local(cardData, filter) {
             const div = document.createElement('div');
             div.className = 'infos_local';
 
-                const nome_local = document.createElement('h1');
-                nome_local.className = 'nome_local';
-                nome_local.innerHTML = card.nome;
-                div.appendChild(nome_local)
-
                 // Imagem do card
                 const divImage = document.createElement('div');
                 divImage.className = 'secao_imgs';
@@ -348,6 +343,11 @@ function info_do_local(cardData, filter) {
                     divImage.appendChild(img);
 
                 div.appendChild(divImage);
+
+                const nome_local = document.createElement('h1');
+                nome_local.className = 'nome_local';
+                nome_local.innerHTML = card.nome;
+                div.appendChild(nome_local);
 
                 const desc_local = document.createElement('p');
                 desc_local.className = 'desc_local';
@@ -378,16 +378,7 @@ function info_do_local_mobile(cardData, filtro) {
                 linha_sobe_desce.className = 'linha_sobe_desce';
                 div.appendChild(linha_sobe_desce);
 
-                const btn_voltar_e_nome = document.createElement('div');
-                btn_voltar_e_nome.className = 'btn_e_nome';
-
-                    const nome_local = document.createElement('h1');
-                    nome_local.className = 'nome_local_mobile';
-                    nome_local.innerHTML = card.nome;
-                    btn_voltar_e_nome.appendChild(botao);
-                    btn_voltar_e_nome.appendChild(nome_local);
-                    
-                div.appendChild(btn_voltar_e_nome);
+                div.appendChild(botao);
 
                 // Imagem do card
                 const divImage = document.createElement('div');
@@ -400,6 +391,16 @@ function info_do_local_mobile(cardData, filtro) {
                     divImage.appendChild(img);
 
                 div.appendChild(divImage);
+
+                const btn_voltar_e_nome = document.createElement('div');
+                btn_voltar_e_nome.className = 'btn_e_nome';
+
+                    const nome_local = document.createElement('h1');
+                    nome_local.className = 'nome_local_mobile';
+                    nome_local.innerHTML = card.nome;
+                    btn_voltar_e_nome.appendChild(nome_local);
+                    
+                div.appendChild(btn_voltar_e_nome);
 
                 const desc_local = document.createElement('p');
                 desc_local.className = 'desc_local_mobile';

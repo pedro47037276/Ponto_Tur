@@ -659,10 +659,27 @@ a{
     display: none;
     height: 100%;
    
+   
+}
+
+.toggle-button2{
+    font-size: 40px;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.615);
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    width: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.toggle-button2:hover{
+    color: white;
 }
 
 .secao_imgs{
-    margin: 50px 0px 60px 0px;
+    
+    margin: 20px 0px 60px 0px;
     height: 450px;
     width: 100%;
     display: flex;
@@ -711,6 +728,7 @@ a{
     width: 90%;
     border: 2px solid rgba(156, 194, 167, 0.137);
 }
+
 
 .infos_local .servicos_h2{
     margin-bottom: 10px;
@@ -810,12 +828,29 @@ a{
 
 /* ESTILO DOS CARDS COM INFORMAÇÕES DO LOCAL NO MOBILE */
 
+
+
 .linha_sobe_desce{
-    border: 4px solid #3333331f;
+    border: 3px solid #3333331f;
     border-radius: 50px;
     width: 35%;
     margin-top: 25px;
 
+}
+
+.toggle-button2{
+    font-size: 35px;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.615);
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.toggle-button2:hover{
+    color: white;
 }
 
 .infos_local_mobile{
@@ -829,11 +864,11 @@ a{
 .btn_e_nome{
     min-width: 100%;
     height: 80px;
-    margin-top: 25px;
+    margin-top: 15px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .nome_local_mobile{
@@ -845,7 +880,8 @@ a{
 .secao_imgs_mobile{
     height: 300px;
     width: 90%;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 0px;
     display: flex;
     justify-content: center;
 }
@@ -861,7 +897,13 @@ a{
     margin-bottom: 30px;
 }
 
+
+
+
 /* ESTILO CARDS SERVIÇOS */
+
+
+
 
 .servicos-container{
     margin-top: 10px;
@@ -955,3 +997,4 @@ a{
     border-radius: 10px;
     margin-right: 30px;
 }
+
