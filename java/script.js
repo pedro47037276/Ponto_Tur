@@ -387,7 +387,7 @@ function info_do_local_mobile(cardData, filtro) {
                     const img = document.createElement('img');
                     img.src = card.img;
                     img.alt = card.nome;
-                    img.className = 'imgs_do_local_mobile'
+                    img.className = 'imgs_do_local_mobile';
                     divImage.appendChild(img);
 
                 div.appendChild(divImage);
