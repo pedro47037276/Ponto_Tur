@@ -16,6 +16,7 @@ function pesquisa() {
             const resultado = snapshot.docs.map(doc => doc.data());
             limpar_sideBar();
             cards_pesquisados(resultado);
+            cards_pesquisados2(resultado);
                 
         }).catch(error => {
             console.error("Erro ao buscar informações:", error);
@@ -173,3 +174,168 @@ function limpar_sideBar() {
 };
 
 
+
+//   PESQUISA MOBILE   \\
+
+
+const btn_pesquisa = document.getElementById('btn_pesquisar');
+btn_pesquisa.addEventListener("click",
+
+function pesquisa_mobile() {
+    firebase.firestore()
+        .collection('ponto_tur')
+        .get().then(snapshot => {
+            snapshot.forEach(doc=> {
+                console.log(doc.id);
+
+            });
+
+            const dados_mobile = snapshot.docs.map(doc => doc.data());
+            cards_pesquisados_mobile(dados_mobile);
+                
+        }).catch(error => {
+            console.error("Erro ao buscar informações:", error);
+        });
+});
+
+function cards_pesquisados_mobile(dados_mobile){
+    const container4 = document.getElementById('info_local_mobile');
+    const campo_pesquisa = document.getElementById('campo_pesq');
+    limpar_sideBar_mobile();
+    const botao = voltar();
+    container4.appendChild(botao);
+
+    dados_mobile.forEach(card => {
+        if(campo_pesquisa.value == card.nome){
+            esconde_locall1();
+
+            
+            const div = document.createElement('div');
+            div.className = 'infos_local_mobile';
+
+                const linha_sobe_desce = document.createElement('hr');
+                linha_sobe_desce.className = 'linha_sobe_desce';
+                div.appendChild(linha_sobe_desce);
+
+                // Imagem do card
+                const divImage = document.createElement('div');
+                divImage.className = 'secao_imgs_mobile';
+
+                    const img = document.createElement('img');
+                    img.src = card.img;
+                    img.alt = card.nome;
+                    // img.className = 'imgs_do_localMobile';
+                    divImage.appendChild(img);
+
+                div.appendChild(divImage);
+
+                const btn_voltar_e_nome = document.createElement('div');
+                btn_voltar_e_nome.className = 'btn_e_nome';
+
+                    const nome_local = document.createElement('h1');
+                    nome_local.className = 'nome_local_mobile';
+                    nome_local.innerHTML = card.nome;
+                    btn_voltar_e_nome.appendChild(nome_local);
+                    
+                div.appendChild(btn_voltar_e_nome);
+
+                const desc_local = document.createElement('p');
+                desc_local.className = 'desc_local_mobile';
+                desc_local.innerHTML = card.descricao;
+                div.appendChild(desc_local);
+
+                const linha = document.createElement('hr');
+                linha.className = 'linha';
+                div.appendChild(linha);
+
+                if(card.nome == "Casa das Onze Janelas"){
+                    var x = 'casa_das_onze_janelas';
+                    buscar_servicos(x);
+    
+                } else if (card.nome == "Estação das Docas"){
+                    var x = 'estacao_das_docas';
+                    buscar_servicos(x);
+    
+                } else if (card.nome == "Basílica Santuário de Nossa Senhora de Nazaré"){
+                    var x = 'basilica_santuario_de_nossa_senhora_de_nazare';
+                    buscar_servicos(x);
+    
+                } else if (card.nome == "Espaço São José Libertino"){
+                    var x = 'espaco_sao_jose_libertino';
+                    buscar_servicos(x);
+    
+                }  else if (card.nome == "Ilha do Combú"){
+                    var x = 'ilha_do_cumbú';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Mercado de São Braz"){
+                    var x = 'Mercado de São Braz';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Bosque Rodrigues Alves"){
+                    var x = 'bosque_rodrigo_alves';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Museu de Arte Sacra"){
+                    var x = 'igreja_santo_alexandre';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Mangal das Garças"){
+                    var x = 'mangal_das_garcas';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Ilha do Mosqueiro"){
+                    var x = 'mosqueiro';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Museu Paraense Emílio Goeldi"){
+                    var x = 'museu_emilio_ goeldi';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Orla de Icoaraci"){
+                    var x = 'orla_de_icoraci';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Porto Futuro"){
+                    var x = 'porto_futuro';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Praça Batista Campos"){
+                    var x = 'praca_batista_campos';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Praça Brasil"){
+                    var x = 'praca_brasil';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Praia do Cotijuba"){
+                    var x = 'praia_do_cotijuba';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Praça da República"){
+                    var x = 'praça da republica';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Ver o Peso"){
+                    var x = 'ver_o_peso_comercio';
+                    buscar_servicos(x);
+
+                } else if (card.nome == "Ver o Rio"){
+                    var x = 'ver_o_rio';
+                    buscar_servicos(x);
+                }
+
+            container4.appendChild(div);
+        }
+    })
+};
+
+function esconde_locall1(){
+    document.getElementById('locall1').style.display = 'none';
+    document.getElementById('info_local_mobile').style.display = 'block';
+}
+
+function limpar_sideBar_mobile() {
+    let clear = document.getElementById('info_local_mobile');
+     clear.innerHTML = "";
+ };
