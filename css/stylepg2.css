@@ -1486,7 +1486,9 @@ a{
     
     .nome_local_mobile{
         color: #14CC1C;
-        text-align: center;
+        text-align: left;
+        margin-left: 20px;
+        margin-right: 20px;
         width: 90%;
     }
     
@@ -1508,10 +1510,125 @@ a{
     .desc_local_mobile{
         color: #000000;
         width: 90%;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        margin-left: 30px;
+        margin-right: 30px;
+        text-align: left;
     }
 
-}
+
+
+    /*    ESTILO CARDS SERVIÇOS    */
+
+
+
+    .servicos-container_mobile{
+        margin-top: 10px;
+        padding-bottom: 70px;
+     
+    }
+    
+    .titulo_servicos_mobile{
+        color: #14CC1C;  
+        margin-bottom: 40px;
+        font-size: 1.5rem;
+        text-align: left;
+        margin-left: 30px;
+
+    }
+    
+    .servico-item_mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 30px auto;
+        width: 80%;
+        min-height: 250px;
+        border: 1px solid #14cc1d42;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        padding: 15px;
+    }
+    
+    .div_infos_mobile{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+        height: 150px;
+        width: 100%;
+    }
+    
+    .horario{
+        color: #505050;
+        font-size: 0.90rem;
+        display: none;
+    }
+
+    .horario_mobile{
+        color: #505050;
+        margin-top: 0px;
+        font-size: 0.80rem;
+    }
+    
+    .servico_nome_mobile{
+        color: #14CC1C;
+        font-size: 1rem;
+    }
+    .categoria_serv_mobile{
+        color: #000000;
+        font-size: 0.80rem;
+        margin-top: 5px;
+    }
+    
+    .icon_serv_mobile{
+        font-size: 60px;
+        margin-right: 20px;
+        color: #14CC1C;
+    }
+    
+    .desc_servico_mobile{
+        color: #000000;
+        margin-top: 5px; 
+        text-align: left; 
+        font-size: 0.90rem; 
+    }
+    
+    .descricao_servico_mobile{
+        width: 500px;
+        display: block;
+        width: 100%;
+        height: 50%;
+        
+    
+    }
+    
+    .nome_hora_mobile{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-left: 20px;
+    }
+    
+    
+    .voltar_serv{
+        color: #14CC1C;
+        font-size: 20px;
+        background-color: #000000;
+        position: absolute;
+        top: 90;
+    
+    }
+    
+    .icones_mobile{
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+};
 
 
 
