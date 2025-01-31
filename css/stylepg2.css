@@ -307,9 +307,7 @@ a{
     color: #ffffff;
 }
 
-
-
-@media(max-width: 800px){
+@media(min-width: 360px) and (max-width: 490px){
     .toggle-button {
         display: none;
     }
@@ -351,29 +349,29 @@ a{
         /*margin: 0px 20px 80px 30px;*/
         background-color: #ffffff;
         width: 90%;
-        min-height: 500px;
-        max-height: 180px;
+        height: 520px;
         box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);      
     }
     
     .cards1 img{
         /*border-bottom-right-radius: 150px;*/
-        width: 100%;
+        width: 95%;
         height: 100%;
         border-radius: 5px;
     }
     
     .cards1 .imagem{
-        width: 95%;
-        padding: 10px;
-        
-        
+        width: 100%;
+        height: 50%;
+        padding-top: 20px;
+    
     }
     
     
     .cards1 .conteudo{
         border-radius: 10px;
         width: 100%;
+        height: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -383,7 +381,7 @@ a{
     .cards1 .conteudo h1{
         color: #14CC1C;
         font-weight: 700;
-        font-size: 17px;
+        font-size: 20px;
         margin: 10px 0px 10px 0px;
         width: 90%;
         text-align: center;
@@ -396,10 +394,10 @@ a{
         font-size: 13px;
         max-width: 90%;
         overflow: hidden;
-        height: 57%;
-        margin-bottom: 2px;
+        max-height: 57%;
         text-align: center;
         overflow-y: auto;
+       
     }
     
     
@@ -407,7 +405,7 @@ a{
     .conteudo .links{
         display: flex;
         width: 100%;
-        margin-top: 30px;
+        margin-top: 10px;
     }
     
     .cards1 .favoritar{
@@ -584,6 +582,346 @@ a{
         color: #ffffff;
     }
 
+
+
+
+
+    .linha_sobe_desce{
+        border: 3px solid #3333331f;
+        border-radius: 50px;
+        width: 35%;
+        margin-top: 25px;
+    
+    }
+    
+    .toggle-button2{
+        font-size: 35px;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgba(255, 255, 255, 0.615);
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        width: 20px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+    
+    .toggle-button2:hover{
+        color: white;
+    }
+    
+    .infos_local_mobile{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn_e_nome{
+        min-width: 100%;
+        height: 80px;
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .nome_local_mobile{
+        color: #14CC1C;
+        text-align: center;
+        width: 90%;
+    }
+    
+    .secao_imgs_mobile{
+        height: 100%;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .secao_imgs_mobile img{
+        height: 100%;
+        width: 90%;
+        border-radius: 10px;    
+    }
+    
+    .desc_local_mobile{
+        color: #000000;
+        width: 90%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(min-width: 750px) and (max-width: 1000px){
+    .toggle-button {
+        display: none;
+    }
+
+    .map{
+        max-width: 100%;
+        height: 600px;
+        position: absolute;
+        z-index: 0;
+        /*z-index:98;*/
+    }
+
+    .locall1{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 1;
+        
+        color:white;
+        background-color:rgb(255, 254, 248);
+        
+    }
+    
+    .cards{
+        margin-top:30px;
+    }
+    
+    .cards1{
+        border: 1px solid #00000017;
+        margin-top:15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 5px;
+        text-align: center;
+        /*margin: 0px 20px 80px 30px;*/
+        background-color: #ffffff;
+        width: 90%;
+        height: 330px;
+        box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);      
+    }
+    
+    .cards1 img{
+        /*border-bottom-right-radius: 150px;*/
+        width: 90%;
+        height: 90%;
+        border-radius: 5px;
+    }
+    
+    .cards1 .imagem{
+        width: 50%;
+        height: 100%;
+        padding-top: 25px;
+    
+    }
+    
+    
+    .cards1 .conteudo{
+        border-radius: 10px;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+     
+    .cards1 .conteudo h1{
+        color: #14CC1C;
+        font-weight: 700;
+        font-size: 1.3rem;
+        margin: 20px 0px 15px 0px;
+        width: 90%;
+        text-align: left;
+    }
+    
+    .cards1 .conteudo p{
+        color: #000000;
+        font-weight: 600;
+        /* font-size: 1rem; */
+        font-size: 0.90rem;
+        max-width: 90%;
+        overflow: hidden;
+        height: 57%;
+        margin-bottom: 2px;
+        text-align: left;
+        overflow-y: auto;
+    }
+    
+    
+    
+    .conteudo .links{ 
+        width: 100%;
+        margin: 10px 0px 30px 0px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .cards1 .favoritar{
+        font-size: 20px;
+        color: #14CC1C;
+    }
+    
+    .cards1 .ir{
+        width: 230px;
+        border-radius: 5px;
+        background-color: #14CC1C;
+        /* border-radius: 10px; */
+        color: white;
+    }
+
+    .leaflet-container a {
+        color: white;
+    }
+    
+    
+    /* .cards1 a{
+        text-decoration: none;
+        /*padding: 15px 10px 10px 10px;
+        background-color: #14CC1C;
+        border-radius: 10px;
+        color: white;
+    } */
+        
+    /* .cards1 a:hover{
+        transform: scale(1.1);
+    
+    }  */
+    .pesquisar{
+        margin-bottom: 50px;
+        margin-top: 5px;
+        width: 100%;
+        
+      
+    }
+
+    .pesq{
+        /*margin-top:30px;*/
+        padding: 10px 15px;
+        width: 70%;
+        height: 40px;
+        font-size: 1rem;
+        font-weight: 400;
+        border-radius: 15px;
+        border: none;
+        border:solid 1px;
+       
+    }
+
+    .pesquisar i{
+        margin-left: 20px;
+        color:black;
+    }
+
+    .btn-abrir-menu1{
+        display:block;
+        color:black;
+        font-size:45px;
+        align-self:center;
+    }
+    .btn-fechar1{
+        color:#000000;
+        font-size:35px;
+        align-self:baseline;
+
+    } 
+    .menu-mobile1{
+        backdrop-filter: blur(10px);
+        border-radius:15px ;
+        width:0;
+        height:0;
+        background:#ffffff48;
+        position:absolute;
+        top:0;
+        right:0;
+        transition:.5s;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:justify;
+        overflow:hidden;
+        z-index:99;
+    }
+    .menu-mobile1 nav{
+        width:100%;
+        
+    } 
+    .menu-mobile1 nav ul{
+        list-style-type:none;
+    }
+    .menu-mobile1 nav a{
+        font-size:20px;
+        text-decoration:none;
+        color:rgb(0, 0, 0);
+        display:block;
+        transition:.5s;
+        padding:20px;
+        padding-left:76px;
+    }
+
+    .menu-mobile1 nav a:hover{
+        background:rgb(255, 255, 255);
+        color:black;
+        box-shadow:0 0 20px rgb(0, 0, 0);
+        width:60%;
+    }
+    .menu-mobile1.abrir-menu{
+        width:100%;
+        height:50vh;
+        z-index:99;
+
+    }  
+        
+        
+    .desktop nav{
+        display:none;
+    }
+    .sidebar{
+        display: none;
+    }
+    .pesq5{
+        display:none;
+    }
+    .color-button{
+        display:none;
+    }
+
+    body{ overflow: inherit;}
+
+    /* ESTILO CARDS DO MARCADOR NO MAPA */
+    
+    .card_marcador{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nome_marcador{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: #14CC1C;
+    }
+    .img_marcador{
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    .desc_marcador{
+        text-align: center;
+    }
+
+    .ir_marcador{
+        width: 150px;
+        height: 25px;
+        border-radius: 5px;
+        background-color: #14CC1C;
+        text-align: center;
+        color: #ffffff;
+    }
+
 }
 
 .testt{
@@ -662,10 +1000,27 @@ a{
     display: none;
     height: 100%;
    
+   
+}
+
+.toggle-button2{
+    font-size: 40px;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.615);
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    width: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.toggle-button2:hover{
+    color: white;
 }
 
 .secao_imgs{
-    margin: 50px 0px 60px 0px;
+    
+    margin: 20px 0px 60px 0px;
     height: 450px;
     width: 100%;
     display: flex;
@@ -701,6 +1056,7 @@ a{
 .desc_local{
     color: #000000af;
     margin-top: 10px;
+    margin-bottom: 30px;
     text-align: left;
     font-weight: 400;
     font-size: 1.2rem;
@@ -713,6 +1069,7 @@ a{
     width: 90%;
     border: 2px solid rgba(156, 194, 167, 0.137);
 }
+
 
 .infos_local .servicos_h2{
     margin-bottom: 10px;
@@ -812,90 +1169,570 @@ a{
 
 /* ESTILO DOS CARDS COM INFORMAÇÕES DO LOCAL NO MOBILE */
 
-.linha_sobe_desce{
-    border: 4px solid #3333331f;
-    border-radius: 50px;
-    width: 35%;
-    margin-top: 25px;
+@media(min-width: 360px) and ( max-width:540px ){
 
-}
+    .toggle-button {
+        display: none;
+    }
 
-.infos_local_mobile{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    .map{
+        max-width: 100%;
+        height: 600px;
+        position: absolute;
+        z-index: 0;
+        /*z-index:98;*/
+    }
 
-.btn_e_nome{
-    min-width: 100%;
-    height: 80px;
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 40px;
-}
+    .locall1{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 1;
+        
+        color:white;
+        background-color:rgb(255, 254, 248);
+        
+    }
+    
+    .cards{
+        margin-top:30px;
+    }
+    
+    .cards1{
+        border: 1px solid #00000017;
+        margin-top:10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        text-align: center;
+        /*margin: 0px 20px 80px 30px;*/
+        background-color: #ffffff;
+        width: 90%;
+        height: 520px;
+        box-shadow: 0px 15px 27px -16px rgba(0,0,0,0.1);      
+    }
+    
+    .cards1 img{
+        /*border-bottom-right-radius: 150px;*/
+        width: 95%;
+        height: 100%;
+        border-radius: 5px;
+    }
+    
+    .cards1 .imagem{
+        width: 100%;
+        height: 50%;
+        padding-top: 20px;
+    
+    }
+    
+    
+    .cards1 .conteudo{
+        border-radius: 10px;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+     
+    .cards1 .conteudo h1{
+        color: #14CC1C;
+        font-weight: 700;
+        font-size: 20px;
+        margin: 10px 0px 10px 0px;
+        width: 90%;
+        text-align: center;
+    }
+    
+    .cards1 .conteudo p{
+        color: #000000;
+        font-weight: 600;
+        /* font-size: 1rem; */
+        font-size: 13px;
+        max-width: 90%;
+        overflow: hidden;
+        max-height: 57%;
+        text-align: center;
+        overflow-y: auto;
+       
+    }
+    
+    
+    
+    .conteudo .links{
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .cards1 .favoritar{
+        font-size: 20px;
+        width: 50%;
+        height: 88%;
+        padding: 3px 50px 3px 50px;
+        color: #14CC1C;
+    }
+    
+    .cards1 .ir{
+        width: 50%;
+        height: 88%;
+        margin-right: 20px;
+        border-radius: 5px;
+        padding: 2px 50px 2px 50px;
+        background-color: #14CC1C;
+        /* border-radius: 10px; */
+        color: white;
+    }
 
-.nome_local_mobile{
-    color: #14CC1C;
-    text-align: center;
-    width: 90%;
-}
+    .leaflet-container a {
+        color: white;
+    }
+    
+    
+    /* .cards1 a{
+        text-decoration: none;
+        /*padding: 15px 10px 10px 10px;
+        background-color: #14CC1C;
+        border-radius: 10px;
+        color: white;
+    } */
+        
+    /* .cards1 a:hover{
+        transform: scale(1.1);
+    
+    }  */
+    .pesquisar{
+        margin-bottom: 50px;
+        margin-top: 5px;
+        width: 100%;
+        
+      
+    }
 
-.secao_imgs_mobile{
-    height: 300px;
-    width: 90%;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-}
+    .pesq{
+        /*margin-top:30px;*/
+        padding: 10px 15px;
+        width: 70%;
+        height: 40px;
+        font-size: 1rem;
+        font-weight: 400;
+        border-radius: 15px;
+        border: none;
+        border:solid 1px;
+       
+    }
 
-.secao_imgs_mobile img{
-    width: 100%;
-    border-radius: 10px;    
-}
+    .pesquisar i{
+        margin-left: 20px;
+        color:black;
+    }
 
-.desc_local_mobile{
-    color: #000000;
-    width: 90%;
-    margin-bottom: 30px;
-}
+    .btn-abrir-menu1{
+        display:block;
+        color:black;
+        font-size:45px;
+        align-self:center;
+    }
+    .btn-fechar1{
+        color:#000000;
+        font-size:35px;
+        align-self:baseline;
+
+    } 
+    .menu-mobile1{
+        backdrop-filter: blur(10px);
+        border-radius:15px ;
+        width:0;
+        height:0;
+        background:#ffffff48;
+        position:absolute;
+        top:0;
+        right:0;
+        transition:.5s;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:justify;
+        overflow:hidden;
+        z-index:99;
+    }
+    .menu-mobile1 nav{
+        width:100%;
+        
+    } 
+    .menu-mobile1 nav ul{
+        list-style-type:none;
+    }
+    .menu-mobile1 nav a{
+        font-size:20px;
+        text-decoration:none;
+        color:rgb(0, 0, 0);
+        display:block;
+        transition:.5s;
+        padding:20px;
+        padding-left:76px;
+    }
+
+    .menu-mobile1 nav a:hover{
+        background:rgb(255, 255, 255);
+        color:black;
+        box-shadow:0 0 20px rgb(0, 0, 0);
+        width:60%;
+    }
+    .menu-mobile1.abrir-menu{
+        width:100%;
+        height:50vh;
+        z-index:99;
+
+    }  
+        
+        
+    .desktop nav{
+        display:none;
+    }
+    .sidebar{
+        display: none;
+    }
+    .pesq5{
+        display:none;
+    }
+    .color-button{
+        display:none;
+    }
+
+    body{ overflow: inherit;}
+
+    /* ESTILO CARDS DO MARCADOR NO MAPA */
+    
+    .card_marcador{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nome_marcador{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: #14CC1C;
+    }
+    .img_marcador{
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    .desc_marcador{
+        text-align: center;
+    }
+
+    .ir_marcador{
+        width: 150px;
+        height: 25px;
+        border-radius: 5px;
+        background-color: #14CC1C;
+        text-align: center;
+        color: #ffffff;
+    }
+
+
+
+
+
+    .linha_sobe_desce{
+        border: 3px solid #3333331f;
+        border-radius: 50px;
+        width: 35%;
+        margin-top: 25px;
+    
+    }
+    
+    .toggle-button2{
+        font-size: 35px;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgba(255, 255, 255, 0.615);
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        width: 20px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+    
+    .toggle-button2:hover{
+        color: white;
+    }
+    
+    .infos_local_mobile{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn_e_nome{
+        min-width: 100%;
+        height: 80px;
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .nome_local_mobile{
+        color: #14CC1C;
+        text-align: left;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 90%;
+    }
+    
+    .secao_imgs_mobile{
+        height: 100%;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .secao_imgs_mobile img{
+        height: 100%;
+        width: 90%;
+        border-radius: 10px;    
+    }
+    
+    .desc_local_mobile{
+        color: #000000;
+        width: 90%;
+        margin-bottom: 20px;
+        margin-left: 30px;
+        margin-right: 30px;
+        text-align: left;
+    }
+
+
+
+    /*    ESTILO CARDS SERVIÇOS    */
+
+
+
+    .servicos-container_mobile{
+        margin-top: 10px;
+        padding-bottom: 70px;
+     
+    }
+    
+    .titulo_servicos_mobile{
+        color: #14CC1C;  
+        margin-bottom: 40px;
+        font-size: 1.5rem;
+        text-align: left;
+        margin-left: 30px;
+
+    }
+    
+    .servico-item_mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 30px auto;
+        width: 80%;
+        min-height: 250px;
+        border: 1px solid #14cc1d42;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        padding: 15px;
+    }
+    
+    .div_infos_mobile{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+        height: 150px;
+        width: 100%;
+    }
+    
+    .horario{
+        color: #505050;
+        font-size: 0.90rem;
+        display: none;
+    }
+
+    .horario_mobile{
+        color: #505050;
+        margin-top: 0px;
+        font-size: 0.80rem;
+    }
+    
+    .servico_nome_mobile{
+        color: #14CC1C;
+        font-size: 1rem;
+    }
+    .categoria_serv_mobile{
+        color: #000000;
+        font-size: 0.80rem;
+        margin-top: 5px;
+    }
+    
+    .icon_serv_mobile{
+        font-size: 60px;
+        margin-right: 20px;
+        color: #14CC1C;
+    }
+    
+    .desc_servico_mobile{
+        color: #000000;
+        margin-top: 5px; 
+        text-align: left; 
+        font-size: 0.90rem; 
+    }
+    
+    .descricao_servico_mobile{
+        width: 500px;
+        display: block;
+        width: 100%;
+        height: 50%;
+        
+    
+    }
+    
+    .nome_hora_mobile{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-left: 20px;
+    }
+    
+    
+    .voltar_serv{
+        color: #14CC1C;
+        font-size: 20px;
+        background-color: #000000;
+        position: absolute;
+        top: 90;
+    
+    }
+    
+    .icones_mobile{
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+};
+
+
+
+
+
 
 /* ESTILO CARDS SERVIÇOS */
 
+
+
+
 .servicos-container{
-    margin-top: 120px;
+    margin-top: 10px;
+    padding-bottom: 70px;
+}
+
+.titulo_servicos{
+    color: #14CC1C;
+    margin-left: 40px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-size: 1.5rem;
 }
 
 .servico-item{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 40px;
-    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 40px;
+    border: 1px solid #14cc1d42;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    padding: 15px;
+    height: 230px;
 }
 
 .div_infos{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100px;
+    align-items: center;
+    height: 50%;
     width: 100%;
-    margin-left: 20px;
+    border-bottom: 3px solid #14cc1d11;
 }
 
 .horario{
-    color: #000000;
+    color: #505050;
+    font-size: 0.90rem;
 }
 
 .servico_nome{
+    color: #14CC1C;
+    font-size: 1.3rem;
+}
+.categoria_serv{
     color: #000000;
-    font-size: 1.2rem;
+    font-size: 0.90rem;
+    margin-top: 5px;
 }
 
 .icon_serv{
     font-size: 60px;
-    
+    margin-right: 20px;
+    color: #14CC1C;
 }
+
+.desc_servico{
+    color: #000000;
+    min-height: 100%;
+    min-width: 100%;
+    margin-top: 20px;
+}
+
+.descricao_servico{
+    width: 500px;
+    display: block;
+    width: 100%;
+    height: 50%;
+}
+
+.nome_hora{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.voltar_serv{
+    color: #14CC1C;
+    font-size: 20px;
+    background-color: #000000;
+    position: absolute;
+    top: 90;
+
+}
+
+.icones{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+

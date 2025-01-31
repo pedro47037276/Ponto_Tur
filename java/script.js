@@ -1,4 +1,5 @@
 import { traceRoute } from "./rotas.js";
+import { buscar_servicos } from "./servicos.js";
   // Inicialize o mapa com Leaflet
   // Inicialize o mapa com Leaflet, desabilitando o zoom
 
@@ -205,7 +206,6 @@ function cards_mobile(cardData) {
 
 // Função para adicionar cards no desktop
 function cards_desktop(cardData) {
-
     const container2 = document.getElementById('fundo');
     
     cardData.forEach(card => {
@@ -240,20 +240,50 @@ function cards_desktop(cardData) {
                 const divLinks = document.createElement('div');
                 divLinks.className = 'links';
 
-                    const fav = document.createElement('a');
-                    fav.href = '#';
-                    fav.className = 'favoritar';
-                    fav.innerHTML = '<i class="bi bi-bookmarks-fill"></i>';
-                    divLinks.appendChild(fav);
-                    //
-                    document.querySelectorAll('.favoritar').forEach(fav => {
-                        fav.addEventListener('click', (event) => {
-                            event.preventDefault();
-                            window.location.href = 'favorito.html';
-                        });
-                    });
-                        
+                const fav = document.createElement('a');
+                fav.href = '#';
+                fav.className = 'favoritar';
                 
+                // Criar o ícone separadamente
+                const icon = document.createElement('i');
+                icon.className = 'bi bi-bookmarks-fill';
+                fav.appendChild(icon);
+                
+                divLinks.appendChild(fav);
+                
+                // Adicionar o event listener
+                fav.addEventListener('click', (event) => {
+                    event.preventDefault();
+                
+                    // Obter os dados do ponto (nome, descrição, imagem, localização)
+                    const nome = titulo.textContent;  // Nome do local
+                    const descricao = card.descricao; // Descrição do local
+                    const imgSrc = card.img;          // Imagem do local
+                    const latitude = card.localizacao.latitude;  // Latitude
+                    const longitude = card.localizacao.longitude; // Longitude
+                
+                    // Criar objeto de favorito
+                    const favorito = { nome, descricao, imgSrc, latitude, longitude };
+                
+                    // Verificar se já existe um array de favoritos no localStorage
+                    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+                
+                    // Verificar se o ponto já está nos favoritos
+                    const index = favoritos.findIndex(fav => fav.nome === nome);
+                
+                    if (index === -1) {
+                        // Adicionar o favorito no array
+                        favoritos.push(favorito);
+                        localStorage.setItem('favoritos', JSON.stringify(favoritos)); // Atualiza o localStorage
+                        alert('Ponto adicionado aos favoritos!');
+                    } else {
+                        alert('Este ponto já está nos favoritos!');
+                    }
+                
+                    // Navegar para a página de favoritos
+                    window.location.href = 'favorito.html';
+                });
+                                
                     const ir = document.createElement('a');
                     ir.href = '#';
                     ir.textContent = 'IR';
@@ -266,7 +296,84 @@ function cards_desktop(cardData) {
                         // console.log(filter)
                         traceRoute(card.localizacao.latitude, card.localizacao.longitude);
                         esconde_sidebar_desktop();
-                        info_do_local(cardData, filter);                        
+                        info_do_local(cardData, filter);
+                        if(card.nome == "Casa das Onze Janelas"){
+                            var x = 'casa_das_onze_janelas';
+                            buscar_servicos(x);
+                            
+                        } else if (card.nome == "Estação das Docas"){
+                            var x = 'estacao_das_docas';
+                            buscar_servicos(x);
+                            
+                        } else if (card.nome == "Basílica Santuário de Nossa Senhora de Nazaré"){
+                            var x = 'basilica_santuario_de_nossa_senhora_de_nazare';
+                            buscar_servicos(x);
+                            
+                        } else if (card.nome == "Espaço São José Liberto"){
+                            var x = 'espaco_sao_jose_libertino';
+                            buscar_servicos(x);
+                            
+                        }  else if (card.nome == "Ilha do Cumbú"){
+                            var x = 'ilha_do_cumbú';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Mercado de São Braz"){
+                            var x = 'Mercado de São Braz';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Bosque Rodrigues Alves"){
+                            var x = 'bosque_rodrigo_alves';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Museu de Arte Sacra"){
+                            var x = 'igreja_santo_alexandre';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Mangal das Garças"){
+                            var x = 'mangal_das_garcas';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Ilha do Mosqueiro"){
+                            var x = 'mosqueiro';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Museu Paraense Emílio Goeldi"){
+                            var x = 'museu_emilio_ goeldi';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Orla de Icoaraci"){
+                            var x = 'orla_de_icoraci';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Porto Futuro"){
+                            var x = 'porto_futuro';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Praça Batista Campos"){
+                            var x = 'praca_batista_campos';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Praça Brasil"){
+                            var x = 'praca_brasil';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Ilha de Cotejuba"){
+                            var x = 'praia_do_cotijuba';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Praça da República"){
+                            var x = 'praça da republica';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Ver-o-Peso"){
+                            var x = 'ver_o_peso_comercio';
+                            buscar_servicos(x);
+                        
+                        } else if (card.nome == "Ver-o-Rio"){
+                            var x = 'ver_o_rio';
+                            buscar_servicos(x);
+                        }
+                        
                     });
 
                 divContent.appendChild(divLinks);
@@ -302,11 +409,6 @@ function info_do_local(cardData, filter) {
             const div = document.createElement('div');
             div.className = 'infos_local';
 
-                const nome_local = document.createElement('h1');
-                nome_local.className = 'nome_local';
-                nome_local.innerHTML = card.nome;
-                div.appendChild(nome_local)
-
                 // Imagem do card
                 const divImage = document.createElement('div');
                 divImage.className = 'secao_imgs';
@@ -318,6 +420,11 @@ function info_do_local(cardData, filter) {
                     divImage.appendChild(img);
 
                 div.appendChild(divImage);
+
+                const nome_local = document.createElement('h1');
+                nome_local.className = 'nome_local';
+                nome_local.innerHTML = card.nome;
+                div.appendChild(nome_local);
 
                 const desc_local = document.createElement('p');
                 desc_local.className = 'desc_local';
@@ -348,16 +455,7 @@ function info_do_local_mobile(cardData, filtro) {
                 linha_sobe_desce.className = 'linha_sobe_desce';
                 div.appendChild(linha_sobe_desce);
 
-                const btn_voltar_e_nome = document.createElement('div');
-                btn_voltar_e_nome.className = 'btn_e_nome';
-
-                    const nome_local = document.createElement('h1');
-                    nome_local.className = 'nome_local_mobile';
-                    nome_local.innerHTML = card.nome;
-                    btn_voltar_e_nome.appendChild(botao);
-                    btn_voltar_e_nome.appendChild(nome_local);
-                    
-                div.appendChild(btn_voltar_e_nome);
+                div.appendChild(botao);
 
                 // Imagem do card
                 const divImage = document.createElement('div');
@@ -366,10 +464,20 @@ function info_do_local_mobile(cardData, filtro) {
                     const img = document.createElement('img');
                     img.src = card.img;
                     img.alt = card.nome;
-                    img.className = 'imgs_do_local_mobile'
+                    img.className = 'imgs_do_local_mobile';
                     divImage.appendChild(img);
 
                 div.appendChild(divImage);
+
+                const btn_voltar_e_nome = document.createElement('div');
+                btn_voltar_e_nome.className = 'btn_e_nome';
+
+                    const nome_local = document.createElement('h1');
+                    nome_local.className = 'nome_local_mobile';
+                    nome_local.innerHTML = card.nome;
+                    btn_voltar_e_nome.appendChild(nome_local);
+                    
+                div.appendChild(btn_voltar_e_nome);
 
                 const desc_local = document.createElement('p');
                 desc_local.className = 'desc_local_mobile';
