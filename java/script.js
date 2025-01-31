@@ -1,5 +1,5 @@
 import { traceRoute } from "./rotas.js";
-import { buscar_servicos } from "./servicos.js";
+import { buscar_servicos, buscar_servicos_mobile } from "./servicos.js";
   // Inicialize o mapa com Leaflet
   // Inicialize o mapa com Leaflet, desabilitando o zoom
 
@@ -143,10 +143,16 @@ function cards_mobile(cardData) {
 
     const container2 = document.getElementById('locall1');
     
+    
     cardData.forEach(card => {
+
+        
+
 
         const div = document.createElement('div');
         div.className = 'cards1';
+
+            
 
             // Imagem do card
             const divImage = document.createElement('div');
@@ -194,6 +200,83 @@ function cards_mobile(cardData) {
                         traceRoute(card.localizacao.latitude, card.localizacao.longitude);
                         esconde_locall1();
                         info_do_local_mobile(cardData,filtro);
+
+                        if(card.nome == "Casa das Onze Janelas"){
+                            var y = 'casa_das_onze_janelas';
+                            buscar_servicos_mobile(y);
+            
+                        } else if (card.nome == "Estação das Docas"){
+                            var y = 'estacao_das_docas';
+                            buscar_servicos_mobile(y);
+            
+                        } else if (card.nome == "Basílica Santuário de Nossa Senhora de Nazaré"){
+                            var y = 'basilica_santuario_de_nossa_senhora_de_nazare';
+                            buscar_servicos_mobile(y);
+            
+                        } else if (card.nome == "Espaço São José Liberto"){
+                            var y = 'espaco_sao_jose_libertino';
+                            buscar_servicos(y);
+            
+                        }  else if (card.nome == "Ilha do Cumbú"){
+                            var y = 'ilha_do_cumbú';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Mercado de São Braz"){
+                            var y = 'Mercado de São Braz';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Bosque Rodrigues Alves"){
+                            var y = 'bosque_rodrigo_alves';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Museu de Arte Sacra"){
+                            var y = 'igreja_santo_alexandre';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Mangal das Garças"){
+                            var y = 'mangal_das_garcas';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Ilha do Mosqueiro"){
+                            var y = 'mosqueiro';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Museu Paraense Emílio Goeldi"){
+                            var y = 'museu_emilio_ goeldi';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Orla de Icoaraci"){
+                            var y = 'orla_de_icoraci';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Porto Futuro"){
+                            var y = 'porto_futuro';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Praça Batista Campos"){
+                            var y = 'praca_batista_campos';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Praça Brasil"){
+                            var y = 'praca_brasil';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Ilha de Cotejuba"){
+                            var y = 'praia_do_cotijuba';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Praça da República"){
+                            var y = 'praça da republica';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Ver-o-Peso"){
+                            var y = 'ver_o_peso_comercio';
+                            buscar_servicos_mobile(y);
+        
+                        } else if (card.nome == "Ver-o-Rio"){
+                            var y = 'ver_o_rio';
+                            buscar_servicos_mobile(y);
+                        }
                     });
 
                 divContent.appendChild(divLinks);
@@ -429,7 +512,11 @@ function info_do_local(cardData, filter) {
                 const desc_local = document.createElement('p');
                 desc_local.className = 'desc_local';
                 desc_local.innerHTML = card.descricao;
-                div.appendChild(desc_local);              
+                div.appendChild(desc_local);  
+                
+                const linha_sobe_desce = document.createElement('hr');
+                linha_sobe_desce.className = 'linha';
+                div.appendChild(linha_sobe_desce);
                              
             container3.appendChild(div);          
         }
@@ -482,7 +569,9 @@ function info_do_local_mobile(cardData, filtro) {
                 const desc_local = document.createElement('p');
                 desc_local.className = 'desc_local_mobile';
                 desc_local.innerHTML = card.descricao;
-                div.appendChild(desc_local);              
+                div.appendChild(desc_local);    
+                
+               
                              
             container4.appendChild(div);          
         }

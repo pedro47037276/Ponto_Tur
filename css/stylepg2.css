@@ -937,11 +937,11 @@ a{
 
     left: 0px; /* Escondido inicialmente */
     width: 760px;
-    height: 90%;
+    height: 85%;
     background-color: rgb(255, 255, 255); 
     color: white;
     transition: left 0.3s;
-    padding: 0px;
+    padding-bottom: 15px;
 }
 .sidebar.open {
     overflow: hidden;
@@ -1489,9 +1489,7 @@ a{
     
     .nome_local_mobile{
         color: #14CC1C;
-        text-align: left;
-        margin-left: 20px;
-        margin-right: 20px;
+        text-align: center;
         width: 90%;
     }
     
@@ -1513,10 +1511,8 @@ a{
     .desc_local_mobile{
         color: #000000;
         width: 90%;
-        margin-bottom: 20px;
-        margin-left: 30px;
-        margin-right: 30px;
-        text-align: left;
+        margin-bottom: 10px;
+        text-align: center;
     }
 
 
@@ -1533,10 +1529,10 @@ a{
     
     .titulo_servicos_mobile{
         color: #14CC1C;  
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        margin-top: 30px;
         font-size: 1.5rem;
-        text-align: left;
-        margin-left: 30px;
+        text-align: center;
 
     }
     
