@@ -22,18 +22,26 @@
                 <span class="span-required">Nome deve ter no minimo 3 caracteres</span>
 
                 <input type="email" name="email" placeholder="Email" class="inputs required" id="email" oninput="emailValidate()">
-                <span class="span-required" id="span-email">Digite um email válido</span>
+                <span class="span-required" id="span-email">email inválido</span>
                 
                 <div class="mostar">
                     <input type="password" id="senha" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()"/>
-                    <span class="span-required" id="span-password">Senha deve ter no mínimo 8 caracteres</span>
-                    <button class="but" type="button" onclick="toggleSenha()"><i class="bi bi-eye"></i></button>
+                    <span class="span-required" id="span-password">mínimo 8 caracteres</span>
+                    
                 </div>
+
+
+                
+
+
+
+
+
 
                 <div class="mostar">
                     <input type="password" id="confirmarSenha" placeholder="Confirmar Senha" class="inputs required" oninput="comparePassword()"/>
-                    <span class="span-required" id="span-confimpassword">Senhas devem ser compatíveis</span>
-                    <button class="but" type="button" onclick="toggleConfirmarSenha()"><i class="bi bi-eye"></i></button>
+                    <span class="span-required" id="span-confimpassword">Senhas incompatíveis</span>
+                   
                 </div>
 
                 <button type="submit">Criar</button>
@@ -49,7 +57,7 @@
                 
                 <div class="mostar2">
                     <input type="password" id="senha2" placeholder="Senha"/>
-                    <button class="but" type="button" onclick="toggleSenha2()"><i class="bi bi-eye"></i></button>
+                    
                 </div>
                 
                 <a href="#" class="esenha">Esqueceu Sua Senha?</a>

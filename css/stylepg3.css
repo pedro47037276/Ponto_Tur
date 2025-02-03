@@ -28,22 +28,22 @@ body{
     min-height: 480px;
 }
 .span-required{
-    font-size: 12px;
-    margin: -10px 0 0 1px;
+    font-size: 8px;
+    margin: -7px 0 0 1px;
     color: red;
     display: none;
 }
 #span-password{
    
-    margin:-10px -50px -6px -181px;
+    margin:-35px -64px -6px -16px;
     
     
 }
 #span-email{
-    margin: -10px 100px 0 1px;
+    margin: -6px 100px 0 1px;
 }
 #span-confimpassword {
-    margin: 10px 0 -6px -182px;
+    margin: 0px 95px -8px 9px;
    
 }
 
@@ -93,10 +93,10 @@ body{
     background-color: #eee;
     border: none;
     margin: 8px 0;
-    padding: 10px 15px;
+    padding: 3px 17px;
     font-size: 13px;
     border-radius: 8px;
-    width: 76%;
+    width: 100;
     outline: none;
 }
 
@@ -269,10 +269,14 @@ body{
 .mostar{
     align-items: flex-end;
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
     
 }
 
 .mostar .but{
+    width: 322px;
     background-color: #fff;
     margin: 8px;
     font-size: 10px;
@@ -287,6 +291,7 @@ body{
 
 
 .mostar2 i{
+    width: 322px;
     font-size: 15px;
     color: #14CC1C;
     font-weight: 1000px;
@@ -301,6 +306,7 @@ body{
 }
 
 .mostar2{
+
     align-items: flex-end;
     display: flex;
     
